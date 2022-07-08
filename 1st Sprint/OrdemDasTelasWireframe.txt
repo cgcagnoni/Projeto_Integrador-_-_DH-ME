@@ -1,0 +1,11 @@
+- Ordem das telas: 
+
+1. Home
+2. Sobre
+3. Página de busca
+4. Página do animal
+5. Cadastro/Formulário 
+6. Login
+7. Quero ajudar a ong
+8. Quero doar um animalzinho
+9. Contato
