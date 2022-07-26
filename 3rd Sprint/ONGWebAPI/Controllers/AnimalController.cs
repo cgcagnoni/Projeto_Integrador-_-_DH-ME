@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ONGWebAPI.Models;
+using ONGWebAPI.Repository.EntityRepository;
 
 namespace ONGWebAPI.Controllers
 {
@@ -9,7 +10,7 @@ namespace ONGWebAPI.Controllers
     [ApiController]
     public class AnimalController : ControllerBase
     {
-        private ONGContext DbONG = new ONGContext();
+        private ONGContext DbONG;// = new ONGContext();
 
         //Listar todos animais
         [HttpGet]
