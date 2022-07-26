@@ -14,8 +14,9 @@
         public bool? Microchip { get; set; }
         public bool? Castrado { get; set; }
         public bool? Deficiencia { get; set; }
-        public UsuarioAdotante? UsuarioAdotante { get; set; }
-        public UsuarioDoador? UsuarioDoador { get; set; }
+        public bool Disponibilidade { get; set; }
+        public Usuario? Usuario { get; set; }
+       
 
 
     }

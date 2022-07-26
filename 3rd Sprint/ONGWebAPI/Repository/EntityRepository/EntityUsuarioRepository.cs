@@ -5,6 +5,7 @@ namespace ONGWebAPI.Repository.EntityRepository
 {
     public class EntityUsuarioRepository : IUsuarioRepository
     {
+        //injeção de depndencia
         private ONGContext DbONG;
 
         public EntityUsuarioRepository(ONGContext DbONG)

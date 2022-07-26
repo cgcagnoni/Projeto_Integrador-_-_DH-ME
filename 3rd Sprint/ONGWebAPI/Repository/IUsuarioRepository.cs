@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using ONGWebAPI.Models;
+﻿using ONGWebAPI.Models;
 
 namespace ONGWebAPI.Repository
 {

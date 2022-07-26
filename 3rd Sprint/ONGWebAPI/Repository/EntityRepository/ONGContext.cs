@@ -9,8 +9,7 @@ namespace ONGWebAPI.Repository.EntityRepository
 
         public DbSet<Animal>? Animais { get; set; }
         public DbSet<Usuario>? Usuarios { get; set; }
-        public DbSet<UsuarioDoador>? UsuarioaDoadores { get; set; }
-        public DbSet<UsuarioAdotante>? UsuariosAdotantes { get; set; }
+
 
         public ONGContext(bool inMemory)
         {
@@ -27,6 +26,7 @@ namespace ONGWebAPI.Repository.EntityRepository
             {
                 string credencial = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ONG;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
                 Configurar.UseSqlServer(credencial);
+               
             }
         }
         protected override void OnModelCreating(ModelBuilder Modelagem)
@@ -36,15 +36,12 @@ namespace ONGWebAPI.Repository.EntityRepository
                 Tabela.HasKey(Propriedade => Propriedade.Id);
             });
 
-            Modelagem.Entity<UsuarioAdotante>(Tabela =>
+            Modelagem.Entity<Usuario>(Tabela =>
             {
                 Tabela.HasMany(Propriedade => Propriedade.Animais);
             });
 
-            Modelagem.Entity<UsuarioDoador>(Tabela =>
-            {
-                Tabela.HasMany(Propriedade => Propriedade.Animais);
-            });
+      
         }
 
 
