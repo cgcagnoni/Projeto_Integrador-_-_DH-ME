@@ -5,6 +5,7 @@ namespace ONGWebAPI.Repository.EntityRepository
 {
     public class ONGContext : DbContext
     {
+
         private bool inMemory;
 
         public DbSet<Animal>? Animais { get; set; }
@@ -34,6 +35,7 @@ namespace ONGWebAPI.Repository.EntityRepository
             Modelagem.Entity<Animal>(Tabela =>
             {
                 Tabela.HasKey(Propriedade => Propriedade.Id);
+                // Tabela.Navigation(Propriedade => Propriedade.Usuario).AutoInclude();
             });
 
             Modelagem.Entity<Usuario>(Tabela =>
@@ -43,9 +45,6 @@ namespace ONGWebAPI.Repository.EntityRepository
 
       
         }
-
-
-
 
     }
 }

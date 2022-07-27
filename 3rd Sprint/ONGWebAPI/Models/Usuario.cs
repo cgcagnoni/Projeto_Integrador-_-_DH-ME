@@ -1,4 +1,6 @@
-﻿namespace ONGWebAPI.Models
+﻿using System.Text.Json.Serialization;
+
+namespace ONGWebAPI.Models
 {
     public class Usuario
     {
@@ -7,6 +9,7 @@
         public string Sobrenome { get; set; }
         public string? Localizacao { get; set; }
         public string? Telefone { get; set; }
+        [JsonIgnore]
         public List<Animal>? Animais { get; set; }
     }
 }

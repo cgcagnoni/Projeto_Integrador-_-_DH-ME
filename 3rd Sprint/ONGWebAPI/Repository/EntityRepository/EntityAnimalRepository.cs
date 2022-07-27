@@ -14,6 +14,10 @@ namespace ONGWebAPI.Repository.EntityRepository
 
         public void AdicionaNovoAnimal(Animal Animal)
         {
+
+            DbONG.ChangeTracker.Clear();
+            var user = DbONG.Usuarios?.Find(Animal.Usuario.Id);
+            Animal.Usuario = user;
             DbONG.Animais?.Add(Animal);
             DbONG.SaveChanges();
         }
@@ -23,23 +27,15 @@ namespace ONGWebAPI.Repository.EntityRepository
             var user = DbONG.Animais?.Find(Id);
             DbONG.Animais?.Remove(user);
             DbONG.SaveChanges();           
-        }
+        }     
 
         public void AtualizarInformacoesPelaId(int Id, Animal Animal)
         {
-            var local = DbONG.Set<Animal>()
-                .Local
-                .FirstOrDefault(entry => entry.Id == Id);
-
-            if (local != null)
-            {
-                // caso exista, remove do cache local para o entity coneguir atualizar
-                DbONG.Entry(local).State = EntityState.Detached;
-            }
-
+            DbONG.ChangeTracker.Clear();
             Animal.Id = Id;
+            //DbONG.Entry(Animal).State = EntityState.Modified;
             DbONG.Update(Animal);
-            DbONG.SaveChanges(); ;
+            DbONG.SaveChanges();
         }
 
         public Animal ExibirPelaID(int Id)
@@ -49,7 +45,7 @@ namespace ONGWebAPI.Repository.EntityRepository
 
         public List<Animal> ListarTodos()
         {
-            return DbONG.Animais?.ToList();
+            return DbONG.Animais?.Include(x => x.Usuario).ToList();
         }
 
         public List<Animal> SolicitarPelaEspecie(string Especie)
@@ -65,5 +61,12 @@ namespace ONGWebAPI.Repository.EntityRepository
             return DbONG.Animais.Any(Coluna => Coluna.Id == Id);
         }
 
+        public List<Animal> ListarAnimaisUsuario(int Id)
+        {
+            var animal = DbONG.Animais?.Where(t => t.Usuario.Id == Id);
+
+            return animal.ToList();
+
+        }
     }
 }

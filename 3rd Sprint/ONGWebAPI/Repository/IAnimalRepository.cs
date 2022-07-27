@@ -11,9 +11,7 @@ namespace ONGWebAPI.Repository
         void ApagarAnimalPelaId(int Id);
         void AtualizarInformacoesPelaId(int Id, Animal Animal);
         bool VerificarAnimal(int Id);
-
-
-
+        List<Animal> ListarAnimaisUsuario(int Id);
 
     }
 }

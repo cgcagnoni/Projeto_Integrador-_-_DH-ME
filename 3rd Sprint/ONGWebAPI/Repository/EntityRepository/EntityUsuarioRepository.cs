@@ -20,10 +20,16 @@ namespace ONGWebAPI.Repository.EntityRepository
         }
 
         public void ApagarUsuarioPelaId(int Id)
-        {
-            var user = DbONG.Usuarios?.Find(Id);
-            DbONG.Usuarios?.Remove(user);
+        {            
+            var usuario = DbONG.Usuarios.OrderBy(e => e.Id).Include(e => e.Animais).First();
+
+            DbONG.Remove(usuario);
+
             DbONG.SaveChanges();
+            
+            //var user = DbONG.Usuarios?.Find(Id);
+            //DbONG.Usuarios?.Remove(user);
+            //DbONG.SaveChanges();
         }
 
         public void AtualizarInformacoesPelaId(int Id, Usuario Usuario)
@@ -58,5 +64,7 @@ namespace ONGWebAPI.Repository.EntityRepository
         {
             return DbONG.Usuarios.Any(Coluna => Coluna.Id == Id);
         }
+
+
     }
 }
