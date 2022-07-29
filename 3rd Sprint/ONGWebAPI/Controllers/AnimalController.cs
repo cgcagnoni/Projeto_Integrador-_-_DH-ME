@@ -18,13 +18,23 @@ namespace ONGWebAPI.Controllers
             this.animalRepository = animalRepository;
         }
 
+        /// <summary>
+        /// Lista todos os animais cadastrados
+        /// </summary>
+       
         [HttpGet]
         public ActionResult<List<Animal>> ListarTodos()
         {
             return animalRepository.ListarTodos();
         }
 
-        //Listar animais pela espécie
+        /// <summary>
+        /// Lista animais de acordo com a espécie
+        /// </summary>
+        /// <remarks>
+        /// Colocar aqui um exemplo de como fornecer os valores necessários
+        /// </remarks>
+
         [HttpGet("PorEspecie/{Especie}")]
         public ActionResult<List<Animal>> SolicitarPelaEspecie(string Especie)
         {
@@ -39,8 +49,13 @@ namespace ONGWebAPI.Controllers
             }
         }
 
+        /// <summary>
+        /// Busca animal pela ID
+        /// </summary>
+        /// <remarks>
+        /// Colocar aqui um exemplo de como fornecer os valores necessários
+        /// </remarks>
 
-        //Exibe animal pela ID
         [HttpGet("{Id}")]
         public ActionResult<Animal> ExibirPelaID(int Id)
         {
@@ -54,7 +69,12 @@ namespace ONGWebAPI.Controllers
             }
         }
 
-        ////adicionar novo animal
+        /// <summary>
+        /// Adiciona um novo animal 
+        /// </summary>
+        /// <remarks>
+        /// Colocar aqui um exemplo de como fornecer os valores necessários
+        /// </remarks>
         [HttpPost]
         public ActionResult<Animal> AdicionaNovoAnimal(Animal Animal)
         {            
@@ -62,7 +82,12 @@ namespace ONGWebAPI.Controllers
             return CreatedAtAction("AdicionaNovoAnimal", new { id = Animal.Id }, Animal);
         }
 
-        //apaga pela id
+        ///<summary>
+        /// Deleta um animal de acordo com o Id
+        ///</summary>
+        /// <remarks>
+        /// Colocar aqui um exemplo de como fornecer os valores necessários
+        /// </remarks>
         [HttpDelete("{Id}")]
         public ActionResult ApagarAnimalPelaId(int Id)
         {
@@ -73,6 +98,13 @@ namespace ONGWebAPI.Controllers
             }
             return NotFound("Usuario nao encontrado");
         }
+
+        /// <summary>
+        /// Atualiza informações do animal de acordo com a Id
+        /// </summary>
+        /// <remarks>
+        /// Colocar aqui um exemplo de como fornecer os valores necessários
+        /// </remarks>
 
         [HttpPut("{Id}")]
         public ActionResult AtualizarInformacoesPelaId(int Id, Animal Animal)
@@ -89,11 +121,24 @@ namespace ONGWebAPI.Controllers
 
         }
 
+        /// <summary>
+        /// Lista os animais de um usuário específico, de acordo com a Id
+        /// </summary>
+        /// <remarks>
+        /// Colocar aqui um exemplo de como fornecer os valores necessários
+        /// </remarks>
         [HttpGet("PorUsuario/{Id}")]
         public ActionResult<List<Animal>> ListarAnimaisUsuario(int Id)
         {
             return animalRepository.ListarAnimaisUsuario(Id);
         }
+
+        /// <summary>
+        /// Tabela fato das adoções de animais da ONG 
+        /// </summary>
+        /// <returns>
+        /// Lista de animais adotados e disponíveis para adoção 
+        /// </returns>
 
         [HttpGet("ListarAnimaisAdocao")]
         public ActionResult<List<Animal>> ListarAnimaisAdocao([FromQuery] bool adocao)
@@ -102,6 +147,12 @@ namespace ONGWebAPI.Controllers
             return animalRepository.ListarAnimaisAdocao(adocao);           
         }
 
+        /// <summary>
+        /// Tabela fato de animais que foram doados para a ONG
+        /// </summary>
+        /// <returns>
+        /// Lista de animais que foram doados 
+        /// </returns>
         [HttpGet("ListarAnimaisDoacao")]
         public ActionResult<List<Animal>> ListarAnimaisDoacao()
         {
