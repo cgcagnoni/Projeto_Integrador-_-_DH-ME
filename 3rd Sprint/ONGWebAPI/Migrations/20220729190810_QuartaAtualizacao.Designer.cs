@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ONGWebAPI.Repository.EntityRepository;
 
@@ -11,9 +12,10 @@ using ONGWebAPI.Repository.EntityRepository;
 namespace ONGWebAPI.Migrations
 {
     [DbContext(typeof(ONGContext))]
-    partial class ONGContextModelSnapshot : ModelSnapshot
+    [Migration("20220729190810_QuartaAtualizacao")]
+    partial class QuartaAtualizacao
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -32,9 +34,6 @@ namespace ONGWebAPI.Migrations
 
                     b.Property<bool?>("Castrado")
                         .HasColumnType("bit");
-
-                    b.Property<DateTime>("DataCadastro")
-                        .HasColumnType("datetime2");
 
                     b.Property<bool?>("Deficiencia")
                         .HasColumnType("bit");

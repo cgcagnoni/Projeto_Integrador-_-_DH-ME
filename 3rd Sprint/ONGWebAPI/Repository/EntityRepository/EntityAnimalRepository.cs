@@ -23,11 +23,11 @@ namespace ONGWebAPI.Repository.EntityRepository
         }
 
         public void ApagarAnimalPelaId(int Id)
-        {            
+        {
             var user = DbONG.Animais?.Find(Id);
             DbONG.Animais?.Remove(user);
-            DbONG.SaveChanges();           
-        }     
+            DbONG.SaveChanges();
+        }
 
         public void AtualizarInformacoesPelaId(int Id, Animal Animal)
         {
@@ -51,7 +51,7 @@ namespace ONGWebAPI.Repository.EntityRepository
         public List<Animal> SolicitarPelaEspecie(string Especie)
         {
             var animal = DbONG.Animais?.Where(t => t.Especie == Especie);
-               
+
             return animal.ToList();
 
         }
@@ -66,6 +66,24 @@ namespace ONGWebAPI.Repository.EntityRepository
             var animal = DbONG.Animais?.Where(t => t.Usuario.Id == Id);
 
             return animal.ToList();
+
+        }
+
+        public List<Animal> ListarAnimaisAdocao(bool adocao)
+        {                           
+            if (adocao == true)
+            {
+                return DbONG.Animais.Where(t => t.Disponibilidade == true).ToList();
+            }
+            else
+            {               
+                return DbONG.Animais.Where(t => t.Disponibilidade == false).ToList();
+            }
+           
+        }
+        public List<Animal> ListarAnimaisDoacao()
+        {        
+            return DbONG.Animais.ToList();
 
         }
     }

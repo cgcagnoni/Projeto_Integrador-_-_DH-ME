@@ -1,4 +1,8 @@
-﻿namespace ONGWebAPI.Models
+﻿using System.Globalization;
+using System.Threading;
+
+
+namespace ONGWebAPI.Models
 {
     public class Animal
     {
@@ -15,8 +19,9 @@
         public bool? Castrado { get; set; }
         public bool? Deficiencia { get; set; }
         public bool Disponibilidade { get; set; }
+        public DateTime DataCadastro { get; set; } 
         public Usuario? Usuario { get; set; }
-       
+
 
 
     }

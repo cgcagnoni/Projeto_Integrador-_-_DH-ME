@@ -95,6 +95,19 @@ namespace ONGWebAPI.Controllers
             return animalRepository.ListarAnimaisUsuario(Id);
         }
 
+        [HttpGet("ListarAnimaisAdocao")]
+        public ActionResult<List<Animal>> ListarAnimaisAdocao([FromQuery] bool adocao)
+        {
+            //return adocao;
+            return animalRepository.ListarAnimaisAdocao(adocao);           
+        }
+
+        [HttpGet("ListarAnimaisDoacao")]
+        public ActionResult<List<Animal>> ListarAnimaisDoacao()
+        {
+            return animalRepository.ListarAnimaisDoacao();
+        }
+
 
 
 

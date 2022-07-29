@@ -10,8 +10,11 @@ namespace ONGWebAPI.Repository
         void AdicionaNovoAnimal(Animal Animal);
         void ApagarAnimalPelaId(int Id);
         void AtualizarInformacoesPelaId(int Id, Animal Animal);
-        bool VerificarAnimal(int Id);
+        bool VerificarAnimal(int Id);        
         List<Animal> ListarAnimaisUsuario(int Id);
+        List<Animal> ListarAnimaisAdocao(bool adocao);
+        List<Animal> ListarAnimaisDoacao();
+
 
     }
 }

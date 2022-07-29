@@ -43,7 +43,17 @@ namespace ONGWebAPI.Repository.EntityRepository
                 Tabela.HasMany(Propriedade => Propriedade.Animais);
             });
 
-      
+            Modelagem.Entity<RegistroAdocao>(Tabela =>
+            {
+                Tabela.HasMany(Propriedade => Propriedade.Animais);
+            });
+
+            Modelagem.Entity<RegistroDoacao>(Tabela =>
+            {
+                Tabela.HasMany(Propriedade => Propriedade.Animais);
+            });
+
+
         }
 
     }
