@@ -19,7 +19,7 @@ namespace ONGWebAPI.Models
         public bool? Castrado { get; set; }
         public bool? Deficiencia { get; set; }
         public bool Disponibilidade { get; set; }
-        public DateTime DataCadastro { get; set; } 
+        public DateOnly DataCadastro { get; set; } 
         public Usuario? Usuario { get; set; }
 
 
