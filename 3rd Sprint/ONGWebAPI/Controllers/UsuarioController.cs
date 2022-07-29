@@ -16,7 +16,12 @@ namespace ONGWebAPI.Controllers
             _usuarioRepository = usuarioRepository;
         }
 
-        //adicionar novo usuario
+        /// <summary>
+        /// Adiciona um novo usuario
+        /// </summary>
+        ///<remarks>
+        /// Exemplo de como inserir os dados
+        /// </remarks>
         [HttpPost]
         public ActionResult AdicionaNovoUsuario(Usuario Usuario)
         {
@@ -24,8 +29,12 @@ namespace ONGWebAPI.Controllers
             return CreatedAtAction("AdicionaNovoUsuario", new { id = Usuario.Id }, Usuario);
 
         }
-
-        //apaga pela id
+        /// <summary>
+        /// Apaga um usuário de acordo com a Id
+        /// </summary>
+        ///<remarks>
+        /// Exemplo de como inserir os dados
+        /// </remarks>
         [HttpDelete("{Id}")]
         public ActionResult ApagarUsuarioPelaId(int Id)
         {
@@ -37,7 +46,12 @@ namespace ONGWebAPI.Controllers
             return NotFound("Usuario nao encontrado");
         }
 
-        //atualizar usuário pela id
+        /// <summary>
+        /// Atualiza os dados de usuário pela Id
+        /// </summary>
+        ///<remarks>
+        /// Exemplo de como inserir os dados
+        /// </remarks>
         [HttpPut("{Id}")]
         public ActionResult AtualizarInformacoesPelaId(int Id, Usuario Usuario)
         {
@@ -53,7 +67,13 @@ namespace ONGWebAPI.Controllers
 
         }
 
-        //Exibe usuário pela ID
+        /// <summary>
+        /// Exibe usuário de acordo com a ID fornecida
+        /// </summary>
+        ///<remarks>
+        /// Exemplo de como inserir os dados
+        /// </remarks>
+        //
         [HttpGet("{Id}")]
         public ActionResult<Usuario> ExibirPelaID(int Id)
         {
@@ -67,7 +87,10 @@ namespace ONGWebAPI.Controllers
             }         
         }
 
-        //Listar todos os usuários
+        /// <summary>
+        /// Lista todos os usuários
+        /// </summary>
+
         [HttpGet]
         public ActionResult<List<Usuario>> ListarTodos()
         {
