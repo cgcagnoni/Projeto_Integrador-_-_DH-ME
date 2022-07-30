@@ -18,23 +18,35 @@ namespace ONGWebAPI.Controllers
             this.animalRepository = animalRepository;
         }
 
+
         /// <summary>
-        /// Lista todos os animais cadastrados
+        /// Listar todos os animais
         /// </summary>
-       
+        /// <returns>
+        /// Lista de todos os animais cadastrados
+        /// </returns>
+        /// <response code="404">Não há nenhum animal cadastrado</response>
+        /// <response code="200">Lista obtida com sucesso</response>
+        /// <response code="400">Erro desconhecido ocorrido ao tentar obter a lista</response>
         [HttpGet]
         public ActionResult<List<Animal>> ListarTodos()
         {
             return animalRepository.ListarTodos();
         }
 
+
         /// <summary>
-        /// Lista animais de acordo com a espécie
-        /// </summary>
+        /// Listar animais pela espécie
+        /// </summary>                      
+        /// <returns>
+        /// Lista de todos os animais de acordo com a espécie
+        /// </returns>
         /// <remarks>
         /// Colocar aqui um exemplo de como fornecer os valores necessários
         /// </remarks>
-
+        /// <response code="200">Lista obtida com sucesso</response>
+        /// <response code="404">Nenhum animal encontrado</response>
+        /// <response code="400">Erro desconhecido ocorrido ao tentar obter a lista</response>
         [HttpGet("PorEspecie/{Especie}")]
         public ActionResult<List<Animal>> SolicitarPelaEspecie(string Especie)
         {
@@ -45,17 +57,29 @@ namespace ONGWebAPI.Controllers
             }
             else
             {
-                return NotFound("Nenhum animal cadastrado");
+                return NotFound();
             }
         }
 
-        /// <summary>
-        /// Busca animal pela ID
-        /// </summary>
-        /// <remarks>
-        /// Colocar aqui um exemplo de como fornecer os valores necessários
-        /// </remarks>
 
+        /// <summary>
+        /// Buscar animal pela Id
+        /// </summary>
+        /// <returns>Retorna o animal de acordo com o ID fornecido</returns>
+        /// <remarks>
+        /// Exemplo de requisição:
+        ///
+        ///     GET / ID
+        ///     {
+        ///        "Id": 12345678
+        ///     }
+        /// 
+        /// **OBS> máximo de 8 caracteres**
+        /// </remarks>
+        /// <param name="Id"> ID do animal</param>
+        /// <response code="404">Nenhum animal encontrado com este ID</response>
+        /// <response code="200">Animal encontrado com sucesso</response>
+        /// <response code="400">Erro desconhecido ocorrido ao tentar encontrar o animal</response>
         [HttpGet("{Id}")]
         public ActionResult<Animal> ExibirPelaID(int Id)
         {
@@ -65,29 +89,71 @@ namespace ONGWebAPI.Controllers
             }
             else
             {
-                return NotFound("Animal nao encontrado");
+                //obs: nao esta mostrando a mensagem correta de response code
+                return NotFound();
             }
         }
 
+
         /// <summary>
-        /// Adiciona um novo animal 
+        /// Adicionar novo animal 
         /// </summary>
+        /// <returns>Adiciona um novo animal à database</returns>
         /// <remarks>
-        /// Colocar aqui um exemplo de como fornecer os valores necessários
+        /// Exemplo de cadastro:
+        /// 
+        ///     POST / ANIMAL  
+        ///     {  
+        ///         "id": 1234,  
+        ///         "nome": "Lulu",  
+        ///         "especie": "Gato",  
+        ///         "sexo": "Fêmea",  
+        ///         "idade": "1",  
+        ///         "porte": "Médio",  
+        ///         "vacinas": "antirrabica, triplice, vermifugo ",  
+        ///         "foto": "fotoFilhote.png",  
+        ///         "localizacao": "São Paulo",  
+        ///         "microchip": true,  
+        ///         "castrado": true,  
+        ///         "deficiencia": false,  
+        ///         "disponibilidade": true,  
+        ///         "dataCadastro": "2022-07-30T20:32:07.183Z",  
+        ///         "usuario":   
+        ///         {  
+        ///             "id": 123,  
+        ///             "nome": "Maria",  
+        ///             "sobrenome": "da Silva",  
+        ///             "localizacao": "São Paulo",  
+        ///             "telefone": "965561231"  
+        ///         }  
+        ///     }
         /// </remarks>
+        /// <response code="201">Animal cadastrado com sucesso</response>
+        /// <response code="400">Erro desconhecido ocorrido ao tentar cadastrar um animal</response>
         [HttpPost]
         public ActionResult<Animal> AdicionaNovoAnimal(Animal Animal)
-        {            
+        {
             animalRepository.AdicionaNovoAnimal(Animal);
             return CreatedAtAction("AdicionaNovoAnimal", new { id = Animal.Id }, Animal);
         }
 
         ///<summary>
-        /// Deleta um animal de acordo com o Id
+        /// Deletar animal pela Id
         ///</summary>
+        ///<returns>Deleta um animal da database pelo Id fornecido</returns>
         /// <remarks>
-        /// Colocar aqui um exemplo de como fornecer os valores necessários
+        /// Exemplo de requisição:
+        ///
+        ///     DELETE / ID
+        ///     {
+        ///        "Id": 12345678
+        ///     }
+        /// 
+        /// **OBS> máximo de 8 caracteres** 
         /// </remarks>
+        /// <response code="200">Animal deletado da database com sucesso</response>
+        /// <response code="404">Animal não encontrado</response>
+        /// <response code="400">Erro desconhecido ocorrido ao tentar deletar animal da database</response>
         [HttpDelete("{Id}")]
         public ActionResult ApagarAnimalPelaId(int Id)
         {
@@ -96,16 +162,54 @@ namespace ONGWebAPI.Controllers
                 animalRepository.ApagarAnimalPelaId(Id);
                 return Ok();
             }
-            return NotFound("Usuario nao encontrado");
+            return NotFound(); //nao esta mostrando a mensagem do response code
         }
 
-        /// <summary>
-        /// Atualiza informações do animal de acordo com a Id
-        /// </summary>
-        /// <remarks>
-        /// Colocar aqui um exemplo de como fornecer os valores necessários
-        /// </remarks>
 
+        /// <summary>
+        /// Atualizar dados do animal pela Id
+        /// </summary>
+        /// <returns>Atualiza as informações do animal na database de acordo com a Id fornecida</returns>
+        /// <remarks>
+        /// Exemplo de requisição:
+        ///
+        ///     GET / ID
+        ///     {
+        ///        "Id": 12345678
+        ///     }
+        /// 
+        /// **OBS> máximo de 8 caracteres**        
+        /// 
+        /// 
+        ///      PUT / ANIMAL  
+        ///         {  
+        ///             "id": 1234,  
+        ///             "nome": "Luluzinha",    
+        ///             "especie": "Gato",  
+        ///             "sexo": "Fêmea",  
+        ///             "idade": "1",  
+        ///             "porte": "Médio",  
+        ///             "vacinas": "antirrabica, triplice, vermifugo ",  
+        ///             "foto": "fotoFilhote.png",  
+        ///             "localizacao": "São Paulo",  
+        ///             "microchip": true,  
+        ///             "castrado": true,  
+        ///             "deficiencia": false,  
+        ///             "disponibilidade": true,  
+        ///             "dataCadastro": "2022-07-30T20:32:07.183Z",  
+        ///             "usuario":   
+        ///             {  
+        ///                 "id": 123,  
+        ///                 "nome": "Maria",  
+        ///                 "sobrenome": "da Silva",  
+        ///                 "localizacao": "São Paulo",  
+        ///                 "telefone": "965561231"  
+        ///             }  
+        ///         }
+        /// </remarks>
+        /// <response code="200">Atualizações feitas na database com sucesso</response>
+        /// <response code="404">Animal não encontrado</response>
+        /// <response code="400">Erro desconhecido ocorrido ao tentar atualizar a database</response>
         [HttpPut("{Id}")]
         public ActionResult AtualizarInformacoesPelaId(int Id, Animal Animal)
         {
@@ -121,38 +225,57 @@ namespace ONGWebAPI.Controllers
 
         }
 
+
         /// <summary>
-        /// Lista os animais de um usuário específico, de acordo com a Id
+        /// Listar animais de usuário específico pela Id
         /// </summary>
+        /// <returns>Lista todos os animais registrados pelo mesmo usuário através da Id fornecida</returns>
         /// <remarks>
-        /// Colocar aqui um exemplo de como fornecer os valores necessários
-        /// </remarks>
+        /// Exemplo de requisição:
+        ///
+        ///     GET / ID
+        ///     {
+        ///        "Id": 12345678
+        ///     }
+        /// 
+        /// **OBS> máximo de 8 caracteres**         
+        /// </remarks> 
+        /// <param name="Id"> Id do usuário</param>
+        /// <response code="200">Lista obtida com sucesso</response>
+        /// <response code="404">Nenhum animal encontrado</response>
+        /// <response code="400">Erro desconhecido ocorrido ao tentar obter a lista</response>
         [HttpGet("PorUsuario/{Id}")]
         public ActionResult<List<Animal>> ListarAnimaisUsuario(int Id)
         {
             return animalRepository.ListarAnimaisUsuario(Id);
         }
 
-        /// <summary>
-        /// Tabela fato das adoções de animais da ONG 
-        /// </summary>
-        /// <returns>
-        /// Lista de animais adotados e disponíveis para adoção 
-        /// </returns>
 
+        /// <summary>
+        /// Tabela fato de ADOÇÃO
+        /// </summary>
+        /// <return>
+        /// Lista todos os animais registrados na tabela fato de adoções
+        /// </return>
+        /// <response code="200">Lista obtida com sucesso</response>
+        /// <response code="404">Nenhum animal encontrado</response>
+        /// <response code="400">Erro desconhecido ocorrido ao tentar obter a lista</response>
         [HttpGet("ListarAnimaisAdocao")]
         public ActionResult<List<Animal>> ListarAnimaisAdocao([FromQuery] bool adocao)
         {
             //return adocao;
-            return animalRepository.ListarAnimaisAdocao(adocao);           
+            return animalRepository.ListarAnimaisAdocao(adocao);
         }
 
+
         /// <summary>
-        /// Tabela fato de animais que foram doados para a ONG
+        /// Tabela fato de DOAÇÃO
         /// </summary>
-        /// <returns>
-        /// Lista de animais que foram doados 
-        /// </returns>
+        /// <return>
+        /// Lista todos os animais registrados na tabela fato de doações
+        /// </return>
+        /// <response code="200">Lista obtida com sucesso</response>
+        /// <response code="404">Nenhum animal encontrado</response>
         [HttpGet("ListarAnimaisDoacao")]
         public ActionResult<List<Animal>> ListarAnimaisDoacao()
         {
