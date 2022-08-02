@@ -10,7 +10,7 @@ namespace ONGWebAPI.Models
     {
         public int Id { get; set; }
         public string Nome { get; set; }
-        public string Especie { get; set; }
+        public Especie Especie { get; set; }
         public string Sexo { get; set; }
         public string? Idade { get; set; }
         public string? Porte { get; set; }

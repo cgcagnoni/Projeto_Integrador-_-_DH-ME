@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using ONGWebAPI.Models;
 using ONGWebAPI.Repository.EntityRepository;
 
 #nullable disable
@@ -15,7 +16,8 @@ namespace ONGWebAPI.Migrations
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
-#pragma warning disable 612, 618
+            #pragma warning disable 612, 618
+        
             modelBuilder
                 .HasAnnotation("ProductVersion", "6.0.7")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
@@ -42,7 +44,7 @@ namespace ONGWebAPI.Migrations
                     b.Property<bool>("Disponibilidade")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Especie")
+                    b.Property<Especie>("Especie")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

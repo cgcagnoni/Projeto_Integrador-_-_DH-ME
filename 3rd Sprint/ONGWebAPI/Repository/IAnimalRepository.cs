@@ -5,7 +5,7 @@ namespace ONGWebAPI.Repository
     public interface IAnimalRepository
     {
         List<Animal> ListarTodos();
-        List<Animal> SolicitarPelaEspecie(string Especie);
+        List<Animal> SolicitarPelaEspecie(Especie especie);
         Animal ExibirPelaID(int Id);
         void AdicionaNovoAnimal(Animal Animal);
         void ApagarAnimalPelaId(int Id);
