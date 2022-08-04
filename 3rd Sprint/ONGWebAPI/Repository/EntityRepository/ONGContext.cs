@@ -19,7 +19,7 @@ namespace ONGWebAPI.Repository.EntityRepository
 
         protected override void OnConfiguring(DbContextOptionsBuilder Configurar)
         {
-          
+
             if (inMemory)
             {
                 Configurar.UseInMemoryDatabase("ong");
@@ -28,23 +28,21 @@ namespace ONGWebAPI.Repository.EntityRepository
             {
                 string credencial = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ONG;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
                 Configurar.UseSqlServer(credencial);
-               
+
             }
         }
-      
+
         protected override void OnModelCreating(ModelBuilder Modelagem)
         {
-
-
-                 Modelagem.Entity<Animal>()
-                 .Property(p => p.Especie)
-                 .HasConversion(
-                  p => p.ToString(),
-                  p => (Especie)Enum.Parse(typeof(Especie), p));
+            Modelagem.Entity<Animal>()
+            .Property(p => p.Especie)
+            .HasConversion(
+             p => p.ToString(),
+             p => (Especie)Enum.Parse(typeof(Especie), p));
 
             Modelagem.Entity<Animal>(Tabela =>
             {
-              
+
                 Tabela.HasKey(Propriedade => Propriedade.Id);
                 // Tabela.Navigation(Propriedade => Propriedade.Usuario).AutoInclude();
             });

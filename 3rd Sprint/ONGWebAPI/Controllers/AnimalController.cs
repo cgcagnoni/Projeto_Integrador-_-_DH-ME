@@ -49,16 +49,8 @@ namespace ONGWebAPI.Controllers
         /// <response code="400">Erro desconhecido ocorrido ao tentar obter a lista</response>
         [HttpGet("PorEspecie")]
         public ActionResult<List<Animal>> SolicitarPelaEspecie([FromQuery] Especie especie)
-        {
-            var especie1 = animalRepository.SolicitarPelaEspecie(especie);
-            if (especie1.Count > 0)
-            {
-                return Ok(especie);
-            }
-            else
-            {
-                return NotFound();
-            }
+        {          
+            return animalRepository.SolicitarPelaEspecie(especie);
         }
 
 
@@ -131,7 +123,7 @@ namespace ONGWebAPI.Controllers
         /// <response code="201">Animal cadastrado com sucesso</response>
         /// <response code="400">Erro desconhecido ocorrido ao tentar cadastrar um animal</response>
         [HttpPost]
-        public ActionResult<Animal> AdicionaNovoAnimal([FromQuery] Animal Animal)
+        public ActionResult<Animal> AdicionaNovoAnimal(Animal Animal)
         {
             animalRepository.AdicionaNovoAnimal(Animal);
             return CreatedAtAction("AdicionaNovoAnimal", new { id = Animal.Id }, Animal);
@@ -211,7 +203,7 @@ namespace ONGWebAPI.Controllers
         /// <response code="404">Animal não encontrado</response>
         /// <response code="400">Erro desconhecido ocorrido ao tentar atualizar a database</response>
         [HttpPut("{Id}")]
-        public ActionResult AtualizarInformacoesPelaId([FromQuery]  int Id, Animal Animal)
+        public ActionResult AtualizarInformacoesPelaId(int Id, Animal Animal)
         {
             if (animalRepository.VerificarAnimal(Id))
             {

@@ -50,6 +50,7 @@ namespace ONGWebAPI.Repository.EntityRepository
 
         public List<Animal> SolicitarPelaEspecie(Especie especie)
         {
+
             var animal = DbONG.Animais?.Where(t => t.Especie == especie);
 
             return animal.ToList();
