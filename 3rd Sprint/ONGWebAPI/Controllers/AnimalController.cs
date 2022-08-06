@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using ONGWebAPI.Entities;
 using ONGWebAPI.Models;
 using ONGWebAPI.Repository;
 using ONGWebAPI.Repository.EntityRepository;
@@ -52,6 +53,25 @@ namespace ONGWebAPI.Controllers
         {          
             return animalRepository.SolicitarPelaEspecie(especie);
         }
+
+        [HttpGet("PorLocalizacao")]
+        public ActionResult<List<Animal>> SolicitarPelaLocalizacao([FromQuery] Localizacao localizacao)
+        {
+            return animalRepository.SolicitarPelaLocalizacao(localizacao);
+        }
+
+        [HttpGet("PorPorte")]
+        public ActionResult<List<Animal>> SolicitarPeloPorte([FromQuery] Porte porte)
+        {
+            return animalRepository.SolicitarPeloPorte(porte);
+        }
+
+        [HttpGet("PorSexo")]
+        public ActionResult<List<Animal>> SolicitarPeloSexo([FromQuery] Sexo sexo)
+        {
+            return animalRepository.SolicitarPeloSexo(sexo);
+        }
+
 
 
         /// <summary>

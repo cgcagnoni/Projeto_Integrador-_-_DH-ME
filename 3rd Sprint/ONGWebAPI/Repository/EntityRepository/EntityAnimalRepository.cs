@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ONGWebAPI.Entities;
 using ONGWebAPI.Models;
 
 namespace ONGWebAPI.Repository.EntityRepository
@@ -52,6 +53,32 @@ namespace ONGWebAPI.Repository.EntityRepository
         {
 
             var animal = DbONG.Animais?.Where(t => t.Especie == especie);
+
+            return animal.ToList();
+
+        }
+        public List<Animal> SolicitarPelaLocalizacao(Localizacao localizacao)
+        {
+
+            var animal = DbONG.Animais?.Where(t => t.Localizacao == localizacao);
+
+            return animal.ToList();
+
+        }
+
+        public List<Animal> SolicitarPeloPorte(Porte porte)
+        {
+
+            var animal = DbONG.Animais?.Where(t => t.Porte == porte);
+
+            return animal.ToList();
+
+        }
+
+        public List<Animal> SolicitarPeloSexo(Sexo sexo)
+        {
+
+            var animal = DbONG.Animais?.Where(t => t.Sexo == sexo);
 
             return animal.ToList();
 

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ONGWebAPI.Entities;
 using ONGWebAPI.Models;
 
 namespace ONGWebAPI.Repository.EntityRepository

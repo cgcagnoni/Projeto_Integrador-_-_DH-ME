@@ -1,4 +1,5 @@
-﻿using ONGWebAPI.Models;
+﻿using ONGWebAPI.Entities;
+using ONGWebAPI.Models;
 
 namespace ONGWebAPI.Repository
 {
@@ -6,6 +7,9 @@ namespace ONGWebAPI.Repository
     {
         List<Animal> ListarTodos();
         List<Animal> SolicitarPelaEspecie(Especie especie);
+        List<Animal> SolicitarPelaLocalizacao(Localizacao localizacao);
+        List<Animal> SolicitarPeloPorte(Porte porte);
+        List<Animal> SolicitarPeloSexo(Sexo sexo);
         Animal ExibirPelaID(int Id);
         void AdicionaNovoAnimal(Animal Animal);
         void ApagarAnimalPelaId(int Id);
