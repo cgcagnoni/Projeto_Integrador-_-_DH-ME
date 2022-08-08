@@ -1,0 +1,60 @@
+/* Geral */
+body{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-family: 'Ubuntu', sans-serif;;
+
+}
+
+/* Navbar */
+#navbar {
+    background-color: #ff598f;
+    color: #fff;
+    padding: 0 10px 0 10px;
+    height: 250px;
+}
+
+#navbar .navbar-logo{
+   width: 150px;
+   height: auto;
+   float: left;
+   margin: 55px;
+}
+
+#navbar .dropdown{
+    float: right;
+}
+
+#navbar .dropdown .btn{
+    height: 200px;
+    font-size: 45px;
+    color: #fff;
+    background-color: #fd8a5e;
+    margin-top: 20px;
+    margin-right: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 20%;
+}
+
+#navbar .dropdown .btn:hover{
+    color: #ff598f;
+    background-color: #fff;
+}
+
+#navbar .dropdown .dropdown-menu {
+    font-size: 40px;
+    background-color: #fd8a5e;
+    border-radius: 20px;
+}
+
+#navbar .dropdown .dropdown-menu a{
+    color: #fff;
+}
+
+#navbar .dropdown .dropdown-menu a:hover{
+    color: #ff598f;
+    background-color: #fff;
+}
+
