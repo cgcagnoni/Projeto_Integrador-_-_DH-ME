@@ -5,6 +5,11 @@ body{
     background-color: #fff;
 }
 
+#container{
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+
 /* Navbar */
 #navbar {
     background-color: #ff598f;
@@ -63,6 +68,8 @@ body{
 #baseboard {
     position:absolute;
     bottom: 0;
+    margin: 0;
+    padding: 0;
     background-color:#ff598f;
     color:#fff;
     height: 150px;
@@ -72,12 +79,48 @@ body{
     list-style: none;
   }
 
+  #baseboard .baseboard-contato{
+    color: #fff;
+  }
+
+  #baseboard .baseboard-contato a{
+    color: #fff;
+  }
+ 
+  #baseboard .baseboard-contato a:hover{
+    color: lightgray;
+  }
+
   #baseboard .baseboard-list ul {
-    padding:0;
+    padding:0 0 0 0;
     text-align:center;
     font-size:18px;
     line-height:1.6;
     margin-bottom:0;
     text-decoration: none;
     list-style: none;
+   }
+
+   .baseboard-list-item{
+    list-style: none;
+    color: #fff;
+    text-decoration: none;
+    text-align:center;
+   }
+
+   .baseboard-list-item a{
+    color: #fff;
+    text-decoration: none;
+   }
+   
+   .baseboard-list-item a:hover{
+    color: lightgray;
+    text-decoration: none;
+   }
+
+   footer{
+    text-align: center;
+    color:#fff;
+    margin: 0;
+    padding: 0;
    }
