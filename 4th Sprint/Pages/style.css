@@ -12,14 +12,14 @@ body{
     background-color: #ff598f;
     color: #fff;
     padding: 0 10px 0 10px;
-    height: 250px;
+    height: 150px;
 }
 
 #navbar .navbar-logo{
-   width: 150px;
+   width: 90px;
    height: auto;
    float: left;
-   margin: 55px;
+   margin: 25px;
 }
 
 #navbar .dropdown{
@@ -27,8 +27,8 @@ body{
 }
 
 #navbar .dropdown .btn{
-    height: 200px;
-    font-size: 45px;
+    height: 100px;
+    font-size: 30px;
     color: #fff;
     background-color: #fd8a5e;
     margin-top: 20px;
@@ -58,3 +58,25 @@ body{
     background-color: #fff;
 }
 
+/* Footer */
+
+#footer {
+    position:absolute;
+    bottom: 0;
+    background-color:#ff598f;
+    color:#fff;
+    height: 150px;
+    width:fit-content;
+    text-align: center;
+    display:inline-block;
+
+  }
+
+  #footer .footer-list ul {
+    padding:0;
+    list-style:none;
+    text-align:center;
+    font-size:18px;
+    line-height:1.6;
+    margin-bottom:0;
+  }
