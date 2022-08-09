@@ -1,10 +1,7 @@
 /* Geral */
 body{
-    padding: 0;
-    margin: 0;
-    border: 0;
-    font-family: 'Ubuntu', sans-serif;;
-
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #fff;
 }
 
 /* Navbar */
@@ -13,6 +10,7 @@ body{
     color: #fff;
     padding: 0 10px 0 10px;
     height: 150px;
+    width: 100vw;
 }
 
 #navbar .navbar-logo{
@@ -61,24 +59,26 @@ body{
 
 /* Footer */
 
-#footer {
+#baseboard {
     position:absolute;
     bottom: 0;
     background-color:#ff598f;
     color:#fff;
     height: 150px;
-    width:fit-content;
+    width:100vw;
+    margin:0%;
     text-align: center;
     display:inline-block;
-    text-decoration: none;
 
   }
 
-  #footer .footer-list ul {
+  #baseboard .baseboard-list ul {
     padding:0;
     list-style:none;
     text-align:center;
     font-size:18px;
     line-height:1.6;
     margin-bottom:0;
+    text-decoration: none;
+    list-style: none;
   }
