@@ -1,4 +1,5 @@
 /* Geral */
+
 body{
     font-family: 'Ubuntu', sans-serif;
     background-color: #fff;
@@ -10,7 +11,7 @@ body{
     color: #fff;
     padding: 0 10px 0 10px;
     height: 150px;
-    width: 100vw;
+    /* width: 100vw; */
 }
 
 #navbar .navbar-logo{
@@ -66,19 +67,17 @@ body{
     color:#fff;
     height: 150px;
     width:100vw;
-    margin:0%;
     text-align: center;
-    display:inline-block;
-
+    text-decoration: none;
+    list-style: none;
   }
 
   #baseboard .baseboard-list ul {
     padding:0;
-    list-style:none;
     text-align:center;
     font-size:18px;
     line-height:1.6;
     margin-bottom:0;
     text-decoration: none;
     list-style: none;
-  }
+   }
