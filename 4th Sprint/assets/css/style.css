@@ -1,8 +1,7 @@
 /* Geral */
 
-body{
-    font-family: 'Ubuntu', sans-serif;
-    background-color: #fff;
+#container{
+    font-family: 'Acme', cursive;
 }
 
 #container{
@@ -31,7 +30,7 @@ body{
 }
 
 #navbar .dropdown .btn{
-    height: 100px;
+    height: 70px;
     font-size: 30px;
     color: #fff;
     background-color: #fd8a5e;
@@ -63,6 +62,54 @@ body{
     background-color: #fff;
 }
 
+/* Homepage */
+
+#homepage{
+    display: flex;
+    background-color: #01dddd;
+}
+.homepage-img img{
+    width: 780px;
+}
+
+.homepage-txt{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+    padding: 15px;
+}
+
+.homepage-btn-item{
+    background-color: #ff598f;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    border: 0;
+    border-radius: 50%;
+    margin: 50px;
+    padding: 35px;
+}
+
+.homepage-btn-item:hover{
+    background-color: #fff;
+    color: #fd8a5e;
+}
+
+.homepage-txt-slog{
+    color:#ff598f;
+    padding: 20px;     
+}
+
+.homepage-txt-nome{
+    font-size: 70px;
+    padding: 15px;
+}
+
+
 /* Footer */
 
 #baseboard {
@@ -85,10 +132,12 @@ body{
 
   #baseboard .baseboard-contato a{
     color: #fff;
+    font-size: 30px;
+    padding: 7px;
   }
  
   #baseboard .baseboard-contato a:hover{
-    color: lightgray;
+    color: #e0e300;
   }
 
   #baseboard .baseboard-list ul {
@@ -114,7 +163,7 @@ body{
    }
    
    .baseboard-list-item a:hover{
-    color: lightgray;
+    color: #e0e300;
     text-decoration: none;
    }
 
