@@ -2,7 +2,7 @@
 
 namespace ONGWebAPI.Models
 {
-    public class Usuario
+    public class Usuario : User
     {
         public int Id { get; set; }
         public string Nome { get; set; }
