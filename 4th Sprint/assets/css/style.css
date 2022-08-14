@@ -1,15 +1,16 @@
 /* Geral */
 
-#container{
+#container {
     font-family: 'Acme', cursive;
 }
 
-#container{
+#container {
     padding: 0 0 0 0;
     margin: 0 0 0 0;
 }
 
 /* Navbar */
+
 #navbar {
     background-color: #ff598f;
     color: #fff;
@@ -18,18 +19,18 @@
     /* width: 100vw; */
 }
 
-#navbar .navbar-logo{
-   width: 90px;
-   height: auto;
-   float: left;
-   margin: 25px;
+#navbar .navbar-logo {
+    width: 90px;
+    height: auto;
+    float: left;
+    margin: 25px;
 }
 
-#navbar .dropdown{
+#navbar .dropdown {
     float: right;
 }
 
-#navbar .dropdown .btn{
+#navbar .dropdown .btn {
     height: 70px;
     font-size: 30px;
     color: #fff;
@@ -38,41 +39,42 @@
     margin-right: 20px;
     padding-left: 50px;
     padding-right: 50px;
-    border-radius:10ex;
+    border-radius: 10ex;
 }
 
-#navbar .dropdown .btn:hover{
+#navbar .dropdown .btn:hover {
     color: #ff598f;
     background-color: #fff;
-    
+
 }
 
 #navbar .dropdown .dropdown-menu {
     font-size: 20px;
     background-color: #fd8a5e;
-    border-radius:5%;
+    border-radius: 5%;
 }
 
-#navbar .dropdown .dropdown-menu a{
+#navbar .dropdown .dropdown-menu a {
     color: #fff;
 }
 
-#navbar .dropdown .dropdown-menu a:hover{
+#navbar .dropdown .dropdown-menu a:hover {
     color: #ff598f;
     background-color: #fff;
 }
 
 /* Homepage */
 
-#homepage{
+#homepage {
     display: flex;
     background-color: #01dddd;
 }
-.homepage-img img{
-    width: 780px;
+
+.homepage-img img {
+    width: 600px;
 }
 
-.homepage-txt{
+.homepage-txt {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -83,7 +85,7 @@
     padding: 15px;
 }
 
-.homepage-btn-item{
+.homepage-btn-item {
     background-color: #ff598f;
     color: #fff;
     font-size: 30px;
@@ -94,17 +96,17 @@
     padding: 35px;
 }
 
-.homepage-btn-item:hover{
+.homepage-btn-item:hover {
     background-color: #fff;
     color: #fd8a5e;
 }
 
-.homepage-txt-slog{
-    color:#ff598f;
-    padding: 20px;     
+.homepage-txt-slog {
+    color: #ff598f;
+    padding: 20px;
 }
 
-.homepage-txt-nome{
+.homepage-txt-nome {
     font-size: 70px;
     padding: 15px;
 }
@@ -113,63 +115,129 @@
 /* Footer */
 
 #baseboard {
-    position:absolute;
+    position: static;
     bottom: 0;
     margin: 0;
     padding: 0;
-    background-color:#ff598f;
-    color:#fff;
+    background-color: #ff598f;
+    color: #fff;
     height: 150px;
-    width:100vw;
+    width: 100vw;
     text-align: center;
     text-decoration: none;
     list-style: none;
-  }
+}
 
-  #baseboard .baseboard-contato{
+#baseboard .baseboard-contato {
     color: #fff;
-  }
+}
 
-  #baseboard .baseboard-contato a{
+#baseboard .baseboard-contato a {
     color: #fff;
     font-size: 30px;
     padding: 7px;
-  }
- 
-  #baseboard .baseboard-contato a:hover{
+}
+
+#baseboard .baseboard-contato a:hover {
     color: #e0e300;
-  }
+}
 
-  #baseboard .baseboard-list ul {
-    padding:0 0 0 0;
-    text-align:center;
-    font-size:18px;
-    line-height:1.6;
-    margin-bottom:0;
-    text-decoration: none;
-    list-style: none;
-   }
-
-   .baseboard-list-item{
-    list-style: none;
-    color: #fff;
-    text-decoration: none;
-    text-align:center;
-   }
-
-   .baseboard-list-item a{
-    color: #fff;
-    text-decoration: none;
-   }
-   
-   .baseboard-list-item a:hover{
-    color: #e0e300;
-    text-decoration: none;
-   }
-
-   footer{
+#baseboard .baseboard-list ul {
+    padding: 0 0 0 0;
     text-align: center;
-    color:#fff;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+.baseboard-list-item {
+    list-style: none;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+}
+
+.baseboard-list-item a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.baseboard-list-item a:hover {
+    color: #e0e300;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #ff598f;
+    position: static;
+    text-align: center;
+    color: #fff;
     margin: 0;
     padding: 0;
-   }
+}
+
+
+/* Sobre nós */
+
+#sobre-nos {
+    display: flex;
+    background-color: #01dddd;
+    font-weight: bold;
+
+}
+
+.sobre-img img {
+    width: 650px;
+    height: 510px;
+    border-radius: 25%;
+    padding: 40px;
+}
+
+
+#sobre-txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+
+}
+
+#sobre-txt .titulo {
+    margin: 20px;
+    font-size: 40px;
+    color: #ff598f;
+}
+
+#sobre-txt .descricao {
+    padding: 15px;
+    font-size: 25px;
+    margin: 40px;
+}
+
+#sobre-txt .link{
+    font-size: 22px;
+    padding: 0;
+    margin: 0;
+    color:#fff;
+    text-decoration: none;
+
+}
+#sobre-txt .link a:link {
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+    color:#fff;
+    text-decoration: none;
+
+}
+
+#sobre-txt .links a:hover {
+    font-size: 25px;
+    color: #e0e300;
+    text-decoration: none;
+}
