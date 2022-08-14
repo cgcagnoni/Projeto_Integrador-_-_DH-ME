@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Net;
-using System.Net.Mail.MailAdress;
 using System.Net.Mail;
 
 namespace ONGWebAPI.Service
 {
     public class MailService
     {
-        public MailAdress fromAddress = new MailAddress("[assocdaspatinhas@gmail.com](mailto:assocdaspatinhas@gmail.com)", "Associação das Patinhas");
+        public MailAddress fromAddress = new MailAddress("assocdaspatinhas@gmail.com", "Associação das Patinhas");
         public const string subject = "Interesse em adoção";
         public const string body = "Texto que será enviado para o usuário que cadastrou o animal";
         public const string fromPassword = "passwGoogleAcounts";
