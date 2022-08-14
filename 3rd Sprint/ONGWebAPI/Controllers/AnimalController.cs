@@ -5,6 +5,7 @@ using ONGWebAPI.Entities;
 using ONGWebAPI.Models;
 using ONGWebAPI.Repository;
 using ONGWebAPI.Repository.EntityRepository;
+using ONGWebAPI.Services;
 
 namespace ONGWebAPI.Controllers
 {
@@ -12,11 +13,13 @@ namespace ONGWebAPI.Controllers
     [ApiController]
     public class AnimalController : ControllerBase
     {
-        IAnimalRepository animalRepository;
+        private IAnimalRepository animalRepository;
+        private IWhatsapp whatsappService;
 
-        public AnimalController(IAnimalRepository animalRepository)
+        public AnimalController(IAnimalRepository animalRepository, IWhatsapp whatsappService)
         {
             this.animalRepository = animalRepository;
+            this.whatsappService = whatsappService;
         }
 
 
@@ -294,107 +297,19 @@ namespace ONGWebAPI.Controllers
             return animalRepository.ListarAnimaisDoacao();
         }
 
+        [HttpPost("InteresseAdocao")]
+        public ActionResult InteresseAdotar(InteresseAdocao interesseAdocao)
+        {            
+            interesseAdocao.Data = DateTime.Now;
+            whatsappService.EnviarMenssagem(interesseAdocao);
+            return Ok();
+        }
 
 
 
 
 
 
-        //private ONGContext DbONG;// = new ONGContext();
-
-        ////Listar todos animais
-        //[HttpGet]
-        //public ActionResult<List<Animal>> ListarTodos()
-        //{
-        //    var Animais = DbONG.Animais?.ToList();
-
-        //    if (Animais == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    else
-        //    {
-        //        return Ok(Animais);
-        //    }
-        //}
-
-        ////Listar animais pela espécie
-        //[HttpGet("{Espécie}")]
-        //public ActionResult<List<Animal>> SolicitarPelaEspecie(string Especie)
-        //{
-        //    var Animal = DbONG.Animais?.Find(Especie);
-
-        //    if (Especie == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    else
-        //    {
-        //        return Ok(Animal);
-        //    }
-        //}
-
-        ////Exibe animal pela ID
-        //[HttpGet("{Id}")]
-        //public ActionResult<Animal> ExibirPelaID(int Id)
-        //{
-        //    var Animal = DbONG.Animais?.Find(Id);
-
-        //    if (Id == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    else
-        //    {
-        //        return Ok(Animal);
-        //    }
-        //}
-
-        ////adicionar novo animal
-        //[HttpPost]
-        //public ActionResult<Animal> AdicionaNovoAnimal(Animal Animal)
-        //{
-
-        //    DbONG.Animais?.Add(Animal);
-        //    DbONG.SaveChanges();
-
-        //    return CreatedAtAction("AdicionaNovoAnimal", new { id = Animal.Id }, Animal);
-        //}
-
-        ////apaga pela id
-        //[HttpDelete("{Id}")]
-        //public ActionResult ApagarAnimalPelaId(int Id)
-        //{
-        //    var Animal = DbONG.Animais?.Find(Id);
-
-        //    if (Animal== null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    else
-        //    {
-        //        DbONG.Animais?.Remove(Animal);
-        //        DbONG.SaveChanges();
-
-        //        return NoContent();
-        //    }
-        //}
-
-        //[HttpPut("{Id}")]
-        //public ActionResult AtualizarInformacoesPelaId(int Id, Animal Animal)
-        //{
-
-        //    if (Id != Animal.Id)
-        //    {
-        //        return BadRequest();
-        //    }
-        //    else
-        //    {
-        //        DbONG.Entry(Animal).State = EntityState.Modified;
-        //        DbONG.SaveChanges();
-        //        return Ok();
-        //    }
-        //}
 
     }
 }

@@ -19,6 +19,5 @@ namespace ONGWebAPI.Repository
         List<Animal> ListarAnimaisAdocao(bool adocao);
         List<Animal> ListarAnimaisDoacao();
 
-
     }
 }

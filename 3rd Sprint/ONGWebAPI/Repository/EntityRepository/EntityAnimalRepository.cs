@@ -114,5 +114,7 @@ namespace ONGWebAPI.Repository.EntityRepository
             return DbONG.Animais.ToList();
 
         }
+
+       
     }
 }
