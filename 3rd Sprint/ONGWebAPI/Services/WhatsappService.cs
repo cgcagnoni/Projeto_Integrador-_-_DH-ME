@@ -10,7 +10,7 @@ namespace ONGWebAPI.Services
             var client = new RestClient("https://graph.facebook.com/v13.0/107709008715545");
             //client.Timeout = -1;
             var request = new RestRequest("/messages", Method.Post);
-            request.AddHeader("Authorization", "Bearer EAAGEqBZBTu0IBAJZCdWEnuD1AL01t7wIAaXfZAlSJLmYgVe0ZBinDt4WR2QpXEBzQxeAFdancabPrAgWaHy6iixSR95WQcZCb1F5rjJB8XABsxg0ivTZBuDEbCWEvrKtkPngZCR3ROdAj52vNhqNSccyeIGQVBZAYV7nWkKU1Jc3pVKV6PMWhgG9EZAZCWnyj7OfnhEfIAYenOcaE9daexYByK3ZANbwfvrFMQZD");
+            request.AddHeader("Authorization", "Bearer ");
             request.AddHeader("Content-Type", "application/json");
             var body = @"{" + "\n" +
             @"    ""messaging_product"": ""whatsapp""," + "\n" +
