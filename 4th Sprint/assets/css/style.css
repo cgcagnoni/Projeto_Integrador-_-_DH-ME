@@ -16,11 +16,11 @@
     color: #fff;
     padding: 0 10px 0 10px;
     height: 150px;
-    /* width: 100vw; */
+    width:auto;
 }
 
 #navbar .navbar-logo {
-    width: 90px;
+    width: 80px;
     height: auto;
     float: left;
     margin: 25px;
@@ -71,7 +71,8 @@
 }
 
 .homepage-img img {
-    width: 600px;
+    width: 500px;
+    height: 320px;
 }
 
 .homepage-txt {
@@ -85,15 +86,19 @@
     padding: 15px;
 }
 
+.homepage-btn {
+    display: flex;
+    justify-content: space-between;
+}
+
 .homepage-btn-item {
     background-color: #ff598f;
     color: #fff;
-    font-size: 30px;
-    font-weight: bold;
+    font-size: 25px;
     border: 0;
-    border-radius: 50%;
-    margin: 50px;
-    padding: 35px;
+    border-radius: 25%;
+    margin: 20px 0 0 10px;
+    padding: 20px;
 }
 
 .homepage-btn-item:hover {
@@ -107,11 +112,24 @@
 }
 
 .homepage-txt-nome {
-    font-size: 70px;
+    font-size: 60px;
     padding: 15px;
 }
 
+/* Catálogo da Home Page */
 
+.homepage-catalog-img img{
+    width: 150px;
+    height:100px;
+}
+
+.homepage-catalog-txt {
+    font-size: 32px;
+    color:#fd8a5e;
+    margin: 0 auto;
+    padding: 30px 0 0 30px;
+
+}
 /* Footer */
 
 #baseboard {
