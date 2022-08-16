@@ -11,6 +11,8 @@ namespace ONGWebAPI.Repository.EntityRepository
 
         public DbSet<Animal>? Animais { get; set; }
         public DbSet<Usuario>? Usuarios { get; set; }
+        public DbSet<User>? User { get; set; }
+
 
 
         public ONGContext(bool inMemory)
@@ -35,6 +37,14 @@ namespace ONGWebAPI.Repository.EntityRepository
 
         protected override void OnModelCreating(ModelBuilder Modelagem)
         {
+            Modelagem.Entity<User>(Tabela =>
+            {
+
+                Tabela.HasKey(Propriedade => Propriedade.Id);
+                
+                // Tabela.Navigation(Propriedade => Propriedade.Usuario).AutoInclude();
+            });
+
             Modelagem.Entity<Animal>()
             .Property(p => p.Especie)
             .HasConversion(
@@ -51,6 +61,7 @@ namespace ONGWebAPI.Repository.EntityRepository
             Modelagem.Entity<Usuario>(Tabela =>
             {
                 Tabela.HasMany(Propriedade => Propriedade.Animais);
+                Tabela.HasKey(Propriedade => Propriedade.IdLogin);
             });
 
             Modelagem.Entity<RegistroAdocao>(Tabela =>

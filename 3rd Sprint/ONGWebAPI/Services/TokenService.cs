@@ -14,13 +14,12 @@ namespace ONGWebAPI.Services
             var key = Encoding.ASCII.GetBytes(Settings.Secret);
             var tokenDescriptor = new SecurityTokenDescriptor
             {
-                Subject = new ClaimsIdentity(new[]
+                Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.Name, user.Username),
-                    new Claim(ClaimTypes.Role, user.Role),
+                    new Claim(ClaimTypes.Name, user.Username.ToString()),
                 }
                 ),
-                Expires = DateTime.UtcNow.AddHours(8),
+                Expires = DateTime.UtcNow.AddHours(2),
                 SigningCredentials = new SigningCredentials(
                     new SymmetricSecurityKey(key),
                     SecurityAlgorithms.HmacSha256Signature)

@@ -2,7 +2,7 @@
 
 namespace ONGWebAPI.Models
 {
-    public class Usuario : User
+    public class Usuario 
     {
         public int Id { get; set; }
         public string Nome { get; set; }
@@ -10,6 +10,7 @@ namespace ONGWebAPI.Models
         public string? Localizacao { get; set; }
         public string? Telefone { get; set; }
         [JsonIgnore]
+        public int? IdLogin { get; set; }
         public List<Animal>? Animais { get; set; }
     }
 }

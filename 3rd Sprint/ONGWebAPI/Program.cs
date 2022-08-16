@@ -32,8 +32,10 @@ builder.Services.AddAuthentication(x =>
         ValidateIssuer = false,
         ValidateAudience = false
     };
-}
-);
+});
+
+
+
    
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -70,6 +72,8 @@ builder.Services.AddSingleton<IAnimalRepository, EntityAnimalRepository>();
 
 
 var app = builder.Build();
+app.UseAuthentication();
+app.UseAuthorization();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -79,9 +83,5 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseAuthentication();
-app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();
