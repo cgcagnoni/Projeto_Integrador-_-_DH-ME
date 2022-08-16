@@ -24,14 +24,12 @@
 
 <body>
   <div id="container">
-
     <!-- Barra de Navegação -->
-    <div id="navbar">
-      <img class="navbar-logo" src="./assets/images/Home/logo-provisoria.jpg" alt="logo-provisoria">
-      <div class="dropdown">
-        <button class="btn btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Menu
-        </button>
+    <div id="navbar" class="row">
+      <div class="nav-logo col">
+        <img class="navbar-logo" src="./assets/images/Home/logo-provisoria.jpg" alt="logo-provisoria"></div>    
+      <div class="dropdown col">
+        <button class="btn btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"> </button>
         <ul class="dropdown-menu">
           <li><a class="dropdown-item" href="busca.html">Quero adotar</a></li>
           <li><a class="dropdown-item" href="doacao-animal.html">Quero divulgar um animal para adoção</a></li>
@@ -46,53 +44,44 @@
     </div>
 
     <!-- Conteúdo da Home Page -->
-    <div id="homepage">
-      <div class="homepage-img">
+    <div class="row homepage-princ" id="homepage">
+      <div class="col homepage-img">
         <img src="./assets/images/Home/animal-2.jpg" alt="">
       </div>
-      <div class="homepage-txt">
-        <h3 class="homepage-txt-slog">Adotar é um ato de amor</h3>
-        <h1 class="homepage-txt-nome">Associação das patinhas</h1>
-        <div class="homepage-btn">
+      <div class="col homepage-txt">
+        <span>
+          <h3 class=" homepage-txt-slog">Adotar é um ato de amor</h3>
+          <h1 class=" homepage-txt-nome">Associação das patinhas</h1>
+        </span>
+        <span class="homepage-btn">
+          <!-- //precisa arrumar os botões -->
           <a href="./busca.html"><button class="homepage-btn-item">Adotar</button></a>
           <a href="./doacao-dinheiro.html"><button class="homepage-btn-item">Contribuir</button></a>
           <a href="./cadastro.html"><button class="homepage-btn-item">Cadastro</button></a>
-        </div>
+        </span>
       </div>
     </div>
 
     <!-- Catálogo da Home Page -->
-    <div class="container text-center homepage-catalog">
-      <div class="row">
-        <div class="col homepage-txt-boxes">
-          <p>Por que adotar?</p>
-        </div>
-        <div class="col homepage-catalog-boxes-txt">
-          Você terá um companheiro para todas as horas
-        </div>
-        <div class="col homepage-catalog-img">
-          Adoção salva a vida de um animal
-        </div>
-        <div class="col homepage-catalog-img">
-          Quem vive com pets tem menos estresse
-        </div>
+    <div class="row" id="homepage-catalog">
+      <a href="/4th Sprint/busca.html" class="col homepage-catalog-img">Animais disponíveis para adoção</a>
+      <div class="col homepage-catalog-img">
+        <img src="/4th Sprint/assets/images/Home/animal-1.jpg" alt="cachorro para adoção">
       </div>
-
-      <div class="row">
-        <div class="col homepage-catalog-txt">
-          <p>Por que adotar?</p>
-        </div>
-        <div class="col homepage-catalog-img">
-          <img class="homepage-catalog-img-item" src="/4th Sprint/assets/images/Home/animal-1.jpg" alt="cachorro para adoção">
-        </div>
-        <div class="col homepage-catalog-img">
-          <img class="homepage-catalog-img-item" src="/4th Sprint/assets/images/Busca/animal-6.jpg" alt="cachorro para adoção">
-        </div>
-        <div class="col homepage-catalog-img">
-          <img class="homepage-catalog-img-item" src="/4th Sprint/assets/images/Home/animal-4.jpg" alt="cachorro para adoção">
-        </div>
+      <div class="col homepage-catalog-img">
+        <img src="/4th Sprint/assets/images/Busca/animal-6.jpg" alt="gato para adoção">
+      </div>
+      <div class="col homepage-catalog-img">
+        <img src="/4th Sprint/assets/images/Home/animal-4.jpg" alt="cachorro para adoção">
       </div>
     </div>
+
+      <div class="row" id="homepage-catalog-txt">
+        <div class="col homepage-catalog-txt">Por que adotar?</div>
+        <div class="col homepage-catalog-txt">Você terá um companheiro para todas as horas</div>
+        <div class="col homepage-catalog-txt">Adoção salva a vida de um animal</div>
+        <div class="col homepage-catalog-txt">Quem vive com pets tem menos estresse</div>
+      </div>
 
     <!-- Rodapé -->
     <div id="baseboard">

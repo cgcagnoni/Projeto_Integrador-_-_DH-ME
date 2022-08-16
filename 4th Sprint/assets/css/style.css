@@ -14,32 +14,35 @@
 #navbar {
     background-color: #ff598f;
     color: #fff;
-    padding: 0 10px 0 10px;
-    height: 150px;
-    width:auto;
+    padding: 10px 10px 0 10px;
+    height: 100px;
+    display: flex;
+    
+    
 }
 
 #navbar .navbar-logo {
-    width: 80px;
+    width: 60px;
     height: auto;
-    float: left;
-    margin: 25px;
+    margin: 20px;
 }
 
 #navbar .dropdown {
-    float: right;
+    display: flex;
+    justify-content: flex-end;
 }
 
 #navbar .dropdown .btn {
-    height: 70px;
-    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    width: 80px;
+    font-size: 40px;
     color: #fff;
-    background-color: #fd8a5e;
+    background-color:#e0e300;
     margin-top: 20px;
-    margin-right: 20px;
-    padding-left: 50px;
-    padding-right: 50px;
-    border-radius: 10ex;
+    padding: 10px 30px 10px 20px;
+    border-radius: 30px;
 }
 
 #navbar .dropdown .btn:hover {
@@ -50,17 +53,16 @@
 
 #navbar .dropdown .dropdown-menu {
     font-size: 20px;
-    background-color: #fd8a5e;
-    border-radius: 5%;
+    background-color:#fff;
+    
 }
 
 #navbar .dropdown .dropdown-menu a {
-    color: #fff;
+    color:#e0e300;
 }
 
 #navbar .dropdown .dropdown-menu a:hover {
     color: #ff598f;
-    background-color: #fff;
 }
 
 /* Homepage */
@@ -86,9 +88,20 @@
     padding: 15px;
 }
 
-.homepage-btn {
+.homepage-txt-slog {
+    color: #ff598f;
+    padding: 20px;
+}
+
+.homepage-txt-nome {
+    font-size: 45px;
+    padding: 15px;
+}
+
+.homepage-btn{
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .homepage-btn-item {
@@ -96,40 +109,68 @@
     color: #fff;
     font-size: 25px;
     border: 0;
-    border-radius: 25%;
+    border-radius: 32px;
     margin: 20px 0 0 10px;
     padding: 20px;
 }
 
 .homepage-btn-item:hover {
     background-color: #fff;
-    color: #fd8a5e;
-}
-
-.homepage-txt-slog {
-    color: #ff598f;
-    padding: 20px;
-}
-
-.homepage-txt-nome {
-    font-size: 60px;
-    padding: 15px;
+    color:#e0e300;
 }
 
 /* Catálogo da Home Page */
 
-.homepage-catalog-img img{
-    width: 150px;
-    height:100px;
+#homepage-catalog-txt {
+    text-align: center;
+    font-size: 20px;
+    color:#ff598f;
+    border-style: solid;
+    border-color:#e0e300;
+    background-color:#fff;
+    opacity: 90%;
+    padding: 30px 20px;
 }
 
-.homepage-catalog-txt {
-    font-size: 32px;
-    color:#fd8a5e;
-    margin: 0 auto;
-    padding: 30px 0 0 30px;
+#homepage-catalog{
+    border-style: solid;
+    border-color:#e0e300;
+    border-bottom: 0;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    background-color:#fff;
 
 }
+
+#homepage-catalog img{
+    width: 180px;
+    margin: 8px;
+    border-radius: 20px;
+}
+
+#homepage-catalog img:hover{
+    opacity: 80%;
+    border-style: solid;
+    border-color: #e0e300;
+}
+
+#homepage-catalog a{
+    text-decoration: none;
+    text-align: center;
+    color:#ff598f;
+    padding: 20px;
+    margin-left: 20px;
+}
+
+#homepage-catalog a:hover{
+    color:#fff;
+    background-color:#fd8a5e;
+    border-radius: 20px;
+}
+
+
+
 /* Footer */
 
 #baseboard {
