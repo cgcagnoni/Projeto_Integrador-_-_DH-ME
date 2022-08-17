@@ -175,7 +175,10 @@
     cursor:pointer;
 }
 
-
+/* Perfil do cliente*/
+#profilecontent{
+    padding: 15px;
+}
 
 /* Footer */
 
