@@ -112,9 +112,10 @@ namespace ONGWebAPI.Repository.EntityRepository
         public List<Animal> ListarAnimaisDoacao()
         {        
             return DbONG.Animais.ToList();
-
         }
 
-       
+      
+
+
     }
 }

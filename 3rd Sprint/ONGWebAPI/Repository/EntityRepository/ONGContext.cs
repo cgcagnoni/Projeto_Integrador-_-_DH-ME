@@ -66,7 +66,7 @@ namespace ONGWebAPI.Repository.EntityRepository
             Modelagem.Entity<InteresseAdocao>(Tabela =>
             {
                 Tabela.Navigation(Propriedade => Propriedade.Animal).AutoInclude();
-                Tabela.Navigation(Propriedade => Propriedade.Usuario).AutoInclude();
+                //Tabela.Navigation(Propriedade => Propriedade.Usuario).AutoInclude();
             });
 
 

@@ -18,7 +18,7 @@ namespace ONGWebAPI.Services
             @"    ""type"": ""text""," + "\n" +
             @"    ""text"": {" + "\n" +
             @$"        ""preview_url"": ""{false}""," + "\n" +
-            $@"        ""body"": ""Ola, {interesseAdocao.Animal.Usuario.Nome}, tem um interesse no {interesseAdocao.Animal.Nome}! \\nSegue abaixo as informações de contato:\\nNome Completo: {interesseAdocao.Usuario.Nome} {interesseAdocao.Usuario.Sobrenome} \\nTelefone: {interesseAdocao.Usuario.Telefone} \\n""" + "\n" +    
+            $@"        ""body"": ""Ola, {interesseAdocao.Animal.Usuario.Nome}, tem um interesse no(a) {interesseAdocao.Animal.Nome}! \\nSegue abaixo as informações de contato:\\nNome Completo: {interesseAdocao.Nome} \\nTelefone: {interesseAdocao.Telefone} \\nE-mail: {interesseAdocao.Email}\\n""" + "\n" +    
             @"    }" + "\n" +
             @"}";
             request.AddParameter("application/json", body, ParameterType.RequestBody);
