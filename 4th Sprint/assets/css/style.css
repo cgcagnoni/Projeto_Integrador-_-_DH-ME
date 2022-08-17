@@ -14,11 +14,9 @@
 #navbar {
     background-color: #ff598f;
     color: #fff;
-    padding: 10px 10px 0 10px;
+    padding: 10px;
     height: 100px;
-    display: flex;
-    
-    
+    border-bottom: solid 2px #e0e300;
 }
 
 #navbar .navbar-logo {
@@ -29,52 +27,46 @@
 
 #navbar .dropdown {
     display: flex;
+    padding: 10px;
     justify-content: flex-end;
+    margin: auto;
 }
 
 #navbar .dropdown .btn {
-    display: flex;
-    justify-content: center;
-    height: 40px;
-    width: 80px;
-    font-size: 40px;
-    color: #fff;
-    background-color:#e0e300;
-    margin-top: 20px;
-    padding: 10px 30px 10px 20px;
-    border-radius: 30px;
+    color: #e0e300;
+    height: 60px;
+    width: 90px;
+    font-size: 30px;
+    border: #e0e300 2px solid;
+    border-radius: 20px;
 }
 
 #navbar .dropdown .btn:hover {
-    color: #ff598f;
     background-color: #fff;
-
 }
 
-#navbar .dropdown .dropdown-menu {
-    font-size: 20px;
-    background-color:#fff;
-    
+.dropdown-menu a {
+    color:#ff598f;
 }
 
-#navbar .dropdown .dropdown-menu a {
-    color:#e0e300;
-}
-
-#navbar .dropdown .dropdown-menu a:hover {
-    color: #ff598f;
+.dropdown-menu a:hover {
+    background-color:#e0e300;
 }
 
 /* Homepage */
 
 #homepage {
     display: flex;
-    background-color: #01dddd;
+    background-color:#00bfaf;
 }
 
-.homepage-img img {
-    width: 500px;
-    height: 320px;
+#homepage img{
+    width: 100%;
+    height: 100%;
+}
+
+#homepage h1{
+    font-size: 50px; 
 }
 
 .homepage-txt {
@@ -85,7 +77,6 @@
     margin-left: auto;
     margin-right: auto;
     color: #fff;
-    padding: 15px;
 }
 
 .homepage-txt-slog {
@@ -100,18 +91,17 @@
 
 .homepage-btn{
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    margin-top: 30px;
 }
 
 .homepage-btn-item {
     background-color: #ff598f;
     color: #fff;
     font-size: 25px;
-    border: 0;
-    border-radius: 32px;
-    margin: 20px 0 0 10px;
-    padding: 20px;
+    border: #e0e300 solid 2px;
+    padding: 15px;
+    border-radius: 25px;
 }
 
 .homepage-btn-item:hover {
@@ -121,52 +111,68 @@
 
 /* Catálogo da Home Page */
 
-#homepage-catalog-txt {
-    text-align: center;
-    font-size: 20px;
-    color:#ff598f;
-    border-style: solid;
-    border-color:#e0e300;
-    background-color:#fff;
-    opacity: 90%;
-    padding: 30px 20px;
-}
-
 #homepage-catalog{
     border-style: solid;
     border-color:#e0e300;
     border-bottom: 0;
     display: flex;
     align-items: center;
-    font-size: 20px;
+    font-size: 25px;
     background-color:#fff;
-
 }
 
 #homepage-catalog img{
-    width: 180px;
-    margin: 8px;
+    max-width: 200px;
+    max-height: 150px;
+    margin: 25px;
     border-radius: 20px;
+    border-style: solid;
+    border-color: #e0e300;
+    cursor: pointer;
 }
 
 #homepage-catalog img:hover{
     opacity: 80%;
-    border-style: solid;
-    border-color: #e0e300;
+
 }
 
 #homepage-catalog a{
     text-decoration: none;
     text-align: center;
-    color:#ff598f;
+    color: #00bfaf;
     padding: 20px;
     margin-left: 20px;
+    font-size: 28px;
 }
 
 #homepage-catalog a:hover{
     color:#fff;
-    background-color:#fd8a5e;
+    background-color:#ff598f;
     border-radius: 20px;
+}
+
+#homepage-catalog-txt {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 18px;
+    color:#fff;
+    border: #e0e300 solid;
+    background-color:#00bfaf;
+    opacity: 90%;
+    padding: 30px 20px;
+}
+
+#homepage-catalog-txt p{
+    border: 2px solid #e0e300;
+    border-radius: 20px;
+    padding: 18px;
+    margin: 20px;
+}
+
+#homepage-catalog-txt p:hover{
+    background-color: #ff598f;
+    cursor:pointer;
 }
 
 
