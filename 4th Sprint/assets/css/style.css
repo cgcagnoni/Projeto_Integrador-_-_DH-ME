@@ -253,10 +253,12 @@ footer {
     display: flex;
     background-color: #01dddd;
     font-weight: bold;
+    border-bottom: solid 2px #e0e300;
+
 
 }
 
-.sobre-img img {
+.sobre-img img{
     width: 650px;
     height: 510px;
     border-radius: 25%;
@@ -305,7 +307,7 @@ footer {
 }
 
 #sobre-txt .links a:hover {
-    font-size: 25px;
-    color: #e0e300;
+    font-size: 27px;
+    color:#ff598f;
     text-decoration: none;
 }
