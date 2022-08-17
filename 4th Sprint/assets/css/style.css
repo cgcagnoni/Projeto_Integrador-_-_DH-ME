@@ -2,6 +2,7 @@
 
 #container {
     font-family: 'Acme', cursive;
+    background-color: #00bfaf;
 }
 
 #container {
@@ -57,7 +58,7 @@
 
 #homepage {
     display: flex;
-    background-color:#00bfaf;
+    background-color:#;
 }
 
 #homepage img{
@@ -101,6 +102,7 @@
     font-size: 25px;
     border: #e0e300 solid 2px;
     padding: 15px;
+    margin-bottom: 40%;
     border-radius: 25px;
 }
 
@@ -112,67 +114,61 @@
 /* Catálogo da Home Page */
 
 #homepage-catalog{
-    border-style: solid;
-    border-color:#e0e300;
+    border-top: solid #e0e300;
     border-bottom: 0;
     display: flex;
-    align-items: center;
     font-size: 25px;
-    background-color:#fff;
 }
 
-#homepage-catalog img{
-    max-width: 200px;
-    max-height: 150px;
-    margin: 25px;
-    border-radius: 20px;
-    border-style: solid;
-    border-color: #e0e300;
-    cursor: pointer;
-}
-
-#homepage-catalog img:hover{
-    opacity: 80%;
-
-}
-
-#homepage-catalog a{
-    text-decoration: none;
+#homepage-catalog h3{
     text-align: center;
-    color: #00bfaf;
-    padding: 20px;
-    margin-left: 20px;
-    font-size: 28px;
+    margin: 5%;
+    color: #fff;
 }
 
-#homepage-catalog a:hover{
-    color:#fff;
-    background-color:#ff598f;
-    border-radius: 20px;
-}
-
-#homepage-catalog-txt {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    font-size: 18px;
-    color:#fff;
+#homepage-catalog .box{
+    font-size: 13px;
+    color:#00bfaf;
     border: #e0e300 solid;
-    background-color:#00bfaf;
+    background-color:#fff;
     opacity: 90%;
     padding: 30px 20px;
+    border-radius: 25px;
+    text-align: center;
+    
 }
 
-#homepage-catalog-txt p{
-    border: 2px solid #e0e300;
-    border-radius: 20px;
-    padding: 18px;
-    margin: 20px;
+.homepage-catalog-carousel{
+    margin: 0 auto;
+
 }
 
-#homepage-catalog-txt p:hover{
-    background-color: #ff598f;
-    cursor:pointer;
+.carousel-item img {
+    width: 50%;
+    margin: 0 auto;
+    padding: 2%;
+}
+
+.carousel-indicators{
+    color:#fff;
+}
+
+.box{
+    margin: 0 auto;
+    margin: 10px auto;
+    padding: 0;
+    position: relative;
+    width: 33.33333%;
+    text-align: center;
+    box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.carousel-caption p{
+    color: #e0e300;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #ff598f;
+    font-size: 25px; color: #fffdd9;
 }
 
 /* Perfil do cliente*/
