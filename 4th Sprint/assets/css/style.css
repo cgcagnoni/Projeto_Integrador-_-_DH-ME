@@ -311,3 +311,27 @@ footer {
     color:#ff598f;
     text-decoration: none;
 }
+
+
+/* Página do animal */
+
+
+#animal-perfil .imagem{
+    width: 300px;
+    padding: 10px;
+
+}
+
+
+#outros-animais .imagem-sugestao{
+    max-width: 200px;
+    border-style: none;
+    border-radius: 5%
+}
+
+#outros-animais .sugestao{
+    font-size: 20px;
+    text-decoration: none;
+    color: #ff598f
+}
+

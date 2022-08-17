@@ -31,15 +31,17 @@
     <!-- Barra de Navegação -->
     <div id="navbar" class="row">
       <div class="nav-logo col">
-        <img class="navbar-logo" src="./assets/images/Home/logo-provisoria.jpg" alt="logo-provisoria"></div>    
+        <img class="navbar-logo" src="./assets/images/Home/logo-provisoria.jpg" alt="logo-provisoria"></div>
       <div class="dropdown col">
-        <button class="btn btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-bars"></i> </button>
+        <button class="btn btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i
+            class="fa-solid fa-bars"></i> </button>
         <ul class="dropdown-menu">
           <li><a class="dropdown-item" href="index.html">Página inicial</a></li>
           <li><a class="dropdown-item" href="busca.html">Quero adotar</a></li>
           <li><a class="dropdown-item" href="doacao-animal.html">Quero divulgar um animal para adoção</a></li>
           <li><a class="dropdown-item" href="cadastro.html">Cadastre-se</a></li>
-          <li><a class="dropdown-item" href="perfil.html">Meu perfil</a></li>          <li><a class="dropdown-item" href="sobre.html">Sobre nós</a></li>
+          <li><a class="dropdown-item" href="perfil.html">Meu perfil</a></li>
+          <li><a class="dropdown-item" href="sobre.html">Sobre nós</a></li>
           <li>
             <hr class="dropdown-divider">
           </li>
@@ -48,12 +50,90 @@
       </div>
     </div>
 
-    <!-- Conteúdo da Home Page -->
-    
-    
+    <!-- Conteúdo da Página -->
+
+    <article>
+      <div id="animal-perfil">
+        <!-- INFOS PROVISORIAS, TROCAR PELA API DEPOIS -->
+        <img class="imagem" src="./assets/images/PaginaAnimal/animal-5.jpg" alt="imagem-animal-pretendido">
+
+        <div id="descricao">
+          <p> PEDRINHO </p>
+          <p> Pedrinho veio de uma ninhada com outros seis gatinhos, encontrados abandonados em um terreno.
+            Tem o pelo rajadinho e os olhos azuis, muito dócil e carinhoso. Aparenta ter em torno de 4 a 5 meses
+            e está pronto para ter um lar!
+          </p>
+
+          <div id="tags-filtro">
+            <!--linkar aqui com a api as tags que estao registradas no animal -->
+            <p>#macho</p>
+            <p>#dócil</p>
+            <p>#filhote</p>
+          </div>
+        </div>
+
+        <div id="botao-adocao">
+          <form action="doacao-animal.html">
+            <input type="submit" value="VOU ADOTAR!" />
+          </form>
+        </div>
+    </article>
+
+    <aside>
+      <div id="outros-animais">
+        <p>Outros peludinhos que também precisam de um lar</p>
+
+        <a href="busca.html" target="_blank" class="sugestao">
+          <img class="imagem-sugestao" src="./assets/images/PaginaAnimal/animal-1.jpg" alt="">Lulu
+        </a>
+        <p></p>
+        <a href="busca.html" target="_blank" class="sugestao">
+          <img class="imagem-sugestao" src="./assets/images/PaginaAnimal/animal-6.jpg" alt="">Rajado
+        </a>
+        <p></p>
+        <a href="busca.html" target="_blank" class="sugestao">
+          <img class="imagem-sugestao" src="./assets/images/PaginaAnimal/animal-7.jpg" alt="">Gigante
+        </a>
+        <p></p>
+        <a href="busca.html" target="_blank" class="sugestao">
+          <img class="imagem-sugestao" src="./assets/images/PaginaAnimal/animal-8.jpg" alt="">Soneca
+        </a>
+        <p></p>
+      </div>
+    </aside>
+    <!--
+      <div id="outros-animais">
+        <p>Outros peludinhos que também precisam de um lar</p>
+
+        <div id="botao-adocao-outro1">
+          <form action="animal-perfil.html">
+            <img class="imagem-outros" src="./assets/images/PaginaAnimal/animal-1.jpg" alt="outro-animal-disponivel-1">
+            <input type="submit" value="Pandora" />
+          </form>
+        </div>
+        <div id="botao-adocao-outro2">
+          <form action="animal-perfil.html">
+            <img class="imagem-outros" src="./assets/images/PaginaAnimal/animal-6.jpg" alt="outro-animal-disponivel-2">
+            <input type="submit" value="Lulu" />
+          </form>
+        </div>
+        <div id="botao-adocao-outro3">
+          <form action="animal-perfil.html">
+            <img class="imagem-outros" src="./assets/images/PaginaAnimal/animal-7.jpg" alt="outro-animal-disponivel-3">
+            <input type="submit" value="Gigante" />
+          </form>
+        </div>
+        <div id="botao-adocao-outro4">
+          <form action="animal-perfil.html">
+            <img class="imagem-outros" src="./assets/images/PaginaAnimal/animal-8.jpg" alt="outro-animal-disponivel-4">
+            <input type="submit" value="Soneca" />
+          </form>
+        </div>
+      </div>
+    -->
 
 
-    
+
 
     <!-- Rodapé -->
     <div id="baseboard">
