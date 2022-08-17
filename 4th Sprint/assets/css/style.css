@@ -317,21 +317,63 @@ footer {
 
 
 #animal-perfil .imagem{
-    width: 300px;
-    padding: 10px;
-
+    width: 300px;}
+    
+#animal-perfil {
+    display: flex;
+    background-color:#00bfaf;
 }
 
+#animal-perfil img{
+    max-width: 100%;
+    max-height: 70%;
+    padding: 20px;
+    border-radius: 10%;
+}
+
+#animal-perfil .nome-animal{
+    font-size: 40px;
+    font-weight: bold; 
+    text-align: center;
+    color: #ff598f;
+    padding: 20px;
+}
+
+.descricao-animal p {    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-left:auto;
+    margin-right: 30px;
+    font-size: 30px; 
+    font-weight:normal;
+    color: #fff; 
+    font-size: 30px;
+    padding: 10px;
+}
+
+
+.adocao-btn{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+
+.adocao-btn-item {
+    background-color: #ff598f;
+    color: #fff;
+    font-size: 25px;
+    border: #e0e300 solid 2px;
+    padding: 15px;
+    border-radius: 25px;
+}
+
+.adocao-btn-item :hover {
+    background-color: #fff;
+    color:#e0e300;
+}
 
 #outros-animais .imagem-sugestao{
     max-width: 200px;
-    border-style: none;
-    border-radius: 5%
 }
-
-#outros-animais .sugestao{
-    font-size: 20px;
-    text-decoration: none;
-    color: #ff598f
-}
-

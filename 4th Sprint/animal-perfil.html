@@ -39,7 +39,6 @@
           <li><a class="dropdown-item" href="index.html">Página inicial</a></li>
           <li><a class="dropdown-item" href="busca.html">Quero adotar</a></li>
           <li><a class="dropdown-item" href="doacao-animal.html">Quero divulgar um animal para adoção</a></li>
-          <li><a class="dropdown-item" href="arrecadacao.html">Quero ajudar a ONG</a></li>
           <li><a class="dropdown-item" href="cadastro.html">Cadastre-se</a></li>
           <li><a class="dropdown-item" href="perfil.html">Meu perfil</a></li>
           <li><a class="dropdown-item" href="sobre.html">Sobre nós</a></li>
@@ -51,32 +50,34 @@
       </div>
     </div>
 
+
     <!-- Conteúdo da Página -->
 
     <article>
-      <div id="animal-perfil">
+      <div id="animal-perfil" class="row animal-perfil-princ">
         <!-- INFOS PROVISORIAS, TROCAR PELA API DEPOIS -->
-        <img class="imagem" src="./assets/images/PaginaAnimal/animal-5.jpg" alt="imagem-animal-pretendido">
-
-        <div id="descricao">
-          <p> PEDRINHO </p>
-          <p> Pedrinho veio de uma ninhada com outros seis gatinhos, encontrados abandonados em um terreno.
-            Tem o pelo rajadinho e os olhos azuis, muito dócil e carinhoso. Aparenta ter em torno de 4 a 5 meses
-            e está pronto para ter um lar!
-          </p>
-
-          <div id="tags-filtro">
-            <!--linkar aqui com a api as tags que estao registradas no animal -->
-            <p>#macho</p>
-            <p>#dócil</p>
-            <p>#filhote</p>
-          </div>
+        <div class="col-5 animal-perfil-img">
+          <img src="./assets/images/PaginaAnimal/animal-5.jpg" alt="imagem-animal-pretendido">
+        </div>
+        <div class="col-7 descricao-animal">
+          <h1 class="nome-animal"> PEDRINHO <h1>
+             <p class="animal-txt"> Pedrinho veio de uma ninhada com outros seis gatinhos, encontrados abandonados em
+                um terreno.
+                Tem o pelo rajadinho e os olhos azuis, muito dócil e carinhoso. Aparenta ter em torno de 4 a 5 meses
+                e está pronto para ter um lar!
+              </p>
         </div>
 
-        <div id="botao-adocao">
-          <form action="doacao-animal.html">
-            <input type="submit" value="VOU ADOTAR!" />
-          </form>
+        <div class="col-1 tags-filtro">
+          <!--linkar aqui com a api as tags que estao registradas no animal -->
+          <p>#macho</p>
+          <p>#dócil</p>
+          <p>#filhote</p>
+        </div>
+        
+        <!-- confirmar a pagina de redirecionamento (contato?) -->
+        <div class="adocao-btn">
+          <a href="./contato.html"><button class="adocao-btn-item">VOU ADOTAR!</button></a>
         </div>
     </article>
 
@@ -102,36 +103,6 @@
         <p></p>
       </div>
     </aside>
-    <!--
-      <div id="outros-animais">
-        <p>Outros peludinhos que também precisam de um lar</p>
-
-        <div id="botao-adocao-outro1">
-          <form action="animal-perfil.html">
-            <img class="imagem-outros" src="./assets/images/PaginaAnimal/animal-1.jpg" alt="outro-animal-disponivel-1">
-            <input type="submit" value="Pandora" />
-          </form>
-        </div>
-        <div id="botao-adocao-outro2">
-          <form action="animal-perfil.html">
-            <img class="imagem-outros" src="./assets/images/PaginaAnimal/animal-6.jpg" alt="outro-animal-disponivel-2">
-            <input type="submit" value="Lulu" />
-          </form>
-        </div>
-        <div id="botao-adocao-outro3">
-          <form action="animal-perfil.html">
-            <img class="imagem-outros" src="./assets/images/PaginaAnimal/animal-7.jpg" alt="outro-animal-disponivel-3">
-            <input type="submit" value="Gigante" />
-          </form>
-        </div>
-        <div id="botao-adocao-outro4">
-          <form action="animal-perfil.html">
-            <img class="imagem-outros" src="./assets/images/PaginaAnimal/animal-8.jpg" alt="outro-animal-disponivel-4">
-            <input type="submit" value="Soneca" />
-          </form>
-        </div>
-      </div>
-    -->
 
 
 
