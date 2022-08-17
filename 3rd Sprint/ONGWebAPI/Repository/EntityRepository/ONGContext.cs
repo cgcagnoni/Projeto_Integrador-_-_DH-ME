@@ -11,6 +11,7 @@ namespace ONGWebAPI.Repository.EntityRepository
 
         public DbSet<Animal>? Animais { get; set; }
         public DbSet<Usuario>? Usuarios { get; set; }
+        public DbSet<InteresseAdocao>? InteresseAdocao { get; set; }
 
 
         public ONGContext(bool inMemory)
@@ -65,8 +66,11 @@ namespace ONGWebAPI.Repository.EntityRepository
 
             Modelagem.Entity<InteresseAdocao>(Tabela =>
             {
+                Tabela.HasOne(Propriedade => Propriedade.Animal)
+                    .WithMany()
+                    .HasForeignKey(Propriedade => Propriedade.AnimalId);
+
                 Tabela.Navigation(Propriedade => Propriedade.Animal).AutoInclude();
-                //Tabela.Navigation(Propriedade => Propriedade.Usuario).AutoInclude();
             });
 
 

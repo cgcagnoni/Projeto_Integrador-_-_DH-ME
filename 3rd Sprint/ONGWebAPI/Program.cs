@@ -42,6 +42,7 @@ builder.Services.AddSingleton<ONGContext>((x) => new ONGContext(builder.Configur
 
 builder.Services.AddSingleton<IUsuarioRepository, EntityUsuarioRepository>();
 builder.Services.AddSingleton<IAnimalRepository, EntityAnimalRepository>();
+builder.Services.AddSingleton<IInteresseAdocao, EntityInteresseAdocaoRepository>();
 builder.Services.AddSingleton<IWhatsapp, WhatsappService>();
 
 

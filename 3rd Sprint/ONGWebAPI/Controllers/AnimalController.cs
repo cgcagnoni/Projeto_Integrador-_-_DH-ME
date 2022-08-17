@@ -297,13 +297,7 @@ namespace ONGWebAPI.Controllers
             return animalRepository.ListarAnimaisDoacao();
         }
 
-        [HttpPost("InteresseAdocao")]
-        public ActionResult InteresseAdotar(InteresseAdocao interesseAdocao)
-        {            
-            interesseAdocao.Data = DateTime.Now;
-            whatsappService.EnviarMenssagem(interesseAdocao);
-            return Ok();
-        }
+        
 
 
 
