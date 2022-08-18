@@ -7,9 +7,11 @@ namespace ONGWebAPI.Service
     public class MailService
     {
         public MailAddress fromAddress = new MailAddress("assocdaspatinhas@gmail.com", "Associação das Patinhas");
-        public const string subject = "Interesse em adoção";
-        public const string body = "Texto que será enviado para o usuário que cadastrou o animal";
-        public const string fromPassword = "passwGoogleAcounts";
+        //Adicionar nomeAnimal e nomeUsuario no corpo da mensagem
+        public const string subject = "Temos um possível adotante para{nomeAnimal}!";
+        public const string body = "Olá, {nomeUsuario}! Você cadastrou {nomeAnimal} na nossa plataforma e um de nossos usuários indicou interesse na adoção. Estamos enviando alguns dados do possível adotante para que você analise. Caso atenda às suas expectativas ou tenha alguma dúvida sobre o adotante, entre em contato por e-mail ou whatsapp.";
+        public const string fromPassword = "bcxrycykshywlcqm";
+        public SmtpClient smtp;
         public SmtpClient smtp;
 
         public MailService()
