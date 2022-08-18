@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using ONGWebAPI.Entities;
 using ONGWebAPI.Models;
 using ONGWebAPI.Repository;
+using ONGWebAPI.Service;
 using ONGWebAPI.Repository.EntityRepository;
 
 namespace ONGWebAPI.Controllers
@@ -13,6 +14,7 @@ namespace ONGWebAPI.Controllers
     public class AnimalController : ControllerBase
     {
         IAnimalRepository animalRepository;
+        
 
         public AnimalController(IAnimalRepository animalRepository)
         {
@@ -288,6 +290,7 @@ namespace ONGWebAPI.Controllers
         /// </return>
         /// <response code="200">Lista obtida com sucesso</response>
         /// <response code="404">Nenhum animal encontrado</response>
+        /// 
         [HttpGet("ListarAnimaisDoacao")]
         public ActionResult<List<Animal>> ListarAnimaisDoacao()
         {
@@ -295,6 +298,17 @@ namespace ONGWebAPI.Controllers
         }
 
 
+        //Método HTTP que chama função SendMail do objeto MailService 
+            //Precisa importar o System.Net.Mail para usar o MailService
+        [HttpPost("{Id}")]
+        public ActionResult EnviarEmail(int Id)
+        {
+            MailService mailService = new MailService();
+            Animal animal = animalRepository.ExibirPelaID(Id);
+            mailService.SendMail(animal.Usuario.Email, animal.Usuario.Nome);
+             
+           return Ok();
+        }
 
 
 
