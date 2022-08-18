@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using ONGWebAPI.Models;
 using ONGWebAPI.Repository;
+using ONGWebAPI.Repository.EntityRepository;
+using ONGWebAPI.Service;
 
 namespace ONGWebAPI.Controllers
 {
@@ -38,10 +40,19 @@ namespace ONGWebAPI.Controllers
         /// <response code="200">Usuário cadastrado com sucesso</response>
         /// <response code="400">Erro desconhecido ocorrido ao tentar cadastrar um usuário</response>
         [HttpPost]
-        public ActionResult AdicionaNovoUsuario(Usuario Usuario)
+        public ActionResult AdicionaNovoUsuario(Usuario usuario)
         {
-            this._usuarioRepository.AdicionaNovoUsuario(Usuario);
-            return CreatedAtAction("AdicionaNovoUsuario", new { id = Usuario.Id }, Usuario);
+            
+            if (usuario.Password == null || usuario.Username == null)
+            {
+                return NotFound(new { message = "Usuário ou senha inválidos" });
+            }
+            var token = TokenService.GenerateToken(usuario);
+            this._usuarioRepository.AdicionaNovoUsuario(usuario);
+            return CreatedAtAction("AdicionaNovoUsuario", new {
+                user = usuario.Username,
+                token = token,
+                id = usuario.Id }, usuario);
 
         }
 

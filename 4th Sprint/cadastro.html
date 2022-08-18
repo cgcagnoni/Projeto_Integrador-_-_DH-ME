@@ -20,6 +20,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
     integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
   </script>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
 
   <title>Associação das patinhas | Adoção responsável 🐾</title>
   <link rel="icon" type="image/x-icon" href="./assets/images/Home/logo-provisoria.jpg">
@@ -27,18 +29,16 @@
 
 <body>
   <div id="container">
+    <!-- Barra de Navegação -->
+    <div id="nav-placeholder"></div>
+    <script>
+      $(function () {
+        $("#nav-placeholder").load("nav.html");
+      });
+    </script>
+  </div>
 
-       <!-- Barra de Navegação -->
-       <div id="nav-placeholder"></div>
-       <!-- Importando jquery -->
-       <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-       <script>
-         //Função carrega a página nav.html dentro da div que tem id nav-placeholder
-       $(function(){
-         $("#nav-placeholder").load("nav.html");
-       });
-       </script>
-    </div>
+ 
 
     <!-- Conteúdo da Página -->
     <div id="form">
@@ -111,6 +111,7 @@
             <div class="Cadastre-se-button">
               <button><a href="#"> Cadastre-se</a></button>
             </div>
+            
         </form>
       </div>
     </div>
@@ -136,7 +137,5 @@
         <p class="copyright">Associação das Patinhas © 2022</p>
       </footer>
     </div>
-  </div>
 </body>
-
 </html>

@@ -20,6 +20,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
     integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
   </script>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
   <title>Associação das patinhas | Adoção responsável 🐾</title>
   <link rel="icon" type="image/x-icon" href="./assets/images/Home/logo-provisoria.jpg">
@@ -29,26 +30,12 @@
   <div id="container">
 
     <!-- Barra de Navegação -->
-    <div id="navbar" class="row">
-      <div class="nav-logo col">
-        <img class="navbar-logo" src="./assets/images/Home/logo-provisoria.jpg" alt="logo-provisoria"></div>
-      <div class="dropdown col">
-        <button class="btn btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i
-            class="fa-solid fa-bars"></i> </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="index.html">Página inicial</a></li>
-          <li><a class="dropdown-item" href="busca.html">Quero adotar</a></li>
-          <li><a class="dropdown-item" href="doacao-animal.html">Quero divulgar um animal para adoção</a></li>
-          <li><a class="dropdown-item" href="cadastro.html">Cadastre-se</a></li>
-          <li><a class="dropdown-item" href="perfil.html">Meu perfil</a></li>
-          <li><a class="dropdown-item" href="sobre.html">Sobre nós</a></li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li><a class="dropdown-item" href="contato.html">Entre em contato</a></li>
-        </ul>
-      </div>
-    </div>
+    <div id="nav-placeholder"></div>
+    <script>
+      $(function () {
+        $("#nav-placeholder").load("nav.html");
+      });
+    </script>
 
 
     <!-- Conteúdo da Página -->
@@ -58,74 +45,65 @@
         <!-- INFOS PROVISORIAS, TROCAR PELA API DEPOIS -->
         <div class="col-5 animal-perfil-img">
           <img src="./assets/images/PaginaAnimal/animal-5.jpg" alt="imagem-animal-pretendido">
+
+          <div class="col-5 tags-filtro">
+            <!--linkar aqui com a api as tags que estao registradas no animal -->
+            #macho
+            #dócil
+            #filhote
+          </div>
         </div>
+
         <div class="col-7 descricao-animal">
           <h1 class="nome-animal"> PEDRINHO <h1>
-             <p class="animal-txt"> Pedrinho veio de uma ninhada com outros seis gatinhos, encontrados abandonados em
+              <p class="animal-txt"> Pedrinho veio de uma ninhada com outros seis gatinhos, encontrados abandonados em
                 um terreno.
                 Tem o pelo rajadinho e os olhos azuis, muito dócil e carinhoso. Aparenta ter em torno de 4 a 5 meses
                 e está pronto para ter um lar!
               </p>
-        </div>
 
-        <div class="col-1 tags-filtro">
-          <!--linkar aqui com a api as tags que estao registradas no animal -->
-          <p>#macho</p>
-          <p>#dócil</p>
-          <p>#filhote</p>
-        </div>
-        
-        <!-- confirmar a pagina de redirecionamento (contato?) -->
-        <div class="adocao-btn">
-          <a href="./contato.html"><button class="adocao-btn-item">VOU ADOTAR!</button></a>
+              <!-- redirecionar para modal alert -->
+              <div class="adocao-btn">
+                <a href=""><button class="adocao-btn-item">VOU ADOTAR!</button></a>
+              </div>
         </div>
     </article>
 
     <aside>
-      <div id="outros-animais">
-        <p>Outros peludinhos que também precisam de um lar</p>
+      <div class="sugestoes">
+        <h2>Outros peludinhos que também precisam de um lar</h2>
 
-        <a href="busca.html" target="_blank" class="sugestao">
-          <img class="imagem-sugestao" src="./assets/images/PaginaAnimal/animal-1.jpg" alt="">Lulu
-        </a>
-        <p></p>
-        <a href="busca.html" target="_blank" class="sugestao">
-          <img class="imagem-sugestao" src="./assets/images/PaginaAnimal/animal-6.jpg" alt="">Rajado
-        </a>
-        <p></p>
-        <a href="busca.html" target="_blank" class="sugestao">
-          <img class="imagem-sugestao" src="./assets/images/PaginaAnimal/animal-7.jpg" alt="">Gigante
-        </a>
-        <p></p>
-        <a href="busca.html" target="_blank" class="sugestao">
-          <img class="imagem-sugestao" src="./assets/images/PaginaAnimal/animal-8.jpg" alt="">Soneca
-        </a>
-        <p></p>
+        <div class="outros-animais">
+          <a href="busca.html" target="_blank">
+            <img src="./assets/images/PaginaAnimal/animal-1.jpg" alt="">
+            <p>Lulu</p>
+          </a>
+          <a href="busca.html" target="_blank">
+            <img src="./assets/images/PaginaAnimal/animal-6.jpg" alt="">
+            <p>Rajado</p>
+          </a>
+          <a href="busca.html" target="_blank">
+            <img src="./assets/images/PaginaAnimal/animal-7.jpg" alt="">
+            <p>Gigante</p>
+          </a>
+          <a href="busca.html" target="_blank">
+            <img src="./assets/images/PaginaAnimal/animal-8.jpg" alt="">
+            <p>Soneca</p>
+          </a>
+        </div>
       </div>
     </aside>
 
 
 
-
     <!-- Rodapé -->
-    <div id="baseboard">
-      <div class="baseboard-contato">
-        <a href="#"><i class="icon ion-social-instagram"></i></a>
-        <a href="#"><i class="icon ion-social-twitter"></i></a>
-        <a href="#"><i class="icon ion-social-facebook"></i></a>
-        <a href="#"><i class="icon ion-social-whatsapp"></i></a>
-        <p></p>
-      </div>
-      <div class="baseboard-list">
-        <li class="baseboard-list-item"><a href="index.html">Página Inicial</a></li>
-        <li class="baseboard-list-item"><a href="sobre.html">Sobre nós</a></li>
-        <li class="baseboard-list-item"><a href="cadastro.html">Cadastro</a></li>
-        <p></p>
-      </div>
-      <footer>
-        <p class="copyright">Associação das Patinhas © 2022</p>
-      </footer>
-    </div>
+    <div id="footer-placeholder"></div>
+    <script>
+      $(function () {
+        $("#footer-placeholder").load("footer.html");
+      });
+    </script>
+
   </div>
 </body>
 
