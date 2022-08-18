@@ -13,9 +13,13 @@ namespace ONGWebAPI.Repository.EntityRepository
             this.DbONG = DbONG;
         }
 
-        public void AdicionaNovoUsuario(Usuario Usuario)
+    
+
+
+        public void AdicionaNovoUsuario(Usuario usuario)
         {
-            DbONG.Usuarios?.Add(Usuario);
+           
+            DbONG.Usuarios?.Add(usuario);
             DbONG.SaveChanges();
         }
 
