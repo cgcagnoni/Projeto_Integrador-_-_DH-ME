@@ -47,27 +47,32 @@
 }
 
 .dropdown-menu a {
-    color:#ff598f;
+    color: #ff598f;
 }
 
 .dropdown-menu a:hover {
-    background-color:#e0e300;
+    background-color: #e0e300;
 }
 
 /* Homepage */
 
 #homepage {
     display: flex;
-    background-color:#;
+    background-color: #;
 }
 
-#homepage img{
+#homepage img {
     width: 100%;
     height: 100%;
 }
 
-#homepage h1{
-    font-size: 50px; 
+#homepage h1 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#homepage h2 {
+    font-size: 50px;
 }
 
 .homepage-txt {
@@ -90,7 +95,7 @@
     padding: 15px;
 }
 
-.homepage-btn{
+.homepage-btn {
     display: flex;
     justify-content: space-evenly;
     margin-top: 30px;
@@ -108,37 +113,37 @@
 
 .homepage-btn-item:hover {
     background-color: #fff;
-    color:#e0e300;
+    color: #e0e300;
 }
 
 /* Catálogo da Home Page */
 
-#homepage-catalog{
+#homepage-catalog {
     border-top: solid #e0e300;
     border-bottom: 0;
     display: flex;
     font-size: 25px;
 }
 
-#homepage-catalog h3{
+#homepage-catalog h3 {
     text-align: center;
     margin: 5%;
     color: #fff;
 }
 
-#homepage-catalog .box{
-    font-size: 13px;
-    color:#00bfaf;
+#homepage-catalog .box {
+    font-size: 20px;
+    color: #00bfaf;
     border: #e0e300 solid;
-    background-color:#fff;
+    background-color: #fff;
     opacity: 90%;
     padding: 30px 20px;
     border-radius: 25px;
     text-align: center;
-    
+
 }
 
-.homepage-catalog-carousel{
+.homepage-catalog-carousel {
     margin: 0 auto;
 
 }
@@ -149,11 +154,11 @@
     padding: 2%;
 }
 
-.carousel-indicators{
-    color:#fff;
+.carousel-indicators {
+    color: #fff;
 }
 
-.box{
+.box {
     margin: 0 auto;
     margin: 10px auto;
     padding: 0;
@@ -164,21 +169,23 @@
     box-sizing: border-box;
 }
 
-.carousel-caption p{
+.carousel-caption p {
     color: #e0e300;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #ff598f;
-    font-size: 25px; color: #fffdd9;
+    font-size: 25px;
+    color: #fffdd9;
 }
 
 /* Perfil do cliente*/
-#profilecontent{
+#profilecontent {
     padding: 15px;
 }
 
 /* Footer */
 
 #baseboard {
+    border-top: #e0e300 2px solid;
     position: static;
     bottom: 0;
     margin: 0;
@@ -249,16 +256,13 @@ footer {
     display: flex;
     background-color: #01dddd;
     font-weight: bold;
-    border-bottom: solid 2px #e0e300;
-
-
 }
 
-.sobre-img img{
+.sobre-img img {
     width: 650px;
     height: 510px;
+    margin: 40px;
     border-radius: 25%;
-    padding: 40px;
 }
 
 
@@ -285,72 +289,74 @@ footer {
     margin: 40px;
 }
 
-#sobre-txt .link a{
+#sobre-txt .link h2 {
+    color: #ff598f;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 23px;
+}
+
+#sobre-txt .link a {
     font-size: 22px;
     padding: 0;
     margin: 0;
-    color:#fff;
+    color: #fff;
     text-decoration: none;
-
-}
-#sobre-txt .link a:link {
-    font-size: 20px;
-    padding: 0;
-    margin: 0;
-    color:#fff;
-    text-decoration: none;
-
 }
 
 #sobre-txt .links a:hover {
     font-size: 27px;
-    color:#ff598f;
+    color: #ff598f;
     text-decoration: none;
 }
 
 
 /* Página do animal */
 
-
-#animal-perfil .imagem{
-    width: 300px;}
-    
 #animal-perfil {
     display: flex;
-    background-color:#00bfaf;
+    background-color: #00bfaf;
 }
 
-#animal-perfil img{
-    max-width: 100%;
+#animal-perfil img {
+    max-width: 80%;
     max-height: 70%;
-    padding: 20px;
     border-radius: 10%;
+    border: #e0e300 2px solid;
+    margin-left: 15%;
+    margin-top: 10px;
 }
 
-#animal-perfil .nome-animal{
+#animal-perfil .tags-filtro {
+    color: #e0e300;
+    font-size: 20px;
+    margin-left: 25%;
+    text-decoration: none;
+}
+
+#animal-perfil .nome-animal {
     font-size: 40px;
-    font-weight: bold; 
+    font-weight: bold;
     text-align: center;
     color: #ff598f;
     padding: 20px;
+    margin-top: 50px;
 }
 
-.descricao-animal p {    
+.descricao-animal p {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    margin-left:auto;
+    margin-left: auto;
     margin-right: 30px;
-    font-size: 30px; 
-    font-weight:normal;
-    color: #fff; 
     font-size: 30px;
+    font-weight: normal;
+    color: #fff;
     padding: 10px;
 }
 
-
-.adocao-btn{
+.adocao-btn {
     display: flex;
     justify-content: space-evenly;
     margin-top: 30px;
@@ -360,19 +366,178 @@ footer {
     background-color: #ff598f;
     color: #fff;
     font-size: 25px;
+    font-weight: bold;
     border: #e0e300 solid 2px;
     padding: 15px;
     border-radius: 25px;
 }
 
-.adocao-btn-item :hover {
+.adocao-btn-item:hover {
     background-color: #fff;
-    color:#e0e300;
+    color: #e0e300;
 }
 
-#outros-animais .imagem-sugestao{
-    max-width: 200px;
+.sugestoes {
+    background-color: #fff;
+    text-align: center;
+    color: #ff598f;
+    font-weight: bolder;
+    font-size: 25px;
+    padding: 20px;
 }
+
+.outros-animais {
+    display: flex;
+    background-color: #fff;
+    justify-content: center;
+}
+
+.outros-animais h2 {
+    color: #ff598f;
+    font-size: 25px;
+    padding: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.outros-animais img {
+    max-width: 300px;
+    border-radius: 5%;
+    margin: 10px;
+}
+
+.outros-animais a {
+    font-size: 22px;
+    padding: 0;
+    margin: 0;
+    color: #01dddd;
+    text-decoration: none;
+    text-align: center;
+
+}
+
+.outros-animais a:hover {
+    font-size: 33px;
+    padding: 0;
+    margin: 0;
+    color: #00bfaf;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.outros-animais img:hover {
+    max-width: 320px;
+    border-radius: 5%;
+    margin: 10px;
+    border: #e0e300 solid 2px;
+
+}
+
+
+
+
+/* Perfil do usuario */
+#profilecontent{
+    background-color: #fff;
+}
+
+.main-login {
+    width: 100vw;
+    height: 100vh;
+    background: #00bfaf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-login {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.left-login>h1 {
+    font-size: 2.5vw;
+    color: #fff;
+}
+
+.left-login-img {
+    width: 35vw;
+}
+
+.right-login {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-login {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px;
+    background: #ff598f;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px #00000056
+}
+
+.card-login>h1 {
+    color: #fff;
+    font-weight: 800;
+    margin: 0;
+}
+
+.textfield {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px;
+}
+
+.textfield>input {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: #fffdd9;
+    color: black;
+    font-size: 12pt;
+}
+
+.textfield>label {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.textfield>input::placeholder {
+    color: #00000056;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #00000056;
+    background-color: #fffdd9;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #00000056;
+}
+
 
 <<<<<<< HEAD
 
