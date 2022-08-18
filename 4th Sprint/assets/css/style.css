@@ -58,7 +58,6 @@
 
 #homepage {
     display: flex;
-    background-color: #;
 }
 
 #homepage img {
@@ -73,6 +72,9 @@
 
 #homepage h2 {
     font-size: 50px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #ff598f;
+    color: #fffdd9;
 }
 
 .homepage-txt {
@@ -122,20 +124,32 @@
     border-top: solid #e0e300;
     border-bottom: 0;
     display: flex;
-    font-size: 25px;
 }
 
 #homepage-catalog h3 {
     text-align: center;
     margin: 5%;
     color: #fff;
+    font-size: 45px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #ff598f;
+    color: #fffdd9;
+}
+
+#homepage-catalog .boxes{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
 }
 
 #homepage-catalog .box {
-    font-size: 20px;
-    color: #00bfaf;
+    font-size: 25px;
+    color: #fff;
     border: #e0e300 solid;
-    background-color: #fff;
+    background-color: #ff598f;
     opacity: 90%;
     padding: 30px 20px;
     border-radius: 25px;
