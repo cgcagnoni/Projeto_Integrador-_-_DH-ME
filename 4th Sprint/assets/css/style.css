@@ -136,7 +136,7 @@
     color: #fffdd9;
 }
 
-#homepage-catalog .boxes{
+#homepage-catalog .boxes {
     height: auto;
     display: flex;
     flex-direction: column;
@@ -449,7 +449,7 @@ footer {
 
 
 /* Perfil do usuario */
-#profilecontent{
+#profilecontent {
     background-color: #fff;
 }
 
@@ -552,17 +552,17 @@ footer {
 
 
 /*LOGIN*/
-.main-login{
+.main-login {
     width: 100vw;
     height: 100vh;
-    background:#00bfaf;
+    background: #00bfaf;
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
 }
 
-.left-login{
-    width:50vw;
+.left-login {
+    width: 50vw;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -570,90 +570,91 @@ footer {
     flex-direction: column;
 }
 
-.left-login >h1{
+.left-login>h1 {
     font-size: 2.5vw;
     vertical-align: top;
-    color:#fff;  
-           
+    color: #fff;
+
 }
 
-.left-login-img{
+.left-login-img {
     width: 65vw;
 
 }
 
-.right-login{
-    width:50vw;
+.right-login {
+    width: 50vw;
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
 }
-.card-login{
+
+.card-login {
     width: 60%;
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
     flex-direction: column;
     padding: 30px 35px;
-    background:#ff598f;
-    border-radius: 20px;   
-    box-shadow:0px 10px 40px #00000056   
+    background: #ff598f;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px #00000056
 }
 
-.card-login >h1{
-    color:#fff;
+.card-login>h1 {
+    color: #fff;
     font-weight: 800;
-    margin:0;   
+    margin: 0;
 }
 
-.textfield{
+.textfield {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    margin:10px;
+    margin: 10px;
 }
 
-.textfield > input{
+.textfield>input {
     width: 100%;
     border: none;
     border-radius: 10px;
     padding: 15px;
-    background:#fffdd9;
-    color:black;
-    font-size: 12pt;    
+    background: #fffdd9;
+    color: black;
+    font-size: 12pt;
 }
 
-.textfield > label{
-    color:#fff;
+.textfield>label {
+    color: #fff;
     margin-bottom: 10px;
 }
 
-.textfield > input::placeholder{    
-    color:#00000056; 
+.textfield>input::placeholder {
+    color: #00000056;
 }
 
-.btn-login{
-    width:100%;
+.btn-login {
+    width: 100%;
     padding: 16px 0px;
     margin: 25px;
     border: none;
-    border-radius: 8px;   
+    border-radius: 8px;
     outline: none;
     text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 2px;
     color: #00000056;
     background-color: #fffdd9;
-    cursor:pointer;
+    cursor: pointer;
     box-shadow: 0px 10px 40px -12px #00000056;
 }
 
 
 /* formularios*/
-#form{
+#form {
     margin-top: 10px;
     margin-left: 15%;
     margin-right: 15px;
@@ -661,35 +662,39 @@ footer {
     height: 80vh;
     display: flex;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, .212);
-    
+
 }
-#img_form{
+
+#img_form {
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    
-}
-#img_form img{
- width: 31rem;
+
 }
 
-#forms{
+#img_form img {
+    width: 31rem;
+}
+
+#forms {
     width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 3rem;
-    
+
 }
-.form-header{
+
+.form-header {
     margin-bottom: 3rem;
     display: flex;
     justify-content: space-between;
 }
-#titulo_forms h1::after{
+
+#titulo_forms h1::after {
     content: "";
     display: block;
     width: 5rem;
@@ -699,19 +704,21 @@ footer {
     position: absolute;
     border-radius: 10px;
 }
-.input-group{
+
+.input-group {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 1rem 0;
 }
-.input-box{
+
+.input-box {
     display: flex;
     flex-direction: column;
     margin-bottom: 1.1rem;
 }
 
-.input-box input{
+.input-box input {
     margin: 0.6rem 0;
     padding: 0.9rem 1.2rem;
     border: none;
@@ -719,47 +726,54 @@ footer {
     box-shadow: 1px 1px 6px black;
     font-size: 0.8rem;
 }
-.input-box input:hover{
+
+.input-box input:hover {
     background-color: #ff598f;
 }
-.input-box input:focus-visible{
+
+.input-box input:focus-visible {
     outline: 1px solid #00bfaf;
 }
-.Cadastre-se-button{
+
+.Cadastre-se-button {
     display: flex;
     align-items: center;
 }
-.Cadastre-se-button button{
-background-color:#01dddd;
-padding: 0.4rem 1rem;
-border-radius: 5px;
-cursor:pointer
-}
-.Cadastre-se-button button:hover{
-    background-color: #ff598f;
-}
-.Cadastre-se-button button a{
-    text-decoration: none;
-}
-.form-select
-{
-    width: 240px;
-       height: 34px;
-       overflow: hidden;
-       background: no-repeat right #ff598f; 
-       border: 1px solid #01dddd;
+
+.Cadastre-se-button button {
+    background-color: #01dddd;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    cursor: pointer
 }
 
-.form-select select{
-    background: transparent; /* importante para exibir o novo ícone */
-       width: 268px;
-       padding: 5px;
-       font-size: 16px;
-       line-height: 1;
-       border: 0;
-       border-radius: 0;
-       height: 34px;
-       -webkit-appearance: none;
+.Cadastre-se-button button:hover {
+    background-color: #ff598f;
+}
+
+.Cadastre-se-button button a {
+    text-decoration: none;
+}
+
+.form-select {
+    width: 240px;
+    height: 34px;
+    overflow: hidden;
+    background: no-repeat right #ff598f;
+    border: 1px solid #01dddd;
+}
+
+.form-select select {
+    background: transparent;
+    /* importante para exibir o novo ícone */
+    width: 268px;
+    padding: 5px;
+    font-size: 16px;
+    line-height: 1;
+    border: 0;
+    border-radius: 0;
+    height: 34px;
+    -webkit-appearance: none;
 }
 
 /* Entre em contato */
@@ -822,7 +836,50 @@ cursor:pointer
 
 
 /* Arrecadacao */
+#arrecadacao {
+    display: flex;
+    background-color: #01dddd;
+    font-weight: bold;
+}
 
+.arrecadacao-img img {
+    width: 450px;
+    height: 300px;
+    margin: 40px;
+    border-radius: 10%;
+    border-style: dashed;
+    border-color: #e0e300;
+}
+
+#arrecadacao-txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+}
+
+#arrecadacao-txt h1 {
+    margin: 25px;
+    font-size: 40px;
+    color: #ff598f;
+    font-weight: bold;
+}
+
+#arrecadacao-txt .descricao {
+    padding: 5px;
+    font-size: 22px;
+    margin: 10px;
+    font-weight:lighter;
+}
+
+#arrecadacao-txt .infos-arrecadacao {
+    font-size: 25px;
+    color: #ff598f;
+    text-decoration: none;
+}
 
 /* Busca */
 
