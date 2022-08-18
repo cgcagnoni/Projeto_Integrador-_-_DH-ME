@@ -373,3 +373,13 @@ footer {
 #outros-animais .imagem-sugestao{
     max-width: 200px;
 }
+
+
+#form{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto;
+
+
+
+}
