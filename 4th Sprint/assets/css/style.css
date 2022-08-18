@@ -485,5 +485,10 @@ footer {
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto;
-    border: #ff598f;
+   
+}
+
+#forms{
+    border: solid #c4c3c356 1px;
+    padding: 10px;
 }
