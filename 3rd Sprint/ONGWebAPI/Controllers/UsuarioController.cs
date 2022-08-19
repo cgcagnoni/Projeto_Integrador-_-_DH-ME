@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using ONGWebAPI.Models;
 using ONGWebAPI.Repository;
 using ONGWebAPI.Repository.EntityRepository;
-using ONGWebAPI.Service;
+using ONGWebAPI.Services;
 
 namespace ONGWebAPI.Controllers
 {

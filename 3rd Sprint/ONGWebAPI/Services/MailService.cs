@@ -2,7 +2,7 @@
 using System.Net;
 using System.Net.Mail;
 
-namespace ONGWebAPI.Service
+namespace ONGWebAPI.Services
 {
     public class MailService
     {
