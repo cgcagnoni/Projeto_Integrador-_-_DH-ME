@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Secular+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
+    </script>
+    <script src="https://kit.fontawesome.com/bf53eea11f.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+        integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+
+    <title>Associação das patinhas | Adoção responsável 🐾</title>
+    <link rel="icon" type="image/x-icon" href="./assets/images/Home/logo-provisoria.jpg">
+</head>
+
+<body>
+    <div id="container">
+
+        <!-- Barra de Navegação -->
+        <div id="nav-placeholder"></div>
+        <script>
+            $(function () {
+                $("#nav-placeholder").load("nav.html");
+            });
+        </script>
+
+        <!-- Conteúdo da Página -->
+        <div class="row" id="profilecontent">
+            <div class="col-4">
+                <div id="listaCadastro" class="list-group">
+                    <a class="list-group-item list-group-item-action" href="./perfil.html">Meu cadastro</a>
+                    <a class="list-group-item list-group-item-action" href="./perfil.html">Minhas adoções</a>
+                    <a class="list-group-item list-group-item-action" href="./perfil.html">Minha doações</a>
+                    <a class="list-group-item list-group-item-action" href="./perfil.html">Segurança</a>
+                    <a class="list-group-item list-group-item-action" href="./perfil.html">Alterar dados</a>
+                </div>
+            </div>
+            <div class="col-8">
+                <div data-bs-spy="scroll" data-bs-target="#listaCadastro" data-bs-smooth-scroll="true"
+                    class="scrollspy-example" tabindex="0">
+                    <nav>
+                        <div>
+                            <h4 id="list-item-1">Alterar dados cadastrais</h4>
+                            <form>
+                                <div class="mb-3">
+                                    
+                                  <label for="nome" class="form-label">Nome</label>
+                                  <input type="text" class="form-control" id="nome" aria-describedby="nomeUsuario" placeholder="Nome do usuario"><br>
+                                  <label for="sobrenome" class="form-label">Sobrenome</label>
+                                  <input type="text" class="form-control" id="sobrenome" aria-describedby="sobrenomeUsuario" placeholder="Sobreome do usuario"><br>
+                                  <label for="email" class="form-label">E-mail</label>
+                                  <input type="email" class="form-control" id="email" aria-describedby="emailUsuario" placeholder="E-mail do usuario"><br>
+                                  <label for="telefone" class="form-label">Telefone</label>
+                                  <input type="text" class="form-control" id="telefone" aria-describedby="telefoneUsuario" placeholder="Telefone do usuario"><br>
+                                  <label for="estado" class="form-label">Estado</label><br>
+                                  <select id="UF" name="UF">
+                                    <option value="">Selecione</option>
+                                    <option value="AC">Acre</option>
+                                    <option value="AL">Alagoas</option>
+                                    <option value="AP">Amapá</option>
+                                    <option value="AM">Amazonas</option>
+                                    <option value="BA">Bahia</option>
+                                    <option value="CE">Ceará</option>
+                                    <option value="DF">Distrito Federal</option>
+                                    <option value="ES">Espirito Santo</option>
+                                    <option value="GO">Goiás</option>
+                                    <option value="MA">Maranhão</option>
+                                    <option value="MS">Mato Grosso do Sul</option>
+                                    <option value="MT">Mato Grosso</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="PA">Pará</option>
+                                    <option value="PB">Paraíba</option>
+                                    <option value="PR">Paraná</option>
+                                    <option value="PE">Pernambuco</option>
+                                    <option value="PI">Piauí</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="RN">Rio Grande do Norte</option>
+                                    <option value="RS">Rio Grande do Sul</option>
+                                    <option value="RO">Rondônia</option>
+                                    <option value="RR">Roraima</option>
+                                    <option value="SC">Santa Catarina</option>
+                                    <option value="SP">São Paulo</option>
+                                    <option value="SE">Sergipe</option>
+                                    <option value="TO">Tocantins</option>
+                                  </select><br>                                
+                                </div>
+                                <div class="mb-3 form-check">
+                                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                  <label class="form-check-label" for="autorizacaoContatoEmail">Autorizo receber contato através do meu e-mail</label>
+                                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                  <label class="form-check-label" for="autorizacaoContatoEmail">Autorizo receber contato através do meu telefone</label>
+                                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                  <label class="form-check-label" for="autorizacaoContatoEmail" required>Concordo com a política de doação e adoção de animais da Associação das Patinhas</label>
+                                </div>
+                                <div>
+                                    <label for="senha" class="form-label">Senha</label>
+                                  <input type="password" class="form-control" id="senha" aria-describedby="nomeUsuario" placeholder="Digite sua senha"><br>
+                                </div>
+
+                                <div class="Cadastre-se-button">
+                                <button type="submit" >Alterar dados</button>
+                                
+
+                              </form>
+                        </div>
+
+                       
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Rodapé -->
+        <div id="footer-placeholder"></div>
+        <script>
+            $(function () {
+                $("#footer-placeholder").load("footer.html");
+            });
+        </script>
+    </div>
+</body>
+
+</html>

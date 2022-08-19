@@ -885,3 +885,28 @@ footer {
 
 
 /* doacao-animal */
+
+/* Perfil */
+#alteraDados {
+    color: #01dddd;
+    text-decoration: none;
+}
+
+#listaCadastro{
+    color: #e0e300;
+    justify-content: flex-end;
+    font-size: 15px;
+    border: #e0e300 2px solid;
+    border-radius: 20px;
+}
+
+#listaCadastro a{
+    color: #ff598f;
+    background-color: #fff;
+    border: #fff;
+}
+
+#listaCadastro a:hover{
+    color: #000;
+    background-color: #e0e300;
+}
