@@ -67,7 +67,17 @@
 
           <section class="infos-arrecadacao">
             <!--  ADD O LINK DO PAGSEGURO-->
-            <i class="ion-card"> Pagseguro - link </i></a><br>
+            <!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
+            <div id="pagseguro">
+              <form action="https://pagseguro.uol.com.br/checkout/v2/donation.html" method="post">
+                <!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
+                <input type="hidden" name="currency" value="BRL" />
+                <input type="hidden" name="receiverEmail" value="assocdaspatinhas@gmail.com" />
+                <input type="hidden" name="iot" value="button" />
+                <input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/doacoes/209x48-doar-azul-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+                </form>
+              </div>
+            <!-- FINAL FORMULARIO BOTAO PAGSEGURO --><br>
             <i class="ion-social-whatsapp"> Whatsapp - (16) 99738-2076</i></a>
           </section>
         </article>

@@ -875,6 +875,9 @@ footer {
     margin: 10px;
     font-weight:lighter;
 }
+#pagseguro{
+    background-color:#01dddd
+}
 
 #arrecadacao-txt .infos-arrecadacao {
     font-size: 25px;
