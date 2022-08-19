@@ -101,8 +101,13 @@
                                 <div class="mb-3 form-check">
                                   <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                   <label class="form-check-label" for="autorizacaoContatoEmail">Autorizo receber contato através do meu e-mail</label>
+                                  </div>
+                                  <div class="mb-3 form-check"> 
                                   <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                   <label class="form-check-label" for="autorizacaoContatoEmail">Autorizo receber contato através do meu telefone</label>
+                                </div>
+                                <div class="mb-3 form-check">
+                                  
                                   <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                   <label class="form-check-label" for="autorizacaoContatoEmail" required>Concordo com a política de doação e adoção de animais da Associação das Patinhas</label>
                                 </div>
