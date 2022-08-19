@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Secular+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
+        </script>
+    <script src="https://kit.fontawesome.com/bf53eea11f.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+        integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
+        </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <title>Associação das patinhas | Adoção responsável 🐾</title>
+    <link rel="icon" type="image/x-icon" href="./assets/images/Home/logo-provisoria.jpg">
+</head>
+
+<body>
+    <div id="cont">
+
+        <!-- Barra de Navegação -->
+        <div id="nav-placeholder"></div>
+        <script>
+            $(function () {
+                $("#nav-placeholder").load("nav.html");
+            });
+        </script>
+
+
+        <!-- Conteúdo da Página -->
+
+        <div id="busca">
+            <div class="container-busca text-center row">
+                <div class="col-11">
+                    <input type="text" class="form-control" id="busca-input"
+                        placeholder="Busque por porte, idade ou sexo do animal">
+                </div>
+                <div class="col-1">
+                    <p for="busca-input" class="busca-icon"><i class="fa-solid fa-magnifying-glass fa-2x"></i></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Catálogo -->
+        <div id="catalog">
+        </div>
+
+        <script>
+
+            const app = document.getElementById('catalog');
+
+            const catalogo = document.createElement('div');
+            catalogo.setAttribute('class', 'catalogo');
+
+            app.appendChild(catalogo);
+
+            //Consumir API para pegar url de fotos 
+            const apiurl = 'https://dog.ceo/api/breeds/image/random/29';
+
+            async function getapi(url) {
+                const response = await fetch(url);
+
+                let data = await response.json();
+                //Desse json data, precisamos do valor de message (url da imagem)
+                return data.message;
+
+            };
+
+            //foreach na array de retorno de getapi 
+
+            getapi(apiurl).then(items => items.forEach(item => {
+
+                //Para cada item da lista, cria uma div classe card
+
+                const card = document.createElement('div');
+                card.setAttribute('class', 'card');
+
+                //Para cada item da lista, crie uma imagem
+                const img = document.createElement('img');
+                //Muda o atributo src para o item da lista
+                img.setAttribute('src', item);
+
+                const link = document.createElement('a');
+                //Cria um link para o card direcionar para o perfil
+                link.setAttribute = ('href', '/4th Sprint/animal-perfil.html');
+
+                //Adiciona da div catalog a div card e o elemento img 
+                catalogo.appendChild(card);
+                card.appendChild(img);
+                //Insere o link na imagem 
+                img.appendChild(link);
+
+            }));
+
+        </script>
+
+        <!-- Criar paginação -->
+        <div id="pag">
+            <nav>
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Rodapé -->
+        <div id="footer-placeholder"></div>
+        <script>
+            $(function () {
+                $("#footer-placeholder").load("footer.html");
+            });
+        </script>
+
+    </div>
+</body>
+
+</html>
