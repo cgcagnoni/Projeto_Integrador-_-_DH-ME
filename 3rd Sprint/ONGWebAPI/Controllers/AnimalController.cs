@@ -18,8 +18,7 @@ namespace ONGWebAPI.Controllers
 
         public AnimalController(IAnimalRepository animalRepository)
         {
-            this.animalRepository = animalRepository;
-            this.whatsappService = whatsappService;
+            this.animalRepository = animalRepository;           
         }
 
 

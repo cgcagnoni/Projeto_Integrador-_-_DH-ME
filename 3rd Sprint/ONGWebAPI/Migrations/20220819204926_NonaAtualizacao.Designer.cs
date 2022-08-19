@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ONGWebAPI.Repository.EntityRepository;
 
@@ -11,9 +12,10 @@ using ONGWebAPI.Repository.EntityRepository;
 namespace ONGWebAPI.Migrations
 {
     [DbContext(typeof(ONGContext))]
-    partial class ONGContextModelSnapshot : ModelSnapshot
+    [Migration("20220819204926_NonaAtualizacao")]
+    partial class NonaAtualizacao
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
