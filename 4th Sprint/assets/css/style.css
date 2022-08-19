@@ -654,7 +654,11 @@ footer {
 
 
 /* formularios*/
+.fundo-form{
+    background-color: #01dddd;
+}
 #form {
+    background-color: white;
     margin-top: 10px;
     margin-left: 15%;
     margin-right: 15px;
@@ -745,6 +749,7 @@ footer {
     padding: 0.4rem 1rem;
     border-radius: 5px;
     cursor: pointer
+    
 }
 
 .Cadastre-se-button button:hover {
@@ -889,6 +894,15 @@ footer {
 
 
 /* doacao-animal */
+#form_animal{
+    margin-left: 15%;
+    margin-right: 15%;
+    background-color: white;
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+}
 
 /* Perfil */
 #alteraDados {
