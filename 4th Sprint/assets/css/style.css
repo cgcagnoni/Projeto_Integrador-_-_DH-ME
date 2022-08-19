@@ -157,6 +157,13 @@
 
 }
 
+.homepage-catalog-carousel a{
+    text-decoration: none;
+}
+.homepage-catalog-carousel a:hover{
+    text-decoration: none;
+}
+
 .homepage-catalog-carousel {
     margin: 0 auto;
 
