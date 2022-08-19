@@ -596,8 +596,9 @@ footer {
 #form {
     background-color: white;
     margin-top: 10px;
-    margin-left: 15%;
+    margin-left: 10%;
     margin-right: 15px;
+    margin-bottom: 10px;
     width: 80%;
     height: 80vh;
     display: flex;
@@ -625,6 +626,7 @@ footer {
     justify-content: center;
     align-items: center;
     padding: 3rem;
+    
 
 }
 
@@ -830,60 +832,6 @@ footer {
 
 
 /* doacao-animal */
-#form_animal{
-    margin-left: 15%;
-    margin-bottom: 1%;
-    margin-top: 1%;
-    margin-right: 15%;
-    background-color: white;
-    width: 80%;
-    height: 80vh;
-    display: flex;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
-}
-#forms_animal{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    padding: 3rem;
-}
-.form-header_animal{
-    margin-left: 15%;
-    margin-right: 15%;
-    margin-bottom: 3rem;
-    display: flex;
-    justify-content: space-between;
-}
-
-#titulo_forms_animal{
-    margin-left: 15%;
-}
-#titulo_forms_animal h1::after {
-    margin-left: 15%;
-    content: '';
-    display: block;
-    width: 5rem;
-    height: 0.3rem;
-    background-color: #00bfaf;
-    margin: 0 auto;
-    position: absolute;
-    border-radius: 10px;
-}
-.input-group_animal {
-   
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 1rem 0;
-   
-    margin-bottom: 15px;
-}
-.input-box-animal{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1.1rem;
-}
 
 
 /* Perfil */
