@@ -11,7 +11,7 @@ namespace ONGWebAPI.Models
         public string Telefone { get; set; }
         public string Email { get; set; }
 
-        [ValidateNever] //tira a obrigatoriedade de colocar o nome do animal
+        [ValidateNever] 
         public virtual Animal Animal { get; set; }
 
         private int _AnimalId;

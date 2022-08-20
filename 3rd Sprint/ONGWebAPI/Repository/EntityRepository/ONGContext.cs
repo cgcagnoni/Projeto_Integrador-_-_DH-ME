@@ -36,33 +36,48 @@ namespace ONGWebAPI.Repository.EntityRepository
 
         protected override void OnModelCreating(ModelBuilder Modelagem)
         {
-            Modelagem.Entity<Animal>()
-            .Property(p => p.Especie)
-            .HasConversion(
-             p => p.ToString(),
-             p => (Especie)Enum.Parse(typeof(Especie), p));
-
             Modelagem.Entity<Animal>(Tabela =>
             {
+                Tabela.Property(p => p.Especie)
+                    .HasConversion(
+                        p => p.ToString(),
+                        p => (Especie)Enum.Parse(typeof(Especie), p)
+                    );
+                Tabela.Property(p => p.Sexo)
+                   .HasConversion(
+                       p => p.ToString(),
+                       p => (Sexo)Enum.Parse(typeof(Sexo), p)
+                   );
+                Tabela.Property(p => p.Porte)
+                   .HasConversion(
+                       p => p.ToString(),
+                       p => (Porte)Enum.Parse(typeof(Porte), p)
+                   );
+                Tabela.Property(p => p.Localizacao)
+                   .HasConversion(
+                       p => p.ToString(),
+                       p => (Localizacao)Enum.Parse(typeof(Localizacao), p)
+                   );
 
                 Tabela.HasKey(Propriedade => Propriedade.Id);
-                // Tabela.Navigation(Propriedade => Propriedade.Usuario).AutoInclude();
+                Tabela.HasOne(Propriedade => Propriedade.Usuario)
+                    .WithMany(Propriedade => Propriedade.Animais)
+                    .HasForeignKey(Propriedade => Propriedade.UsuarioId);
+                Tabela.Navigation(Propriedade => Propriedade.Usuario).AutoInclude();
             });
 
             Modelagem.Entity<Usuario>(Tabela =>
             {
-                Tabela.HasMany(Propriedade => Propriedade.Animais);
-            });
+                // Tabela.HasMany(Propriedade => Propriedade.Animais);
+                Tabela.Property(p => p.Username)
+                    .IsUnicode(true);
 
-            Modelagem.Entity<RegistroAdocao>(Tabela =>
-            {
-                Tabela.HasMany(Propriedade => Propriedade.Animais);
-            });
-
-            Modelagem.Entity<RegistroDoacao>(Tabela =>
-            {
-                Tabela.HasMany(Propriedade => Propriedade.Animais);
-            });
+                Tabela.Property(p => p.AutorizacaoNotificacao)
+                  .HasConversion(
+                      p => p.ToString(),
+                      p => (AutorizacaoNotificacao)Enum.Parse(typeof(AutorizacaoNotificacao), p)
+                  );
+            });            
 
             Modelagem.Entity<InteresseAdocao>(Tabela =>
             {
