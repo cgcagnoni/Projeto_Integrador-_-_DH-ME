@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ONGWebAPI.Entities;
@@ -6,6 +7,7 @@ using ONGWebAPI.Models;
 using ONGWebAPI.Repository;
 using ONGWebAPI.Repository.EntityRepository;
 using ONGWebAPI.Services;
+using System.Security.Claims;
 
 namespace ONGWebAPI.Controllers
 {
@@ -145,8 +147,10 @@ namespace ONGWebAPI.Controllers
         /// <response code="201">Animal cadastrado com sucesso</response>
         /// <response code="400">Erro desconhecido ocorrido ao tentar cadastrar um animal</response>
         [HttpPost]
+        [Authorize]
         public ActionResult<Animal> AdicionaNovoAnimal(Animal Animal)
         {
+            Animal.Usuario = new Usuario() { Id = int.Parse(User.FindFirst(ClaimTypes.Sid).Value) };
             animalRepository.AdicionaNovoAnimal(Animal);
             return CreatedAtAction("AdicionaNovoAnimal", new { id = Animal.Id }, Animal);
         }

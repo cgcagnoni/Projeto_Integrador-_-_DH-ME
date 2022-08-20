@@ -69,6 +69,11 @@ namespace ONGWebAPI.Repository.EntityRepository
             return DbONG.Usuarios.Any(Coluna => Coluna.Id == Id);
         }
 
+        public Usuario Login(string username, string hashPassword)
+        {
+            return DbONG.Usuarios.FirstOrDefault(x => x.Username == username && x.Password == hashPassword);
+        }
+
 
     }
 }

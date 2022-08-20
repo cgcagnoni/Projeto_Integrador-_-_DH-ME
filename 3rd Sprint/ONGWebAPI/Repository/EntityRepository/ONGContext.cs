@@ -58,13 +58,19 @@ namespace ONGWebAPI.Repository.EntityRepository
                        p => p.ToString(),
                        p => (Localizacao)Enum.Parse(typeof(Localizacao), p)
                    );
+
                 Tabela.HasKey(Propriedade => Propriedade.Id);
-                // Tabela.Navigation(Propriedade => Propriedade.Usuario).AutoInclude();
+                Tabela.HasOne(Propriedade => Propriedade.Usuario)
+                    .WithMany(Propriedade => Propriedade.Animais)
+                    .HasForeignKey(Propriedade => Propriedade.UsuarioId);
+                Tabela.Navigation(Propriedade => Propriedade.Usuario).AutoInclude();
             });
 
             Modelagem.Entity<Usuario>(Tabela =>
             {
-                Tabela.HasMany(Propriedade => Propriedade.Animais);
+                // Tabela.HasMany(Propriedade => Propriedade.Animais);
+                Tabela.Property(p => p.Username)
+                    .IsUnicode(true);
 
                 Tabela.Property(p => p.AutorizacaoNotificacao)
                   .HasConversion(

@@ -19,14 +19,15 @@ namespace ONGWebAPI.Repository.EntityRepository
             DbONG.ChangeTracker.Clear();
             var user = DbONG.Usuarios?.Find(Animal.Usuario.Id);
             Animal.Usuario = user;
-            DbONG.Animais?.Add(Animal);
+            DbONG.Entry(Animal).State = EntityState.Added;
             DbONG.SaveChanges();
         }
 
         public void ApagarAnimalPelaId(int Id)
         {
-            var user = DbONG.Animais?.Find(Id);
-            DbONG.Animais?.Remove(user);
+            DbONG.ChangeTracker.Clear();
+            var animal = DbONG.Animais?.Find(Id);
+            DbONG.Entry(animal).State = EntityState.Deleted;
             DbONG.SaveChanges();
         }
 
@@ -34,8 +35,7 @@ namespace ONGWebAPI.Repository.EntityRepository
         {
             DbONG.ChangeTracker.Clear();
             Animal.Id = Id;
-            //DbONG.Entry(Animal).State = EntityState.Modified;
-            DbONG.Update(Animal);
+            DbONG.Entry(Animal).State = EntityState.Modified;
             DbONG.SaveChanges();
         }
 
