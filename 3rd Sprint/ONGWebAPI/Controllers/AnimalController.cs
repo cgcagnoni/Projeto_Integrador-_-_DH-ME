@@ -34,6 +34,7 @@ namespace ONGWebAPI.Controllers
         /// <response code="200">Lista obtida com sucesso</response>
         /// <response code="400">Erro desconhecido ocorrido ao tentar obter a lista</response>
         [HttpGet]
+        [Authorize(Roles = "Administrador")]
         public ActionResult<List<Animal>> ListarTodos()
         {
             return animalRepository.ListarTodos();
@@ -96,7 +97,7 @@ namespace ONGWebAPI.Controllers
         /// <response code="404">Nenhum animal encontrado com este ID</response>
         /// <response code="200">Animal encontrado com sucesso</response>
         /// <response code="400">Erro desconhecido ocorrido ao tentar encontrar o animal</response>
-        [HttpGet("{Id}")]
+        [HttpGet("{Id}")]        
         public ActionResult<Animal> ExibirPelaID(int Id)
         {
             if (animalRepository.VerificarAnimal(Id))
@@ -173,14 +174,15 @@ namespace ONGWebAPI.Controllers
         /// <response code="404">Animal não encontrado</response>
         /// <response code="400">Erro desconhecido ocorrido ao tentar deletar animal da database</response>
         [HttpDelete("{Id}")]
-        public ActionResult ApagarAnimalPelaId(int Id)
+        [Authorize(Roles = "Administrador")]
+        public ActionResult ApagarAnimalPelaId(Animal animal, int id)
         {
-            if (animalRepository.VerificarAnimal(Id))
+            if (animalRepository.VerificarAnimal(id))
             {
-                animalRepository.ApagarAnimalPelaId(Id);
+                animalRepository.ApagarAnimalPelaId(id);
                 return Ok();
             }
-            return NotFound(); //nao esta mostrando a mensagem do response code
+            return NotFound(); 
         }
 
 
@@ -226,11 +228,19 @@ namespace ONGWebAPI.Controllers
         ///         }
         /// </remarks>
         /// <response code="200">Atualizações feitas na database com sucesso</response>
+        /// <response code="401">Animal não pertence ao usuário logado</response>
         /// <response code="404">Animal não encontrado</response>
         /// <response code="400">Erro desconhecido ocorrido ao tentar atualizar a database</response>
         [HttpPut("{Id}")]
+        [Authorize]
         public ActionResult AtualizarInformacoesPelaId(int Id, Animal Animal)
         {
+            var animalBanco = animalRepository.ExibirPelaID(Id);
+            if (animalBanco.UsuarioId != int.Parse(User.FindFirst(ClaimTypes.Sid).Value))
+            {
+                return Unauthorized("Animal não pertence ao usuário logado");
+            }
+
             if (animalRepository.VerificarAnimal(Id))
             {
                 animalRepository.AtualizarInformacoesPelaId(Id, Animal);
@@ -238,7 +248,7 @@ namespace ONGWebAPI.Controllers
             }
             else
             {
-                return NotFound("Usuario nao encontrado");
+                return NotFound("Animal nao encontrado");
             };
 
         }
@@ -263,8 +273,10 @@ namespace ONGWebAPI.Controllers
         /// <response code="404">Nenhum animal encontrado</response>
         /// <response code="400">Erro desconhecido ocorrido ao tentar obter a lista</response>
         [HttpGet("PorUsuario/{Id}")]
-        public ActionResult<List<Animal>> ListarAnimaisUsuario(int Id)
+        [Authorize]
+        public ActionResult<List<Animal>> ListarAnimaisUsuario(int Id,Animal animal)
         {
+            animal.Usuario = new Usuario() { Id = int.Parse(User.FindFirst(ClaimTypes.Sid).Value) };
             return animalRepository.ListarAnimaisUsuario(Id);
         }
 
@@ -278,11 +290,11 @@ namespace ONGWebAPI.Controllers
         /// <response code="200">Lista obtida com sucesso</response>
         /// <response code="404">Nenhum animal encontrado</response>
         /// <response code="400">Erro desconhecido ocorrido ao tentar obter a lista</response>
-        [HttpGet("ListarAnimaisAdocao")]
-        public ActionResult<List<Animal>> ListarAnimaisAdocao([FromQuery] bool adocao)
+        [HttpGet("ListarAnimaisDisponiveis")]
+        public ActionResult<List<Animal>> ListarAnimaisDisponiveis()
         {
             //return adocao;
-            return animalRepository.ListarAnimaisAdocao(adocao);
+            return animalRepository.ListarAnimaisDisponiveis();
         }
 
 
@@ -295,23 +307,24 @@ namespace ONGWebAPI.Controllers
         /// <response code="200">Lista obtida com sucesso</response>
         /// <response code="404">Nenhum animal encontrado</response>
         /// 
-        [HttpGet("ListarAnimaisDoacao")]
-        public ActionResult<List<Animal>> ListarAnimaisDoacao()
+        [HttpGet("ListarAnimaisAdotados")]
+        [Authorize(Roles = "Administrador")]
+        public ActionResult<List<Animal>> ListarAnimaisAdotados()
         {
-            return animalRepository.ListarAnimaisDoacao();
+            return animalRepository.ListarAnimaisAdotados();
         }
 
 
         //Método HTTP que chama função SendMail do objeto MailService 
-            //Precisa importar o System.Net.Mail para usar o MailService
+        //Precisa importar o System.Net.Mail para usar o MailService
         [HttpPost("{Id}")]
         public ActionResult EnviarEmail(int Id)
         {
             MailService mailService = new MailService();
             Animal animal = animalRepository.ExibirPelaID(Id);
             mailService.SendMail(animal.Usuario.Email, animal.Usuario.Nome);
-             
-           return Ok();
+
+            return Ok();
         }
 
 

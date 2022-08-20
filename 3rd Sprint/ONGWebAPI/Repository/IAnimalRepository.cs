@@ -16,8 +16,8 @@ namespace ONGWebAPI.Repository
         void AtualizarInformacoesPelaId(int Id, Animal Animal);
         bool VerificarAnimal(int Id);        
         List<Animal> ListarAnimaisUsuario(int Id);
-        List<Animal> ListarAnimaisAdocao(bool adocao);
-        List<Animal> ListarAnimaisDoacao();
+        List<Animal> ListarAnimaisDisponiveis();
+        List<Animal> ListarAnimaisAdotados();
 
     }
 }

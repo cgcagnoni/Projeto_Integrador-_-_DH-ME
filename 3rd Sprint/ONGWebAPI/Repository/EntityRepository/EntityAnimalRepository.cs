@@ -97,21 +97,13 @@ namespace ONGWebAPI.Repository.EntityRepository
 
         }
 
-        public List<Animal> ListarAnimaisAdocao(bool adocao)
+        public List<Animal> ListarAnimaisDisponiveis()
         {                           
-            if (adocao == true)
-            {
-                return DbONG.Animais.Where(t => t.Disponibilidade == true).ToList();
-            }
-            else
-            {               
-                return DbONG.Animais.Where(t => t.Disponibilidade == false).ToList();
-            }
-           
+            return DbONG.Animais.Where(t => t.Disponibilidade == true).ToList();          
         }
-        public List<Animal> ListarAnimaisDoacao()
+        public List<Animal> ListarAnimaisAdotados()
         {        
-            return DbONG.Animais.ToList();
+            return DbONG.Animais.Where(t => t.Disponibilidade == false).ToList();
         }
 
       

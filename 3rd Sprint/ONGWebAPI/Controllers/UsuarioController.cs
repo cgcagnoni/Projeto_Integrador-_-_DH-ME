@@ -111,6 +111,7 @@ namespace ONGWebAPI.Controllers
         /// <response code="404">Usuário não encontrado</response>
         /// <response code="400">Erro desconhecido ocorrido ao tentar deletar um usuário</response>
         [HttpDelete("{Id}")]
+        [Authorize(Roles = "Administrador")]
         public ActionResult ApagarUsuarioPelaId(int Id)
         {
             if (_usuarioRepository.VerificarUsuario(Id))
@@ -161,6 +162,7 @@ namespace ONGWebAPI.Controllers
             if (_usuarioRepository.VerificarUsuario(Id))
             {
                 _usuarioRepository.AtualizarInformacoesPelaId(Id, Usuario);
+
                 return Ok();
             }
             else
@@ -191,11 +193,17 @@ namespace ONGWebAPI.Controllers
         /// <response code="404">Nenhum usuário encontrado com este Id</response>
         /// <response code="400">Erro desconhecido ocorrido ao tentar encontrar o usuário</response>
         [HttpGet("{Id}")]
+        [Authorize]
         public ActionResult<Usuario> ExibirPelaID(int Id)
         {
-            if (_usuarioRepository.VerificarUsuario(Id))
+            if (!User.IsInRole(Roles.Administrador.ToString()))
             {
-                return Ok(_usuarioRepository.ExibirPelaID(Id));
+                Id = int.Parse(User.FindFirst(ClaimTypes.Sid).Value);
+            }
+            var usuario = _usuarioRepository.ExibirPelaID(Id);
+            if (usuario != null)
+            {
+                return Ok(usuario);
             }
             else
             {
