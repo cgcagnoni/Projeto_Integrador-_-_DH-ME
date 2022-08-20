@@ -832,7 +832,13 @@ footer {
 
 
 /* doacao-animal */
+.input-checkbox{
+    display: block;
+    position: relative;
+    padding-left: 10px;
+    margin-bottom: 12px;
 
+}
 
 /* Perfil */
 #alteraDados {
