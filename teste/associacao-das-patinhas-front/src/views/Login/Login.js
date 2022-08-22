@@ -2,8 +2,9 @@ import router from '@/router'
 
 export default {
     data() {
-        return {
-            users: {},
+        return {            
+            usuario: null,
+            senha: null
         };
     },
     methods: {
