@@ -15,11 +15,11 @@
     integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
     integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
-  </script>
+    </script>
   <script src="https://kit.fontawesome.com/bf53eea11f.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
     integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
-  </script>
+    </script>
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
   <title>Associação das patinhas | Adoção responsável 🐾</title>
@@ -27,7 +27,7 @@
 </head>
 
 <body>
-  <div id="container">
+  <div id="cont">
 
     <!-- Barra de Navegação -->
     <div id="nav-placeholder"></div>
@@ -40,10 +40,84 @@
 
     <!-- Conteúdo da Página -->
 
+    <div id="busca">
+      <div class="container-busca text-center row">
+        <div class="col-11">
+          <input type="text" class="form-control" id="busca-input"
+            placeholder="Busque por porte, idade ou sexo do animal">
+        </div>
+        <div class="col-1">
+          <p for="busca-input" class="busca-icon"><i class="fa-solid fa-magnifying-glass fa-2x"></i></p>
+        </div>
+      </div>
+    </div>
 
+    <!-- Catálogo -->
+    <div id="catalog">
 
+    </div>
 
+    <script>
 
+      //Criando uma variável para guardar a id da div que vamos inserir o catálogo
+      var catalog = document.getElementById('catalog');
+
+      //Função que recebe como argumento a classe da div que será criada e o código html da div
+      function criaCard(catalogItem, html) {
+        //extra html you want to store.
+        return '<div class="' + catalogItem + '">' + html + '</div>';
+      }
+
+      //Loop para que sejam criadas várias divs com os cards dos animais 
+      //Incluir dados (nome, porte etc) e link para a página do animal
+      for (var i = 0; i < 5; i++) {
+        catalog.innerHTML += criaCard('catalog-row', `
+          <div class="row">
+              <div class="catalog-card col">
+                <a href="/4th Sprint/animal-perfil.html">
+                <img src="./assets/images/busca/animal-4.jpg">
+                <h1 class="catalog-name"> Belinha </h1>
+                </a>
+              </div>
+              <div class="catalog-card col">
+                <a href="/4th Sprint/animal-perfil.html">
+                <img src="./assets/images/busca/animal-7.jpg">
+                <h1 class="catalog-name"> Rajado </h1>
+                </a>
+              </div>
+              <div class="catalog-card col">
+                <a href="/4th Sprint/animal-perfil.html">
+                <img src="./assets/images/busca/animal-6.jpg">
+                <h1 class="catalog-name"> Dorothéia </h1>
+                </a>
+              </div>
+          </div>
+        
+        `);
+      }
+
+    </script>
+
+    <!-- Criar paginação -->
+    <div id="pag">
+      <nav>
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
 
     <!-- Rodapé -->
     <div id="footer-placeholder"></div>

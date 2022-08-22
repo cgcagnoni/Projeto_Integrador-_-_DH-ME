@@ -15,8 +15,8 @@ namespace ONGWebAPI.Controllers
     [ApiController]
     public class AnimalController : ControllerBase
     {
-        IAnimalRepository animalRepository;
-        
+        private IAnimalRepository animalRepository;
+        private IWhatsapp whatsappService;
 
         public AnimalController(IAnimalRepository animalRepository)
         {
