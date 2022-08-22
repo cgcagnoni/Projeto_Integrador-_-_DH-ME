@@ -1,9 +1,14 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ONGWebAPI.Entities;
 using ONGWebAPI.Models;
 using ONGWebAPI.Repository;
 using ONGWebAPI.Repository.EntityRepository;
 using ONGWebAPI.Services;
+using System.Security.Claims;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace ONGWebAPI.Controllers
 {
@@ -47,13 +52,41 @@ namespace ONGWebAPI.Controllers
             {
                 return NotFound(new { message = "Usuário ou senha inválidos" });
             }
-            var token = TokenService.GenerateToken(usuario);
+            usuario.Role = Entities.Roles.Usuario;
+            usuario.Password = this.hashPassword(usuario.Password);
             this._usuarioRepository.AdicionaNovoUsuario(usuario);
             return CreatedAtAction("AdicionaNovoUsuario", new {
                 user = usuario.Username,
-                token = token,
                 id = usuario.Id }, usuario);
+        }
 
+        [HttpGet("Login")]
+        public ActionResult<String> Login(string username, string senha)
+        {
+            if (username == null || senha == null)
+            {
+                return Unauthorized("usuario ou senha incorretos");
+            }
+
+            var user = this._usuarioRepository.Login(username, hashPassword(senha));
+
+            if (user == null)
+            {
+                return Unauthorized("usuario ou senha incorretos");
+            }
+            else
+            {
+                return Ok(TokenService.GenerateToken(user));
+            }
+        }
+
+        private string hashPassword(string password)
+        {
+            using (SHA256 mySHA256 = SHA256.Create())
+            {
+                return Convert.ToBase64String(mySHA256.ComputeHash(Encoding.UTF8.GetBytes(password)));
+            }
+                
         }
 
 
@@ -78,6 +111,7 @@ namespace ONGWebAPI.Controllers
         /// <response code="404">Usuário não encontrado</response>
         /// <response code="400">Erro desconhecido ocorrido ao tentar deletar um usuário</response>
         [HttpDelete("{Id}")]
+        [Authorize(Roles = "Administrador")]
         public ActionResult ApagarUsuarioPelaId(int Id)
         {
             if (_usuarioRepository.VerificarUsuario(Id))
@@ -118,11 +152,17 @@ namespace ONGWebAPI.Controllers
         /// <response code="404">Usuário não encontrado</response>
         /// <response code="400">Erro desconhecido ocorrido ao tentar atualizar a database</response>
         [HttpPut("{Id}")]
+        [Authorize]
         public ActionResult AtualizarInformacoesPelaId(int Id, Usuario Usuario)
         {
+            if (!User.IsInRole(Roles.Administrador.ToString()))
+            {
+                Id = int.Parse(User.FindFirst(ClaimTypes.Sid).Value);
+            }
             if (_usuarioRepository.VerificarUsuario(Id))
             {
                 _usuarioRepository.AtualizarInformacoesPelaId(Id, Usuario);
+
                 return Ok();
             }
             else
@@ -153,11 +193,17 @@ namespace ONGWebAPI.Controllers
         /// <response code="404">Nenhum usuário encontrado com este Id</response>
         /// <response code="400">Erro desconhecido ocorrido ao tentar encontrar o usuário</response>
         [HttpGet("{Id}")]
+        [Authorize]
         public ActionResult<Usuario> ExibirPelaID(int Id)
         {
-            if (_usuarioRepository.VerificarUsuario(Id))
+            if (!User.IsInRole(Roles.Administrador.ToString()))
             {
-                return Ok(_usuarioRepository.ExibirPelaID(Id));
+                Id = int.Parse(User.FindFirst(ClaimTypes.Sid).Value);
+            }
+            var usuario = _usuarioRepository.ExibirPelaID(Id);
+            if (usuario != null)
+            {
+                return Ok(usuario);
             }
             else
             {
@@ -174,96 +220,10 @@ namespace ONGWebAPI.Controllers
         /// <response code="200">Lista obtida com sucesso</response>
         /// <response code="400">Erro desconhecido ocorrido ao tentar obter a lista</response>
         [HttpGet]
+        [Authorize(Roles = "Administrador")]
         public ActionResult<List<Usuario>> ListarTodos()
         {
             return _usuarioRepository.ListarTodos();
         }
-
-
-
-
-
-
-
-        //private ONGContext DbONG = new ONGContext();
-
-        ////Listar todos os usuários
-        //[HttpGet]
-        //public ActionResult<List<Usuario>> ListarTodos()
-        //{
-        //    var User = DbONG.Usuarios?.ToList();
-
-        //    if (User == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    else
-        //    {
-        //        return Ok(User);
-        //    }
-        //}
-
-        ////Exibe usuário pela ID
-        //[HttpGet("{Id}")]
-        //public ActionResult<Usuario> ExibirPelaID(int Id)
-        //{
-        //    var User = DbONG.Usuarios?.Find(Id);
-
-        //    if (Id == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    else
-        //    {
-        //        return Ok(User);
-        //    }
-        //}
-
-        ////adicionar novo usuario
-        //[HttpPost]
-        //public ActionResult<Usuario> AdicionaNovoUsuario(Usuario Usuario)
-        //{
-
-        //    DbONG.Usuarios?.Add(Usuario);
-        //    DbONG.SaveChanges();
-
-        //    return CreatedAtAction("AdicionaNovoUsuario", new { id = Usuario.Id }, Usuario);
-        //}
-
-        ////apaga pela id
-        //[HttpDelete("{Id}")]
-        //public ActionResult ApagarUsuarioPelaId(int Id)
-        //{
-        //    var User = DbONG.Usuarios?.Find(Id);
-
-        //    if (User == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    else
-        //    {
-        //        DbONG.Usuarios?.Remove(User);
-        //        DbONG.SaveChanges();
-
-        //        return NoContent();
-        //    }
-        //}
-
-        ////atualizar usuário pela id
-        //[HttpPut("{Id}")]
-        //public ActionResult AtualizarInformacoesPelaId(int Id, Usuario Usuario)
-        //{
-
-        //    if (Id != Usuario.Id)
-        //    {
-        //        return BadRequest();
-        //    }
-        //    else
-        //    {
-        //        DbONG.Entry(Usuario).State = EntityState.Modified;
-        //        DbONG.SaveChanges();
-        //        return Ok();
-        //    }
-        //}
     }
 }

@@ -13,45 +13,29 @@ namespace ONGWebAPI.Repository.EntityRepository
             this.DbONG = DbONG;
         }
 
-    
-
-
         public void AdicionaNovoUsuario(Usuario usuario)
         {
-           
-            DbONG.Usuarios?.Add(usuario);
+            DbONG.ChangeTracker.Clear();
+            DbONG.Entry(usuario).State = EntityState.Added;
             DbONG.SaveChanges();
         }
 
         public void ApagarUsuarioPelaId(int Id)
         {            
-            var usuario = DbONG.Usuarios.OrderBy(e => e.Id).Include(e => e.Animais).First();
-
-            DbONG.Remove(usuario);
-
+            DbONG.ChangeTracker.Clear();
+            var usuario = DbONG.Usuarios.Find(Id);
+            DbONG.Entry(usuario).State = EntityState.Deleted;
             DbONG.SaveChanges();
-            
-            //var user = DbONG.Usuarios?.Find(Id);
-            //DbONG.Usuarios?.Remove(user);
-            //DbONG.SaveChanges();
         }
 
         public void AtualizarInformacoesPelaId(int Id, Usuario Usuario)
         {
-            // Procura se já existe um usuario com o id no cache local
-            var local = DbONG.Set<Usuario>()
-                .Local
-                .FirstOrDefault(entry => entry.Id == Id);
-
-            if (local != null)
-            {
-                // caso exista, remove do cache local para o entity coneguir atualizar
-                DbONG.Entry(local).State = EntityState.Detached;
-            }
-
+            DbONG.ChangeTracker.Clear();
             Usuario.Id = Id;
-            DbONG.Update(Usuario);
-            // DbONG.Entry(Usuario).State = EntityState.Modified;
+            DbONG.Entry(Usuario).State = EntityState.Modified;
+            DbONG.Entry(Usuario).Property(e => e.Username).IsModified = false;
+            DbONG.Entry(Usuario).Property(e => e.Password).IsModified = false;
+            DbONG.Entry(Usuario).Property(e => e.Role).IsModified = false;
             DbONG.SaveChanges();
         }
 
@@ -67,6 +51,11 @@ namespace ONGWebAPI.Repository.EntityRepository
         public bool VerificarUsuario(int Id)
         {
             return DbONG.Usuarios.Any(Coluna => Coluna.Id == Id);
+        }
+
+        public Usuario Login(string username, string hashPassword)
+        {
+            return DbONG.Usuarios.FirstOrDefault(x => x.Username == username && x.Password == hashPassword);
         }
 
 

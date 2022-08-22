@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ONGWebAPI.Repository.EntityRepository;
 
@@ -11,9 +12,10 @@ using ONGWebAPI.Repository.EntityRepository;
 namespace ONGWebAPI.Migrations
 {
     [DbContext(typeof(ONGContext))]
-    partial class ONGContextModelSnapshot : ModelSnapshot
+    [Migration("20220819204926_NonaAtualizacao")]
+    partial class NonaAtualizacao
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -69,7 +71,7 @@ namespace ONGWebAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UsuarioId")
+                    b.Property<int?>("UsuarioId")
                         .HasColumnType("int");
 
                     b.Property<string>("Vacinas")
@@ -128,7 +130,6 @@ namespace ONGWebAPI.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Localizacao")
@@ -154,7 +155,6 @@ namespace ONGWebAPI.Migrations
 
                     b.Property<string>("Username")
                         .IsRequired()
-                        .IsUnicode(true)
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -166,9 +166,7 @@ namespace ONGWebAPI.Migrations
                 {
                     b.HasOne("ONGWebAPI.Models.Usuario", "Usuario")
                         .WithMany("Animais")
-                        .HasForeignKey("UsuarioId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UsuarioId");
 
                     b.Navigation("Usuario");
                 });

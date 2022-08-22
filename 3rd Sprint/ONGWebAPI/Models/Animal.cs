@@ -1,7 +1,9 @@
-﻿using ONGWebAPI.Entities;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using ONGWebAPI.Entities;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
+using System.Text.Json.Serialization;
 using System.Threading;
 
 
@@ -22,7 +24,25 @@ namespace ONGWebAPI.Models
         public bool? Castrado { get; set; }
         public bool? Deficiencia { get; set; }
         public bool Disponibilidade { get; set; }
-        public DateTime DataCadastro { get; set; } 
-        public Usuario? Usuario { get; set; }
+        public DateTime DataCadastro { get; set; }
+        [ValidateNever]
+        public virtual Usuario Usuario { get; set; }
+        private int _UsuarioId;
+        [JsonIgnore]
+        public int UsuarioId
+        {
+            get => this.Usuario?.Id ?? _UsuarioId;
+
+            set
+            {
+                if(this.Usuario == null)
+                {
+                    _UsuarioId = value;
+                }
+            }
+        }
+        
+
+        
     }
 }

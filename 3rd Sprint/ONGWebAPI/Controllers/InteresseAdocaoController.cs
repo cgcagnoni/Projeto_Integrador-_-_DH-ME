@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using ONGWebAPI.Models;
 using ONGWebAPI.Repository;
 using ONGWebAPI.Services;
+using System.Security.Permissions;
 
 namespace ONGWebAPI.Controllers
 {
@@ -11,13 +13,16 @@ namespace ONGWebAPI.Controllers
     {
         private IInteresseAdocao interesseRepository;
         private IWhatsapp whatsappService;
-        public InteresseAdocaoController(IInteresseAdocao interesseRepository, IWhatsapp whatsappService)
+        private IAnimalRepository animalRepository;
+        public InteresseAdocaoController(IInteresseAdocao interesseRepository,IAnimalRepository animalRepository, IWhatsapp whatsappService)
         {
             this.interesseRepository = interesseRepository;
             this.whatsappService = whatsappService;
+            this.animalRepository = animalRepository;
         }
 
         [HttpGet]
+        [Authorize]
         public ActionResult<List<InteresseAdocao>> ListarTodos()
         {
             return interesseRepository.ListarInteressados();
@@ -30,13 +35,24 @@ namespace ONGWebAPI.Controllers
             return CreatedAtAction("PostInteresseAdocao", new { id = interesseAdocao.Id }, interesseAdocao);            
         }
 
-        [HttpPost("InteresseAdo")]
-        public ActionResult InteresseAdotar(InteresseAdocao interesseAdocao)
+        [HttpPost("InteresseAdocao")]
+        public ActionResult InteresseAdocao(InteresseAdocao interesseAdocao)
         {
+
             interesseAdocao.Data = DateTime.Now;
-            whatsappService.EnviarMenssagem(interesseAdocao);
+            var animal = this.animalRepository.ExibirPelaID(interesseAdocao.AnimalId);
+            if (animal?.Usuario?.AutorizacaoNotificacao == Entities.AutorizacaoNotificacao.WhatsApp || animal?.Usuario?.AutorizacaoNotificacao == Entities.AutorizacaoNotificacao.EmailEWhatsApp)
+            {
+                whatsappService.EnviarMenssagem(interesseAdocao);
+            }
+            if (animal?.Usuario?.AutorizacaoNotificacao == Entities.AutorizacaoNotificacao.Email || animal?.Usuario?.AutorizacaoNotificacao == Entities.AutorizacaoNotificacao.EmailEWhatsApp)
+            {
+                // envia por email
+            }
             return Ok();
         }
+
+  
 
 
     }

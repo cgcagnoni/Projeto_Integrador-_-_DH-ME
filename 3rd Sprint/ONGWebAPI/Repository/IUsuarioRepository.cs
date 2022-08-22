@@ -9,7 +9,8 @@ namespace ONGWebAPI.Repository
         void ApagarUsuarioPelaId(int Id);
         void AtualizarInformacoesPelaId(int Id, Usuario Usuario);
         bool VerificarUsuario(int Id);
-        void AdicionaNovoUsuario(Usuario Usuario); 
+        void AdicionaNovoUsuario(Usuario Usuario);
+        Usuario Login(string username, string hashPassword);
 
     }
 }
