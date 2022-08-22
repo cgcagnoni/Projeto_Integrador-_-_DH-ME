@@ -1,0 +1,81 @@
+/* Perfil */
+#alteraDados {
+    color: #01dddd;
+    text-decoration: none;
+}
+
+#listaCadastro{
+    color: #e0e300;
+    justify-content: flex-end;
+    font-size: 15px;
+    border: #e0e300 2px solid;
+    border-radius: 20px;
+}
+
+#listaCadastro a{
+    color: #ff598f;
+    background-color: #fff;
+    border: #fff;
+}
+
+#listaCadastro a:hover{
+    color: #000;
+    background-color: #e0e300;
+}
+
+#busca{
+    background-color: #fff; 
+}
+
+.form-control{
+    margin: 2% 0 5% 3%;
+    text-align: center;
+}
+
+.busca-icon{
+    color:#ff598f;
+    margin-top: 35px;
+}
+
+.catalog-row{
+    display: flex;
+    justify-content: center;
+}
+
+.catalog-row a{
+    text-decoration: none;
+}
+.catalog-row a:hover{
+    text-decoration: none;
+}
+
+.catalog-card.col h1{
+    text-align: center;
+    font-size: 25px;
+    border: 2px #e0e300 solid;
+    border-radius: 20px;
+    margin: 0 20px 0 20px;
+    color:#ff598f;
+}
+
+.catalog-card.col h1:hover{
+    text-decoration: none;
+    background-color: #ff598f;
+    color:#e0e300;
+
+}
+
+.catalog-card img{
+    height: 200px;
+    width: auto;
+    margin: 20px;
+    border-radius: 4%;
+} 
+
+.catalog-card img:hover{
+    opacity: 80%;
+}
+
+#profilecontent {
+    padding: 15px;
+}
