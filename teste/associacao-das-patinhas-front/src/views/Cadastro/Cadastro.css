@@ -1,0 +1,127 @@
+/* formularios*/
+.fundo-form{
+    background-color: #01dddd;
+}
+#form {
+    background-color: white;
+    margin-top: 10px;
+    margin-left: 15%;
+    margin-right: 15px;
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .212);
+
+}
+
+#img_form {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+
+}
+
+#img_form img {
+    width: 31rem;
+}
+
+#forms {
+    width: 50%;
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+
+}
+
+.form-header {
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+#titulo_forms h1::after {
+    content: "";
+    display: block;
+    width: 5rem;
+    height: 0.3rem;
+    background-color: #01dddd;
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.1rem;
+}
+
+.input-box input {
+    margin: 0.6rem 0;
+    padding: 0.9rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px black;
+    font-size: 0.8rem;
+}
+
+.input-box input:hover {
+    background-color: #ff598f;
+}
+
+.input-box input:focus-visible {
+    outline: 1px solid #00bfaf;
+}
+
+.Cadastre-se-button {
+    display: flex;
+    align-items: center;
+}
+
+.Cadastre-se-button button {
+    background-color: #01dddd;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    cursor: pointer
+    
+}
+
+.Cadastre-se-button button:hover {
+    background-color: #ff598f;
+}
+
+.Cadastre-se-button button a {
+    text-decoration: none;
+}
+
+.form-select {
+    width: 240px;
+    height: 34px;
+    overflow: hidden;
+    background: no-repeat right #ff598f;
+    border: 1px solid #01dddd;
+}
+
+.form-select select {
+    background: transparent;
+    /* importante para exibir o novo ícone */
+    width: 268px;
+    padding: 5px;
+    font-size: 16px;
+    line-height: 1;
+    border: 0;
+    border-radius: 0;
+    height: 34px;
+    -webkit-appearance: none;
+}

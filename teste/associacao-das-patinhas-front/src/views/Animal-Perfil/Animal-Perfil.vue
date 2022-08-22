@@ -56,3 +56,7 @@
         </div>
     </aside>
 </template>
+
+<script src="./Animal-Perfil.js"></script>
+<style src="./Animal-Perfil.css">
+</style>
