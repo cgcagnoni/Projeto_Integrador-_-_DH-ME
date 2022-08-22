@@ -1,0 +1,65 @@
+/* Footer */
+#baseboard {
+    border-top: #e0e300 2px solid;
+    position: static;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    background-color: #ff598f;
+    color: #fff;
+    height: 150px;
+    width: 100vw;
+    text-align: center;
+    text-decoration: none;
+    list-style: none;
+}
+
+#baseboard .baseboard-contato {
+    color: #fff;
+}
+
+#baseboard .baseboard-contato a {
+    color: #fff;
+    font-size: 30px;
+    padding: 7px;
+}
+
+#baseboard .baseboard-contato a:hover {
+    color: #e0e300;
+}
+
+#baseboard .baseboard-list ul {
+    padding: 0 0 0 0;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+.baseboard-list-item {
+    list-style: none;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+}
+
+.baseboard-list-item a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.baseboard-list-item a:hover {
+    color: #e0e300;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #ff598f;
+    position: static;
+    text-align: center;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
