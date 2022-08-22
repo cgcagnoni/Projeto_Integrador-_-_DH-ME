@@ -3,7 +3,7 @@
         <div id="animal-perfil" class="row animal-perfil-princ">
             <!-- INFOS PROVISORIAS, TROCAR PELA API DEPOIS -->
             <div class="col-5 animal-perfil-img">
-                <img src="./assets/images/PaginaAnimal/animal-5.jpg" alt="imagem-animal-pretendido">
+                <img src="@/assets/images/PaginaAnimal/animal-5.jpg" alt="imagem-animal-pretendido">
 
                 <div class="col-5 tags-filtro">
                     <!--linkar aqui com a api as tags que estao registradas no animal -->
@@ -36,27 +36,27 @@
             <h2>Outros peludinhos que também precisam de um lar</h2>
 
             <div class="outros-animais">
-                <a href="busca.html" target="_blank">
-                    <img src="./assets/images/PaginaAnimal/animal-1.jpg" alt="">
+                <RouterLink to="/busca" target="_blank">
+                    <img src="@/assets/images/PaginaAnimal/animal-1.jpg" alt="">
                     <p>Lulu</p>
-                </a>
-                <a href="busca.html" target="_blank">
-                    <img src="./assets/images/PaginaAnimal/animal-6.jpg" alt="">
+                </RouterLink>
+                <RouterLink to="/busca" target="_blank">
+                    <img src="@/assets/images/PaginaAnimal/animal-6.jpg" alt="">
                     <p>Rajado</p>
-                </a>
-                <a href="busca.html" target="_blank">
-                    <img src="./assets/images/PaginaAnimal/animal-7.jpg" alt="">
+                </RouterLink>
+                <RouterLink to="/busca" target="_blank">
+                    <img src="@/assets/images/PaginaAnimal/animal-7.jpg" alt="">
                     <p>Gigante</p>
-                </a>
-                <a href="busca.html" target="_blank">
-                    <img src="./assets/images/PaginaAnimal/animal-8.jpg" alt="">
+                </RouterLink>
+                <RouterLink to="/busca" target="_blank">
+                    <img src="@/assets/images/PaginaAnimal/animal-8.jpg" alt="">
                     <p>Soneca</p>
-                </a>
+                </RouterLink>                  
             </div>
         </div>
     </aside>
 </template>
 
-<script src="./Animal-Perfil.js"></script>
-<style src="./Animal-Perfil.css">
+<script src="./AnimalPerfil.js"></script>
+<style src="./AnimalPerfil.css">
 </style>

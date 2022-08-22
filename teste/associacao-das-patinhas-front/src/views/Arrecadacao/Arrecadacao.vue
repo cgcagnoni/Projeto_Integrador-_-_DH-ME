@@ -4,7 +4,7 @@
   <div id="arrecadacao">
     <!-- Imagem -->
     <div class="arrecadacao-img">
-      <img src="./assets/images/QueroAjudar/ajudar.jpg" alt="arrecadacao-ong">
+      <img src="@/assets/images/QueroAjudar/ajudar.jpg" alt="arrecadacao-ong">
     </div>
 
 

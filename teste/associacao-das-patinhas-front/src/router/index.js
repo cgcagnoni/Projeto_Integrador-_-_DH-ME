@@ -1,6 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import IndexView from '../views/Index/Index.vue'
+import AnimalPerfilView from '../views/AnimalPerfil/AnimalPerfil.vue'
+import ArrecadacaoView from '../views/Arrecadacao/Arrecadacao.vue'
+import BuscaView from '../views/Busca/Busca.vue'
+import CadastroView from '../views/Cadastro/Cadastro.vue'
+import ContatoView from '../views/Contato/Contato.vue'
+import DoacaoAnimalView from '../views/DoacaoAnimal/DoacaoAnimal.vue'
 import LoginView from '../views/Login/Login.vue'
+import PerfilView from '../views/Perfil/Perfil.vue'
+import SobreView from '../views/Sobre/Sobre.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -11,40 +19,53 @@ const router = createRouter({
       component: IndexView
     },
     {
-      path: '/busca',
-      name: 'busca',
-      component: LoginView
-    },
-    {
-      path: '/doacao-animal',
-      name: 'doacao-animal',
-      component: LoginView
+      path: '/animalperfil',
+      name: 'animalperfil',
+      component: AnimalPerfilView
     },
     {
       path: '/arrecadacao',
       name: 'arrecadacao',
-      component: LoginView
+      component: ArrecadacaoView
+    },
+    {
+      path: '/busca',
+      name: 'busca',
+      component: BuscaView
     },
     {
       path: '/cadastro',
       name: 'cadastro',
-      component: LoginView
+      component: CadastroView
     },
     {
-      path: '/perfil',
-      name: 'perfil',
-      component: LoginView
+      path: '/contato',
+      name: 'contato',
+      component: ContatoView
     },
     {
-      path: '/sobre',
-      name: 'sobre',
-      component: () => import('../views/Login/Login.vue')
-    },
+      path: '/doacao-animal',
+      name: 'doacao-animal',
+      component: DoacaoAnimalView
+
+    },    
     {
       path: '/Login',
       name: 'login',
       component: LoginView
     },
+    {
+      path: '/perfil',
+      name: 'perfil',
+      component: PerfilView
+    },
+    {
+      path: '/sobre',
+      name: 'sobre',
+      component: SobreView
+      //component: () => import('../views/Login/Login.vue')
+    },
+    
     {
       path: '/about',
       name: 'about',

@@ -1,4 +1,4 @@
-<script>
+{/* <script>
     //Criando uma variável para guardar a id da div que vamos inserir o catálogo
     var catalog = document.getElementById("catalog");
 
@@ -38,4 +38,13 @@
         `
       );
     }
-  </script>
+  </script> */}
+
+export default {
+  data() {
+      return {
+      };
+  },
+  methods: {
+  },
+}

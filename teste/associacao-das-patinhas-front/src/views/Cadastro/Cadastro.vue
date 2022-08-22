@@ -2,7 +2,7 @@
   <!-- Conteúdo da Página -->
   <div id="form">
     <div id="img_form">
-      <img src="./assets/images/Cadastro/VACCINAR.png" />
+      <img src="@/assets/images/Cadastro/VACCINAR.png" />
     </div>
 
     <div id="forms">
