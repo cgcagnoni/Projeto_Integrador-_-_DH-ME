@@ -38,7 +38,7 @@
 
           <div>
             <h4 id="list-item-2">Minhas adoções</h4>
-            <p>Você ainda não adotou nenhum animalzinho!</p>
+            <p>{{nome}}Você ainda não adotou nenhum animalzinho!</p>
             <br />
             <hr class="solid" />
           </div>

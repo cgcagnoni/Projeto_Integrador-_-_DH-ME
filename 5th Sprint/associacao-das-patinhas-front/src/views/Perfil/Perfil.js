@@ -36,7 +36,7 @@ export default {
             // });
         },
         listarAnimaisDisponiveis() {
-            fetch(`https://localhost:7288/api/Animal/ListarAnimaisDisponiveis`, this.getOptions()).then(resp => {
+            fetch(`https://localhost:7288/api/Animal/ListarAnimaisDisponiveisUsuario`, this.getOptions()).then(resp => {
                 resp.json().then(animaisDisponiveis => {
                     this.animaisDisponiveis = animaisDisponiveis;
                 })
