@@ -67,10 +67,9 @@
 #homepage-catalog {
     border-top: solid #e0e300;
     border-bottom: 0;
-    display: flex;
 }
 
-#homepage-catalog h3 {
+.boxes h3 {
     text-align: center;
     margin: 5%;
     color: #fff;
@@ -80,16 +79,17 @@
     color: #fffdd9;
 }
 
-#homepage-catalog .boxes {
+.boxes {
     height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    padding: 20px;
 
 }
 
-#homepage-catalog .box {
+.box {
     font-size: 25px;
     color: #fff;
     border: #e0e300 solid;
@@ -98,7 +98,22 @@
     padding: 30px 20px;
     border-radius: 25px;
     text-align: center;
+    margin: 10px auto;
+    padding: 0;
+    position: relative;
+    width: 33.33333%;
+    box-sizing: border-box;
 
+}
+
+.homepage-catalog-carousel h3{
+    text-align: center;
+    margin: 5%;
+    color: #fff;
+    font-size: 45px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #ff598f;
+    color: #fffdd9;
 }
 
 .homepage-catalog-carousel a{
@@ -110,6 +125,7 @@
 
 .homepage-catalog-carousel {
     margin: 0 auto;
+    border-top:#e0e300 2px solid;
 
 }
 
@@ -121,17 +137,6 @@
 
 .carousel-indicators {
     color: #fff;
-}
-
-.box {
-    margin: 0 auto;
-    margin: 10px auto;
-    padding: 0;
-    position: relative;
-    width: 33.33333%;
-    text-align: center;
-    box-sizing: border-box;
-    box-sizing: border-box;
 }
 
 .carousel-caption p {

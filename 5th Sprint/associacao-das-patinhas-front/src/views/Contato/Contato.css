@@ -1,14 +1,14 @@
 /* Entre em contato */
 #contato {
     display: flex;
-    background-color: #01dddd;
     font-weight: bold;
+    margin: 20px;
 }
 
 .contato-img img {
     width: 450px;
     height: 300px;
-    margin: 40px;
+    margin: 0 auto;
     border-radius: 50%;
 }
 

@@ -1,17 +1,15 @@
 /* formularios*/
 .fundo-form{
-    background-color: #01dddd;
+    background-color: #fff;
 }
 #form {
-    background-color: white;
     margin-top: 10px;
-    margin-left: 15%;
+    margin-left: 10%;
     margin-right: 15px;
+    margin-bottom: 10px;
     width: 80%;
-    height: 80vh;
-    display: flex;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, .212);
-
+    height: auto;
+    display: flex; 
 }
 
 #img_form {
@@ -29,11 +27,9 @@
 
 #forms {
     width: 50%;
-    display: block;
-    flex-direction: column;
+    display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 3rem;
+    padding: 2rem;
 
 }
 
@@ -89,16 +85,14 @@
     align-items: center;
 }
 
-.Cadastre-se-button button {
-    background-color: #01dddd;
-    padding: 0.4rem 1rem;
-    border-radius: 5px;
-    cursor: pointer
-    
+.Cadastre-se-button .botao{
+    color:#fff;
+    border: 2px solid #e0e300;    
 }
 
-.Cadastre-se-button button:hover {
-    background-color: #ff598f;
+.Cadastre-se-button .botao:hover{
+    background-color:#ff598f;
+    color: #fff;
 }
 
 .Cadastre-se-button button a {

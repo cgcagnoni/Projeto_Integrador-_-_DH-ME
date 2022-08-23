@@ -3,7 +3,7 @@
 
   <div id="busca">
     <div class="container-busca text-center row">
-      <div class="col-11">
+      <div class="col-11 input-busca">
         <input
           type="text"
           class="form-control"
@@ -21,7 +21,6 @@
 
   <!-- Catálogo -->
   <div id="catalog"></div>
-
 
   <!-- Criar paginação -->
   <div id="pag">
