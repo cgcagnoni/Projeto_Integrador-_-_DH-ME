@@ -20,7 +20,7 @@ namespace ONGWebAPI.Controllers
 
         public AnimalController(IAnimalRepository animalRepository)
         {
-            this.animalRepository = animalRepository;           
+            this.animalRepository = animalRepository;
         }
 
 
@@ -28,14 +28,14 @@ namespace ONGWebAPI.Controllers
         /// Listar todos os animais
         /// </summary>
         /// <returns>
-        /// Lista de todos os animais cadastrados
+        /// Lista de todos os animais cadastrados (disponiveis para adoção e adotados)
         /// </returns>
         /// <response code="404">Não há nenhum animal cadastrado</response>
         /// <response code="200">Lista obtida com sucesso</response>
         /// <response code="400">Erro desconhecido ocorrido ao tentar obter a lista</response>
         [HttpGet]
         [Authorize(Roles = "Administrador")]
-        public ActionResult<List<Animal>> ListarTodos()
+        public ActionResult<List<Animal>> ListarTodos() 
         {
             return animalRepository.ListarTodos();
         }
@@ -55,7 +55,7 @@ namespace ONGWebAPI.Controllers
         /// <response code="400">Erro desconhecido ocorrido ao tentar obter a lista</response>
         [HttpGet("PorEspecie")]
         public ActionResult<List<Animal>> SolicitarPelaEspecie([FromQuery] Especie especie)
-        {          
+        {
             return animalRepository.SolicitarPelaEspecie(especie);
         }
 
@@ -97,7 +97,7 @@ namespace ONGWebAPI.Controllers
         /// <response code="404">Nenhum animal encontrado com este ID</response>
         /// <response code="200">Animal encontrado com sucesso</response>
         /// <response code="400">Erro desconhecido ocorrido ao tentar encontrar o animal</response>
-        [HttpGet("{Id}")]        
+        [HttpGet("{Id}")]
         public ActionResult<Animal> ExibirPelaID(int Id)
         {
             if (animalRepository.VerificarAnimal(Id))
@@ -182,7 +182,7 @@ namespace ONGWebAPI.Controllers
                 animalRepository.ApagarAnimalPelaId(id);
                 return Ok();
             }
-            return NotFound(); 
+            return NotFound();
         }
 
 
@@ -279,7 +279,7 @@ namespace ONGWebAPI.Controllers
         {
             Id = int.Parse(User.FindFirst(ClaimTypes.Sid).Value);
             return animalRepository.ListarAnimaisUsuario(Id);
-        }    
+        }
         /// <summary>
         /// Tabela fato de ADOÇÃO
         /// </summary>
@@ -292,17 +292,16 @@ namespace ONGWebAPI.Controllers
         [HttpGet("ListarAnimaisDisponiveis")]
         public ActionResult<List<Animal>> ListarAnimaisDisponiveis()
         {
-            //return adocao;
-            if (User.IsInRole(Roles.Usuario.ToString()))
-            {
-                int Id = int.Parse(User.FindFirst(ClaimTypes.Sid).Value);
-                return animalRepository.ListarAnimaisDisponiveisUsuario(Id);
-            }
-            else
-            {
-                return animalRepository.ListarAnimaisDisponiveis();
-            }            
-            
+            //return adocao;            
+            return animalRepository.ListarAnimaisDisponiveis();
+
+
+        }
+        [HttpGet("ListarAnimaisDisponiveisUsuario")]
+        public ActionResult<List<Animal>> ListarAnimaisDisponiveisUsuario()
+        {
+            int Id = int.Parse(User.FindFirst(ClaimTypes.Sid).Value);
+            return animalRepository.ListarAnimaisDisponiveisUsuario(Id);
         }
 
 
@@ -319,17 +318,18 @@ namespace ONGWebAPI.Controllers
         [Authorize]
         public ActionResult<List<Animal>> ListarAnimaisAdotados()
         {
-            if (User.IsInRole(Roles.Usuario.ToString()))
-            {
-                int Id = int.Parse(User.FindFirst(ClaimTypes.Sid).Value);
-                return animalRepository.ListarAnimaisDoadosUsuario(Id);
-            }
-            else
-            {
-                return animalRepository.ListarAnimaisAdotados();
-            }
+            return animalRepository.ListarAnimaisAdotados();
+
         }
 
+        [HttpGet("ListarAnimaisDoadosUsuario")]
+        [Authorize]
+        public ActionResult<List<Animal>> ListarAnimaisDoadosUsuario()
+        {
+            int Id = int.Parse(User.FindFirst(ClaimTypes.Sid).Value);
+            return animalRepository.ListarAnimaisDoadosUsuario(Id);
+
+        }
 
         //Método HTTP que chama função SendMail do objeto MailService 
         //Precisa importar o System.Net.Mail para usar o MailService

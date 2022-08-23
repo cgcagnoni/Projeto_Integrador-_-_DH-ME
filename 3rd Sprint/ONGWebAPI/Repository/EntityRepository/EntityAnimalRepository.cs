@@ -18,7 +18,7 @@ namespace ONGWebAPI.Repository.EntityRepository
 
             DbONG.ChangeTracker.Clear();
             var user = DbONG.Usuarios?.Find(Animal.Usuario.Id);
-            Animal.Usuario = user;
+            Animal.Usuario = user;            
             DbONG.Entry(Animal).State = EntityState.Added;
             DbONG.SaveChanges();
         }
