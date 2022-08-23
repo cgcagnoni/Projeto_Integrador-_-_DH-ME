@@ -23,10 +23,17 @@ namespace ONGWebAPI.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Administrador")]
+        [Authorize]//Roles = "Administrador")]
         public ActionResult<List<InteresseAdocao>> ListarTodos()
         {           
             return interesseRepository.ListarInteressados();
+        }
+        [HttpGet("{Id}")]
+        [Authorize]
+        public ActionResult<List<InteresseAdocao>> ListarInteressadosPorUsuario(int Id)
+        {
+            Id = int.Parse(User.FindFirst(ClaimTypes.Sid).Value);
+            return interesseRepository.ListarInteressadosPorUsuario(Id);
         }
 
         [HttpPost]
