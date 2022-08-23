@@ -240,6 +240,7 @@ namespace ONGWebAPI.Controllers
             {
                 return Unauthorized("Animal não pertence ao usuário logado");
             }
+            Animal.Usuario = new Usuario() { Id = animalBanco.UsuarioId };
 
             if (animalRepository.VerificarAnimal(Id))
             {
@@ -274,13 +275,11 @@ namespace ONGWebAPI.Controllers
         /// <response code="400">Erro desconhecido ocorrido ao tentar obter a lista</response>
         [HttpGet("PorUsuario/{Id}")]
         [Authorize]
-        public ActionResult<List<Animal>> ListarAnimaisUsuario(int Id,Animal animal)
+        public ActionResult<List<Animal>> ListarAnimaisUsuario(int Id)
         {
-            animal.Usuario = new Usuario() { Id = int.Parse(User.FindFirst(ClaimTypes.Sid).Value) };
+            Id = int.Parse(User.FindFirst(ClaimTypes.Sid).Value);
             return animalRepository.ListarAnimaisUsuario(Id);
-        }
-
-
+        }    
         /// <summary>
         /// Tabela fato de ADOÇÃO
         /// </summary>
@@ -294,7 +293,16 @@ namespace ONGWebAPI.Controllers
         public ActionResult<List<Animal>> ListarAnimaisDisponiveis()
         {
             //return adocao;
-            return animalRepository.ListarAnimaisDisponiveis();
+            if (User.IsInRole(Roles.Usuario.ToString()))
+            {
+                int Id = int.Parse(User.FindFirst(ClaimTypes.Sid).Value);
+                return animalRepository.ListarAnimaisDisponiveisUsuario(Id);
+            }
+            else
+            {
+                return animalRepository.ListarAnimaisDisponiveis();
+            }            
+            
         }
 
 
@@ -308,10 +316,18 @@ namespace ONGWebAPI.Controllers
         /// <response code="404">Nenhum animal encontrado</response>
         /// 
         [HttpGet("ListarAnimaisAdotados")]
-        [Authorize(Roles = "Administrador")]
+        [Authorize]
         public ActionResult<List<Animal>> ListarAnimaisAdotados()
         {
-            return animalRepository.ListarAnimaisAdotados();
+            if (User.IsInRole(Roles.Usuario.ToString()))
+            {
+                int Id = int.Parse(User.FindFirst(ClaimTypes.Sid).Value);
+                return animalRepository.ListarAnimaisDoadosUsuario(Id);
+            }
+            else
+            {
+                return animalRepository.ListarAnimaisAdotados();
+            }
         }
 
 

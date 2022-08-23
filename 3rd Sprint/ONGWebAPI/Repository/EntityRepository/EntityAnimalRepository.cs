@@ -36,6 +36,7 @@ namespace ONGWebAPI.Repository.EntityRepository
             DbONG.ChangeTracker.Clear();
             Animal.Id = Id;
             DbONG.Entry(Animal).State = EntityState.Modified;
+            if (Animal.Usuario != null) DbONG.Entry(Animal.Usuario).State = EntityState.Unchanged;
             DbONG.SaveChanges();
         }
 
@@ -94,20 +95,29 @@ namespace ONGWebAPI.Repository.EntityRepository
             var animal = DbONG.Animais?.Where(t => t.Usuario.Id == Id);
 
             return animal.ToList();
+        }
+        public List<Animal> ListarAnimaisDisponiveisUsuario(int Id)
+        {
+            var animal = ListarAnimaisUsuario(Id);
+            return animal.Where(t => t.Disponibilidade == true).ToList();
+        }
 
+        public List<Animal> ListarAnimaisDoadosUsuario(int Id)
+        {
+            var animal = ListarAnimaisUsuario(Id);
+            return animal.Where(t => t.Disponibilidade == false).ToList();
         }
 
         public List<Animal> ListarAnimaisDisponiveis()
-        {                           
-            return DbONG.Animais.Where(t => t.Disponibilidade == true).ToList();          
+        {
+            return DbONG.Animais.Where(t => t.Disponibilidade == true).ToList();
         }
-        public List<Animal> ListarAnimaisAdotados()
-        {        
+
+            public List<Animal> ListarAnimaisAdotados()
+        {
             return DbONG.Animais.Where(t => t.Disponibilidade == false).ToList();
         }
 
       
-
-
     }
 }
