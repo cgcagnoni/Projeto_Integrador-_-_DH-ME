@@ -14,6 +14,7 @@
                 <li><RouterLink class="dropdown-item" to="/cadastro">Cadastre-se</RouterLink></li>
                 <li><RouterLink class="dropdown-item" to="/perfil">Meu perfil</RouterLink></li>
                 <li><RouterLink class="dropdown-item" to="/sobre">Sobre nós</RouterLink></li>
+                <li><RouterLink class="dropdown-item" to="/login">Login</RouterLink></li>
                 <li>
                     <hr class="dropdown-divider">
                 </li>

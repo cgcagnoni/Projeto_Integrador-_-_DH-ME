@@ -28,10 +28,10 @@
         <nav>
           <div>
             <h4 id="list-item-1">Meu cadastro</h4>
-            <p>Nome:</p>
-            <p>E-mail:</p>
-            <p>Telefone:</p>
-            <p>Localização:</p>
+            <p>Nome: &nbsp {{nome}}</p>
+            <p>E-mail: &nbsp {{email}}</p>
+            <p>Telefone: &nbsp {{telefone}}</p>
+            <p>Localização: &nbsp {{localizacao}}</p>
             <br />
             <hr class="solid" />
           </div>
@@ -47,6 +47,14 @@
             <p>Você ainda não doou nenhum animalzinho!</p>
             <br />
             <hr class="solid" />
+          </div>
+          <div>
+            <h4 id="list-item-3">Meus animais colocados para adoção</h4>
+            <p v-for="animal in animaisDisponiveis">
+              {{animal.nome}}
+            </p>
+            <br />
+            <hr class="solid" />           
           </div>
           <div>
             <h4 id="list-item-4">Segurança</h4>
