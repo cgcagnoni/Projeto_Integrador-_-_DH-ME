@@ -1,8 +1,86 @@
+@media(max-width: 750px){
+    #container{
+        width: 100%;
+    }
+    
+    #homepage{
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .box{
+        font-size: xx-small;
+        
+    }
+
+    #profilecontent{
+        display: block;
+    }
+
+
+    #listaCadastro{
+        width: 100%;
+        margin-bottom: 20%;
+    }
+
+    .alteraList{
+        margin: 20px;
+    }
+
+    #arrecadacao{
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 12px;
+    }
+
+    #busca{
+        display: block;
+    }
+
+    .busca-icon i{
+        color:#fff;
+    }
+
+    #contato{
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    #profilecontent{
+        margin: 0 auto;
+    }
+
+    #animal-perfil {
+        display: flex;
+        flex-direction: column;
+        background-color: #00bfaf;
+    }
+
+    #animal-perfil img {
+        display: block;
+        
+    }
+
+    .descricao-animal{
+        text-align: center;
+    }
+
+    .outros-animais{
+        flex-direction: column;
+    }
+
+}
+
+
+
 /* Geral */
 
 #container {
     font-family: 'Acme', cursive;
     background-color: #00bfaf;
+    width: 100%;
 }
 
 #container {
@@ -20,20 +98,20 @@
     border-bottom: solid 2px #e0e300;
 }
 
-#navbar .navbar-logo {
+.navbar-logo {
     width: 60px;
     height: auto;
     margin: 20px;
 }
 
-#navbar .dropdown {
+.dropdown {
     display: flex;
     padding: 10px;
     justify-content: flex-end;
     margin: auto;
 }
 
-#navbar .dropdown .btn {
+.dropdown .btn {
     color: #e0e300;
     height: 60px;
     width: 90px;
@@ -42,7 +120,7 @@
     border-radius: 20px;
 }
 
-#navbar .dropdown .btn:hover {
+.dropdown .btn:hover {
     background-color: #fff;
 }
 
@@ -58,6 +136,7 @@
 /* Homepage */
 #homepage {
     display: flex;
+    flex-direction: row;
 }
 
 #homepage img {
@@ -123,10 +202,9 @@
 #homepage-catalog {
     border-top: solid #e0e300;
     border-bottom: 0;
-    display: flex;
 }
 
-#homepage-catalog h3 {
+.boxes h3 {
     text-align: center;
     margin: 5%;
     color: #fff;
@@ -136,16 +214,16 @@
     color: #fffdd9;
 }
 
-#homepage-catalog .boxes {
+.boxes {
     height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-
+    padding: 20px;
 }
 
-#homepage-catalog .box {
+.box {
     font-size: 25px;
     color: #fff;
     border: #e0e300 solid;
@@ -154,7 +232,23 @@
     padding: 30px 20px;
     border-radius: 25px;
     text-align: center;
+    margin: 10px auto;
+    padding: 0;
+    position: relative;
+    width: 33.33333%;
+    box-sizing: border-box;
 
+}
+
+
+.homepage-catalog-carousel h3{
+    text-align: center;
+    margin: 5%;
+    color: #fff;
+    font-size: 45px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #ff598f;
+    color: #fffdd9;
 }
 
 .homepage-catalog-carousel a{
@@ -166,6 +260,7 @@
 
 .homepage-catalog-carousel {
     margin: 0 auto;
+    border-top:#e0e300 2px solid;
 
 }
 
@@ -179,17 +274,6 @@
     color: #fff;
 }
 
-.box {
-    margin: 0 auto;
-    margin: 10px auto;
-    padding: 0;
-    position: relative;
-    width: 33.33333%;
-    text-align: center;
-    box-sizing: border-box;
-    box-sizing: border-box;
-}
-
 .carousel-caption p {
     color: #e0e300;
     -webkit-text-stroke-width: 1px;
@@ -200,8 +284,20 @@
 
 
 /* Perfil do cliente*/
-#profilecontent {
-    padding: 15px;
+
+
+.alteraList{
+    margin: 20px;
+    padding: 20px;
+}
+
+.Cadastre-se-button .botao{
+    color:#fff;
+    border: 2px solid #e0e300;
+}
+.Cadastre-se-button .botao:hover{
+    background-color:#ff598f;
+    color: #fff;
 }
 
 
@@ -589,42 +685,26 @@ footer {
 
 
 /* formularios*/
+
 .fundo-form{
-    background-color: #01dddd;
+    background-color: #fff;
 }
 #form {
-    background-color: white;
     margin-top: 10px;
     margin-left: 10%;
     margin-right: 15px;
     margin-bottom: 10px;
     width: 80%;
     height: auto;
-    display: flex;
-    
+    display: flex; 
     box-shadow: 5px 5px 10px rgba(0, 0, 0, .212);
 
-}
-
-#img_form {
-    width: 50%;
-    display: block;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-
-}
-
-#img_form img {
-    width: 31rem;
 }
 
 #forms {
     width: 50%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
     padding: 2rem;
     
 
@@ -652,7 +732,7 @@ footer {
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 1rem 0;
-}
+} 
 
 .input-box {
     display: flex;
@@ -731,14 +811,14 @@ footer {
 /* Entre em contato */
 #contato {
     display: flex;
-    background-color: #01dddd;
     font-weight: bold;
+    margin: 20px;
 }
 
 .contato-img img {
     width: 450px;
     height: 300px;
-    margin: 40px;
+    margin: 0 auto;
     border-radius: 50%;
 }
 
@@ -835,15 +915,6 @@ footer {
     color: #ff598f;
     text-decoration: none;
 }
-
-/* Busca */
-
-
-/* doacao-animal */
-
-
-
-
 
 
 /* Perfil */
