@@ -15,6 +15,14 @@ namespace ONGWebAPI.Repository.EntityRepository
         public List<InteresseAdocao> ListarInteressados()
         {
             return DbONG.InteresseAdocao.ToList();
+        }       
+
+        public List<InteresseAdocao> ListarInteressadosPorUsuario(int id)
+        {
+            var animal = DbONG.InteresseAdocao.Where(t => t.Animal.Usuario.Id == id);
+
+            return animal.ToList();
+
         }
 
         public void PostInteresseAdocao(InteresseAdocao interesseAdocao)

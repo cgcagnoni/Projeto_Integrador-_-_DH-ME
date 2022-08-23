@@ -6,5 +6,8 @@ namespace ONGWebAPI.Repository
     {
         void PostInteresseAdocao(InteresseAdocao interesseAdocao);
         List<InteresseAdocao> ListarInteressados();
+        List<InteresseAdocao> ListarInteressadosPorUsuario(int id);
+
+
     }
 }
