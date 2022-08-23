@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using ONGWebAPI.Models;
 using ONGWebAPI.Repository;
 using ONGWebAPI.Services;
+using System.Security.Claims;
 using System.Security.Permissions;
 
 namespace ONGWebAPI.Controllers
@@ -22,9 +23,9 @@ namespace ONGWebAPI.Controllers
         }
 
         [HttpGet]
-        [Authorize]
+        [Authorize(Roles = "Administrador")]
         public ActionResult<List<InteresseAdocao>> ListarTodos()
-        {
+        {           
             return interesseRepository.ListarInteressados();
         }
 
