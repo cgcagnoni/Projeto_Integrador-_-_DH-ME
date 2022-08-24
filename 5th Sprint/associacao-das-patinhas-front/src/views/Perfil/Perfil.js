@@ -8,7 +8,8 @@ export default {
             email: null,
             telefone: null,
             localizacao: null,
-            animaisDisponiveis: []
+            animaisDisponiveis: [],
+            animaisAdotados:[]
         };
     },
     methods: {
@@ -41,7 +42,14 @@ export default {
                     this.animaisDisponiveis = animaisDisponiveis;
                 })
             })
-        }
+        },
+        listarAnimaisAdotados() {
+            fetch(`https://localhost:7288/api/Animal/ListarAnimaisDoadosUsuario`, this.getOptions()).then(resp => {
+                resp.json().then(animaisAdotados => {
+                    this.animaisAdotados = animaisAdotados;
+                })
+            })
+        },        
 
     },
     beforeMount() {
@@ -50,6 +58,7 @@ export default {
         if (token) {            
             this.buscarUsuarioPorId();
             this.listarAnimaisDisponiveis();
+            this.listarAnimaisAdotados();
         }
         else{
             router.push('/login')
