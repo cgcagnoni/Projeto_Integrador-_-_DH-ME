@@ -2,7 +2,7 @@
   <!-- Conteúdo da Página -->
   <div id="form">
     <div id="img_form">
-      <img src="@/assets/images/Cadastro/cão-e-gato.jpg">
+      <img src="@/assets/images/DoacaoAnimal/cão-e-gato.jpg">
     </div>
     <div id="forms">
       <form action="#">
