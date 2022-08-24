@@ -98,7 +98,7 @@ namespace ONGWebAPI.Controllers
         /// <response code="200">Animal encontrado com sucesso</response>
         /// <response code="400">Erro desconhecido ocorrido ao tentar encontrar o animal</response>
         [HttpGet("{Id}")]
-        public ActionResult<Animal> ExibirPelaID(int Id)
+        public ActionResult ExibirPelaID(int Id)
         {
             if (animalRepository.VerificarAnimal(Id))
             {
@@ -298,10 +298,10 @@ namespace ONGWebAPI.Controllers
 
         }
         [HttpGet("ListarAnimaisDisponiveisUsuario")]
-        public ActionResult<List<Animal>> ListarAnimaisDisponiveisUsuario()
+        public async Task<ActionResult<List<Animal>>> ListarAnimaisDisponiveisUsuario()
         {
             int Id = int.Parse(User.FindFirst(ClaimTypes.Sid).Value);
-            return animalRepository.ListarAnimaisDisponiveisUsuario(Id);
+            return await animalRepository.ListarAnimaisDisponiveisUsuario(Id);
         }
 
 
@@ -319,29 +319,28 @@ namespace ONGWebAPI.Controllers
         public ActionResult<List<Animal>> ListarAnimaisAdotados()
         {
             return animalRepository.ListarAnimaisAdotados();
-
         }
 
         [HttpGet("ListarAnimaisDoadosUsuario")]
         [Authorize]
-        public ActionResult<List<Animal>> ListarAnimaisDoadosUsuario()
+        public async Task<ActionResult<List<Animal>>> ListarAnimaisDoadosUsuario()
         {
             int Id = int.Parse(User.FindFirst(ClaimTypes.Sid).Value);
-            return animalRepository.ListarAnimaisDoadosUsuario(Id);
+            return await animalRepository.ListarAnimaisDoadosUsuario(Id);
 
         }
 
         //Método HTTP que chama função SendMail do objeto MailService 
         //Precisa importar o System.Net.Mail para usar o MailService
-        [HttpPost("{Id}")]
-        public ActionResult EnviarEmail(int Id)
-        {
-            MailService mailService = new MailService();
-            Animal animal = animalRepository.ExibirPelaID(Id);
-            mailService.SendMail(animal.Usuario.Email, animal.Usuario.Nome);
+        //[HttpPost("{Id}")]
+        //public ActionResult EnviarEmail(int Id)
+        //{
+        //    MailService mailService = new MailService();
+        //    Animal animal = animalRepository.ExibirPelaID(Id);
+        //    mailService.SendMail(animal.Usuario.Email, animal.Usuario.Nome);
 
-            return Ok();
-        }
+        //    return Ok();
+        //}
 
 
 
