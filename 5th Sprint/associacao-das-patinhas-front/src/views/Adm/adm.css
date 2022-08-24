@@ -1,0 +1,52 @@
+#pag-adm{
+    font-family: 'Acme', cursive;;
+    font-size: 22px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    align-items: flex-start;
+    height: 100%;
+    border-right: #e0e300 2px solid;
+}
+
+#pag-adm a{
+    text-decoration: none;
+    color: #fff;
+}
+
+#pag-adm button{
+    border-radius: 18px;
+    border: #e0e300 solid 2px;
+    margin: 2%;
+    color: #fff;
+    background-color: #00bfaf;
+    padding: 3%;
+}
+
+#pag-adm button:hover{
+    background-color: #ff598f;
+}
+
+#pag-adm h1{
+    padding: 20px;
+    text-align: center;
+    color:#ff598f
+}
+.adm-ong 
+{
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+}
+.adm-user 
+{
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+}
+.adm-anim 
+{
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+}

@@ -52,6 +52,7 @@ export default {
         },        
 
     },
+    
     beforeMount() {
         const token = localStorage.getItem("token")
 
