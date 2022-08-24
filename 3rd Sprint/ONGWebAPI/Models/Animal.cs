@@ -17,6 +17,7 @@ namespace ONGWebAPI.Models
         public Sexo Sexo { get; set; }
         public string? Idade { get; set; }
         public Porte? Porte { get; set; }
+        public string Descricao { get; set; }
         public string? Vacinas { get; set; }
         public string? Foto { get; set; }
         public Localizacao? Localizacao { get; set; }
