@@ -8,6 +8,7 @@ import ContatoView from '../views/Contato/Contato.vue'
 import DoacaoAnimalView from '../views/DoacaoAnimal/DoacaoAnimal.vue'
 import LoginView from '../views/Login/Login.vue'
 import PerfilView from '../views/Perfil/Perfil.vue'
+import admView from '../views/Adm/adm.vue'
 import SobreView from '../views/Sobre/Sobre.vue'
 
 const router = createRouter({
@@ -67,6 +68,11 @@ const router = createRouter({
     },
     
     {
+      path: '/adm',
+      name: 'adm',
+      component: admView
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting
@@ -74,6 +80,7 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       
     }
+    
   ]
 })
 
