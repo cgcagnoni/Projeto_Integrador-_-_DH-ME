@@ -9,6 +9,10 @@
         margin: 0 auto;
     }
 
+    .homepage-img {
+        display: table-footer-group;
+    }
+
     #homepage-catalog{
         flex-wrap: wrap;
     }

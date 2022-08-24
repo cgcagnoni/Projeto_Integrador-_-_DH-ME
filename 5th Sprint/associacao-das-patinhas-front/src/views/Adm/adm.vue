@@ -5,10 +5,10 @@
                 <div class="col">
                     <div class="adm-anim">
                         <h1>Animais</h1>
-                        <a href="/4th Sprint/alteracao-de-animal.html"><button>
+                        <a RouterLink="/4th Sprint/alteracao-de-animal.html"><button>
                                 Alteração de cadastro
                         </a></button>
-                        <a href="/4th Sprint/busca.html"><button>
+                        <a RouterLink="/4th Sprint/busca.html"><button>
                                 Buscar um animal
                         </a></button>
                         <a href="#"><button type="button" v-on:click="criarListaAnimais">
@@ -22,7 +22,7 @@
                 <div class="col">
                     <div class="adm-user">
                         <h1>Usuários</h1>
-                        <a href="/4th Sprint/alteracao-de-cadastro.html"><button>
+                        <a RouterLink="/4th Sprint/alteracao-de-cadastro.html"><button>
                                 Alteração de cadastro
                         </a></button>
                         <a href="#"><button>
@@ -36,7 +36,7 @@
                 <div class="col">
                     <div class="adm-ong">
                         <h1>Administração</h1>
-                        <a href="/4th Sprint/alteracao-de-cadastro.html"><button>
+                        <a RouterLink="/4th Sprint/alteracao-de-cadastro.html"><button>
                                 Doações
                         </a></button>
                     </div>
