@@ -10,7 +10,8 @@
     }
 
     .box{
-        font-size: xx-small;
+        font-size: 20px;
+        padding: 20px;
 
     }
 
@@ -69,6 +70,31 @@
 
     .outros-animais{
         flex-direction: column;
+    }
+
+    .main-login{
+        display: flex;
+        flex-direction: column;
+        height: 900px;
+        margin-top: 20px;
+    }
+    .left-login{
+        width: 20;
+        margin: 12px;
+    }
+
+    .right-login{
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .sobre-nos{
+        flex-direction: column;
+    }
+
+    .sobre-img img {
+        margin: 0 auto;
+        max-width: 600px;
     }
 
 }

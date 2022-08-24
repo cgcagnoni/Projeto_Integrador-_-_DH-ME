@@ -1,7 +1,6 @@
 /* Arrecadacao */
 #arrecadacao {
     display: flex;
-    background-color: #01dddd;
     font-weight: bold;
 }
 
@@ -36,9 +35,6 @@
     font-size: 22px;
     margin: 10px;
     font-weight:lighter;
-}
-#pagseguro{
-    background-color:#01dddd
 }
 
 #arrecadacao-txt .infos-arrecadacao {

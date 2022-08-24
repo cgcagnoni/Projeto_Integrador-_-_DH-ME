@@ -2,6 +2,7 @@
 
 #sobre-nos {
     display: flex;
+    flex-direction: row;
     background-color: #01dddd;
     font-weight: bold;
 }

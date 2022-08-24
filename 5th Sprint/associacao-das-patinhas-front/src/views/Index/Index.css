@@ -90,7 +90,7 @@
 }
 
 .box {
-    font-size: 25px;
+    font-size: 50px;
     color: #fff;
     border: #e0e300 solid;
     background-color: #ff598f;
@@ -126,13 +126,14 @@
 .homepage-catalog-carousel {
     margin: 0 auto;
     border-top:#e0e300 2px solid;
-
+    width: 500px;
 }
 
-.carousel-item img {
-    width: 50%;
+
+.carousel-item img{
     margin: 0 auto;
     padding: 2%;
+    min-height: 300px;
 }
 
 .carousel-indicators {

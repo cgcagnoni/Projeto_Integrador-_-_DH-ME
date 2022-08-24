@@ -22,62 +22,52 @@
     </div>
 
     <!-- Catálogo da Home Page -->
-    <div class="col homepage-catalog-carousel">
-      <a href="/4th Sprint/busca.html">
-        <h3>Animais disponíveis para adoção</h3>
-      </a>
-      <div class="carousel carousel-dark slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#carouselExampleDark"
-            data-bs-slide-to="0"
-            class="active"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleDark"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleDark"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-          ></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="10000">
-            <img
-              src="@/assets/images/Home/animal-5.jpg"
-              class="d-block"
-              alt="..."
-            />
-            <div class="carousel-caption d-none d-md-block">
-              <p>Pedrinho</p>
-            </div>
+    <div id="homepage-catalog">
+      <div class="col homepage-catalog-carousel">
+        <a href="/4th Sprint/busca.html">
+          <h3>Animais disponíveis para adoção</h3>
+        </a>
+        <div class="carousel carousel-dark slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleDark"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleDark"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleDark"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
           </div>
-          <div class="carousel-item" data-bs-interval="2000">
-            <img
-              src="@/assets/images/Home/animal-4.jpg"
-              class="d-block"
-              alt="..."
-            />
-            <div class="carousel-caption d-none d-md-block">
-              <p>Lulu</p>
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+              <img src="@/assets/images/Home/animal-5.jpg" alt="..." />
+              <div class="carousel-caption d-none d-md-block">
+                <p>Pedrinho</p>
+              </div>
             </div>
-          </div>
-          <div class="carousel-item">
-            <img
-              src="@/assets/images/Home/animal-3.jpg"
-              class="d-block"
-              alt="..."
-            />
-            <div class="carousel-caption d-none d-md-block">
-              <p>Rajado</p>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="@/assets/images/Home/animal-4.jpg" alt="..." />
+              <div class="carousel-caption d-none d-md-block">
+                <p>Lulu</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="@/assets/images/Home/animal-3.jpg" alt="..." />
+              <div class="carousel-caption d-none d-md-block">
+                <p>Rajado</p>
+              </div>
             </div>
           </div>
         </div>
