@@ -53,6 +53,12 @@
         margin: 0 auto;
     }
 
+    .contato-img img {
+        width: 80%;
+        height: auto;
+        margin: 20px;
+    }
+
     #profilecontent{
         margin: 0 auto;
     }
