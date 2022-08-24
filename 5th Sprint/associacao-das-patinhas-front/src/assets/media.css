@@ -9,6 +9,10 @@
         margin: 0 auto;
     }
 
+    #homepage-catalog{
+        flex-wrap: wrap;
+    }
+
     .box{
         font-size: 20px;
         padding: 20px;

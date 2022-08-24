@@ -90,13 +90,13 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-    </div>
-    <div id="homepage-catalog row">
-      <div class="boxes">
-        <h3>Motivos para adotar</h3>
-        <div class="col box">Você não participa do mercado de animais</div>
-        <div class="col box">A adoção salva a vida de um animal</div>
-        <div class="col box">Quem vive com pets tem menos estresse</div>
+      <div id="homepage-catalog-box">
+        <div class="boxes">
+          <h3>Motivos para adotar</h3>
+          <div class="col box">Você não participa do mercado de animais</div>
+          <div class="col box">A adoção salva a vida de um animal</div>
+          <div class="col box">Quem vive com pets tem menos estresse</div>
+        </div>
       </div>
     </div>
   </div>
