@@ -1,0 +1,100 @@
+@media(max-width: 750px){
+    #container{
+        width: 100%;
+    }
+
+    #homepage{
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .box{
+        font-size: 20px;
+        padding: 20px;
+
+    }
+
+    #profilecontent{
+        display: block;
+    }
+
+
+    #listaCadastro{
+        width: 100%;
+        margin-bottom: 20%;
+    }
+
+    .alteraList{
+        margin: 20px;
+    }
+
+    #arrecadacao{
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 12px;
+    }
+
+    #busca{
+        display: block;
+    }
+
+    .busca-icon i{
+        color:#fff;
+    }
+
+    #contato{
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    #profilecontent{
+        margin: 0 auto;
+    }
+
+    #animal-perfil {
+        display: flex;
+        flex-direction: column;
+        background-color: #00bfaf;
+    }
+
+    #animal-perfil img {
+        display: block;
+
+    }
+
+    .descricao-animal{
+        text-align: center;
+    }
+
+    .outros-animais{
+        flex-direction: column;
+    }
+
+    .main-login{
+        display: flex;
+        flex-direction: column;
+        height: 900px;
+        margin-top: 20px;
+    }
+    .left-login{
+        width: 20;
+        margin: 12px;
+    }
+
+    .right-login{
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .sobre-nos{
+        flex-direction: column;
+    }
+
+    .sobre-img img {
+        margin: 0 auto;
+        max-width: 600px;
+    }
+
+}

@@ -1,29 +1,40 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ONGWebAPI.Models;
+using ONGWebAPI.Services;
 
 namespace ONGWebAPI.Repository.EntityRepository
 {
     public class EntityInteresseAdocaoRepository : IInteresseAdocao
     {
-        private ONGContext DbONG;
-
-        public EntityInteresseAdocaoRepository(ONGContext dbONG)
+        private ONGContextFactory DbONGFactory;
+        public EntityInteresseAdocaoRepository(ONGContextFactory DbONGFactory)
         {
-            DbONG = dbONG;
+            this.DbONGFactory = DbONGFactory;
         }
 
         public List<InteresseAdocao> ListarInteressados()
         {
-            return DbONG.InteresseAdocao.ToList();
+            using (var DbONG = DbONGFactory.create()) return DbONG.InteresseAdocao.ToList();
+        }       
+
+        public List<InteresseAdocao> ListarInteressadosPorUsuario(int id)
+        {
+            using (var DbONG = DbONGFactory.create())
+            {
+                var animal = DbONG.InteresseAdocao.Where(t => t.Animal.Usuario.Id == id);
+
+                return animal.ToList();
+            }
         }
 
         public void PostInteresseAdocao(InteresseAdocao interesseAdocao)
         {
-
-            DbONG.ChangeTracker.Clear();
-            DbONG.Entry(interesseAdocao).State = EntityState.Added;
-            DbONG.SaveChanges();
-            //DbONG.Entry(interesseAdocao).Reference(x => x.Animal).Load();
+            using (var DbONG = DbONGFactory.create())
+            {                
+                DbONG.Entry(interesseAdocao).State = EntityState.Added;
+                DbONG.SaveChanges();
+                //DbONG.Entry(interesseAdocao).Reference(x => x.Animal).Load();
+            }
         }
     }
 }

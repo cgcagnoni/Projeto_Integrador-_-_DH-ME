@@ -1,0 +1,120 @@
+/* Página do animal */
+
+#animal-perfil {
+    display: flex;
+    background-color: #00bfaf;
+}
+
+#animal-perfil img {
+    max-width: 80%;
+    max-height: 70%;
+    border-radius: 10%;
+    border: #e0e300 2px solid;
+    margin-left: 15%;
+    margin-top: 10px;
+}
+
+#animal-perfil .tags-filtro {
+    color: #e0e300;
+    font-size: 20px;
+    margin-left: 25%;
+    text-decoration: none;
+}
+
+#animal-perfil .nome-animal {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    color: #ff598f;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.descricao-animal p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: 30px;
+    font-size: 30px;
+    font-weight: normal;
+    color: #fff;
+    padding: 10px;
+}
+
+.adocao-btn {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+
+.adocao-btn-item {
+    background-color: #ff598f;
+    color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+    border: #e0e300 solid 2px;
+    padding: 15px;
+    border-radius: 25px;
+}
+
+.adocao-btn-item:hover {
+    background-color: #fff;
+    color: #e0e300;
+}
+
+.sugestoes {
+    background-color: #fff;
+    text-align: center;
+    color: #ff598f;
+    font-weight: bolder;
+    font-size: 25px;
+    padding: 20px;
+}
+
+.outros-animais {
+    display: flex;
+    background-color: #fff;
+    justify-content: center;
+}
+
+.outros-animais h2 {
+    color: #ff598f;
+    font-size: 25px;
+    padding: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.outros-animais img {
+    max-width: 300px;
+    border-radius: 5%;
+    margin: 10px;
+}
+
+.outros-animais a {
+    font-size: 22px;
+    padding: 0;
+    margin: 0;
+    color: #01dddd;
+    text-decoration: none;
+    text-align: center;
+
+}
+
+.outros-animais a:hover {
+    font-size: 33px;
+    padding: 0;
+    margin: 0;
+    color: #00bfaf;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.outros-animais img:hover {
+    max-width: 320px;
+    border-radius: 5%;
+    margin: 10px;
+    border: #e0e300 solid 2px;
+}

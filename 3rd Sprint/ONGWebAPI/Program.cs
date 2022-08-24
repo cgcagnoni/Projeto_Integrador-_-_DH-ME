@@ -98,7 +98,7 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 //Configuração da injeção de dependência
-builder.Services.AddSingleton<ONGContext>((x) => new ONGContext(builder.Configuration.GetValue<bool>("UsarBancoEmMemoria")));
+builder.Services.AddSingleton<ONGContextFactory>((x) => new ONGContextFactory(builder.Configuration.GetValue<bool>("UsarBancoEmMemoria")));
 
 builder.Services.AddSingleton<IUsuarioRepository, EntityUsuarioRepository>();
 builder.Services.AddSingleton<IAnimalRepository, EntityAnimalRepository>();

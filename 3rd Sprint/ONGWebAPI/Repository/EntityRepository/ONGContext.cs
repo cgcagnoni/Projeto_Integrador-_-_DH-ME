@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using ONGWebAPI.Entities;
 using ONGWebAPI.Models;
+using System.Diagnostics;
 
 namespace ONGWebAPI.Repository.EntityRepository
 {
@@ -30,6 +32,8 @@ namespace ONGWebAPI.Repository.EntityRepository
             {
                 string credencial = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ONG;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
                 Configurar.UseSqlServer(credencial);
+                Configurar.EnableSensitiveDataLogging();
+                Configurar.LogTo((log) => Debug.WriteLine(log));
 
             }
         }
