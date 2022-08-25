@@ -2,6 +2,7 @@
 #arrecadacao {
     display: flex;
     font-weight: bold;
+    background-color: #01dddd;
 }
 
 .arrecadacao-img img {
