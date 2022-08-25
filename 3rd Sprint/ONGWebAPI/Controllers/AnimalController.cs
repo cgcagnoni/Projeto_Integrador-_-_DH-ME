@@ -330,18 +330,7 @@ namespace ONGWebAPI.Controllers
 
         }
 
-        //Método HTTP que chama função SendMail do objeto MailService 
-        //Precisa importar o System.Net.Mail para usar o MailService
-        //[HttpPost("{Id}")]
-        //public ActionResult EnviarEmail(int Id)
-        //{
-        //    MailService mailService = new MailService();
-        //    Animal animal = animalRepository.ExibirPelaID(Id);
-        //    mailService.SendMail(animal.Usuario.Email, animal.Usuario.Nome);
-
-        //    return Ok();
-        //}
-
+        
 
 
 

@@ -1,4 +1,5 @@
-﻿using ONGWebAPI.Repository.EntityRepository;
+﻿using Microsoft.EntityFrameworkCore;
+using ONGWebAPI.Repository.EntityRepository;
 
 namespace ONGWebAPI.Services
 {
@@ -14,6 +15,7 @@ namespace ONGWebAPI.Services
 
         public ONGContext create()
         {
+            
             return new ONGContext(this.usarBancoEmMemoria);
         }
 

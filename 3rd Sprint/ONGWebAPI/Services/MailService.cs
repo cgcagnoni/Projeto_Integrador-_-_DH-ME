@@ -1,18 +1,17 @@
-﻿using System;
+﻿using ONGWebAPI.Models;
+using System;
 using System.Net;
 using System.Net.Mail;
 
 namespace ONGWebAPI.Services
 {
     public class MailService
-    {
+    {       
         public MailAddress fromAddress = new MailAddress("assocdaspatinhas@gmail.com", "Associação das Patinhas");
         public const string subject = "Interesse em adoção";
-        public const string body = "Texto que será enviado para o usuário que cadastrou o animal";
-        public const string fromPassword = "passwGoogleAcounts";
         public SmtpClient smtp;
 
-        public MailService()
+        public MailService(string fromPassword)
         {
             smtp = new SmtpClient
             {
@@ -31,8 +30,21 @@ namespace ONGWebAPI.Services
             var toAddress = new MailAddress(mailUserPet, nameUserPet);
             var message = new MailMessage(fromAddress, toAddress);
             message.Subject = subject;
-            message.Body = body;
+            //message.Body = body;
             smtp.Send(message);
         }
+
+        public void SendEmail(InteresseAdocao interesseAdocao)
+        {            
+            MailMessage message = new MailMessage();
+            message.From = fromAddress;
+            message.To.Add(new MailAddress($"{interesseAdocao.Animal.Usuario.Email}, {interesseAdocao.Animal.Usuario.Nome}"));
+            message.Subject = subject;
+            message.IsBodyHtml = false;
+            message.Body = $"Olá, {interesseAdocao.Animal.Usuario.Nome}! Você cadastrou {interesseAdocao.Animal.Nome} na nossa plataforma e um de nossos usuários indicou interesse na adoção. Estamos enviando alguns dados do possível adotante para que você analise. Caso atenda às suas expectativas ou tenha alguma dúvida sobre o adotante, entre em contato por e-mail ou whatsapp. \\\\nSegue abaixo as informações de contato:\\\\nNome Completo: {interesseAdocao.Nome} \\\\nTelefone: {interesseAdocao.Telefone} \\\\nE-mail: {interesseAdocao.Email}\\\\n";
+            smtp.Send(message);
+        }
+
+
     }
 }

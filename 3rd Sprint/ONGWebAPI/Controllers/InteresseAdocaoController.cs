@@ -15,17 +15,19 @@ namespace ONGWebAPI.Controllers
         private IInteresseAdocao interesseRepository;
         private IWhatsapp whatsappService;
         private IAnimalRepository animalRepository;
-        public InteresseAdocaoController(IInteresseAdocao interesseRepository,IAnimalRepository animalRepository, IWhatsapp whatsappService)
+        private MailService mailService;
+        public InteresseAdocaoController(IInteresseAdocao interesseRepository, IAnimalRepository animalRepository, IWhatsapp whatsappService, MailService mailService)
         {
             this.interesseRepository = interesseRepository;
             this.whatsappService = whatsappService;
             this.animalRepository = animalRepository;
+            this.mailService = mailService;
         }
 
         [HttpGet]
         [Authorize]//Roles = "Administrador")]
         public ActionResult<List<InteresseAdocao>> ListarTodos()
-        {           
+        {
             return interesseRepository.ListarInteressados();
         }
         [HttpGet("{Id}")]
@@ -37,31 +39,23 @@ namespace ONGWebAPI.Controllers
         }
 
         [HttpPost]
-        public ActionResult<InteresseAdocao> PostInteresseAdocao(InteresseAdocao interesseAdocao)
-        {
-            interesseRepository.PostInteresseAdocao(interesseAdocao);
-            return CreatedAtAction("PostInteresseAdocao", new { id = interesseAdocao.Id }, interesseAdocao);            
-        }
-
-        [HttpPost("InteresseAdocao")]
         public ActionResult InteresseAdocao(InteresseAdocao interesseAdocao)
         {
-
             interesseAdocao.Data = DateTime.Now;
+
+            interesseRepository.PostInteresseAdocao(interesseAdocao);
+
             var animal = this.animalRepository.ExibirPelaID(interesseAdocao.AnimalId);
             if (animal?.Usuario?.AutorizacaoNotificacao == Entities.AutorizacaoNotificacao.WhatsApp || animal?.Usuario?.AutorizacaoNotificacao == Entities.AutorizacaoNotificacao.EmailEWhatsApp)
             {
                 whatsappService.EnviarMenssagem(interesseAdocao);
             }
             if (animal?.Usuario?.AutorizacaoNotificacao == Entities.AutorizacaoNotificacao.Email || animal?.Usuario?.AutorizacaoNotificacao == Entities.AutorizacaoNotificacao.EmailEWhatsApp)
-            {
-                // envia por email
+            {                
+                mailService.SendEmail(interesseAdocao);
             }
-            return Ok();
+            return CreatedAtAction("InteresseAdocao", new { id = interesseAdocao.Id }, interesseAdocao);
         }
-
-  
-
 
     }
 }

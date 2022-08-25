@@ -11,10 +11,13 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.IdentityModel.Tokens;
 using ONGWebAPI;
 using System.Text;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+Settings.Secret = builder.Configuration.GetValue<string>("TokenJWT");
 
 builder.Services.AddAuthentication(x =>
 {
@@ -98,14 +101,15 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 //Configuração da injeção de dependência
-builder.Services.AddSingleton<ONGContextFactory>((x) => new ONGContextFactory(builder.Configuration.GetValue<bool>("UsarBancoEmMemoria")));
+ONGContextFactory factory = new ONGContextFactory(builder.Configuration.GetValue<bool>("UsarBancoEmMemoria"));
+builder.Services.AddSingleton<ONGContextFactory>(factory);
+builder.Services.AddSingleton<ONGContext>(factory.create());
 
 builder.Services.AddSingleton<IUsuarioRepository, EntityUsuarioRepository>();
 builder.Services.AddSingleton<IAnimalRepository, EntityAnimalRepository>();
 builder.Services.AddSingleton<IInteresseAdocao, EntityInteresseAdocaoRepository>();
 builder.Services.AddSingleton<IWhatsapp, WhatsappService>();
-
-
+builder.Services.AddSingleton<MailService>((x) => new MailService(builder.Configuration.GetValue<string>("SenhaEmail")));
 
 var app = builder.Build();
 

@@ -33,8 +33,7 @@ namespace ONGWebAPI.Repository.EntityRepository
                 string credencial = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ONG;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
                 Configurar.UseSqlServer(credencial);
                 Configurar.EnableSensitiveDataLogging();
-                Configurar.LogTo((log) => Debug.WriteLine(log));
-
+                Configurar.LogTo((log) => Debug.WriteLine(log));               
             }
         }
 
@@ -61,6 +60,11 @@ namespace ONGWebAPI.Repository.EntityRepository
                    .HasConversion(
                        p => p.ToString(),
                        p => (Localizacao)Enum.Parse(typeof(Localizacao), p)
+                   );
+                Tabela.Property(p => p.Idade)
+                   .HasConversion(
+                       p => p.ToString(),
+                       p => (Idade)Enum.Parse(typeof(Idade), p)
                    );
 
                 Tabela.HasKey(Propriedade => Propriedade.Id);
