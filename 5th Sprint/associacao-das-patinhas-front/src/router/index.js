@@ -10,6 +10,9 @@ import LoginView from '../views/Login/Login.vue'
 import PerfilView from '../views/Perfil/Perfil.vue'
 import admView from '../views/Adm/adm.vue'
 import SobreView from '../views/Sobre/Sobre.vue'
+import AlteracaoAnimalView from '../views/Alteracao-de-animal/Alteracao-de-animal.vue'
+;
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -72,6 +75,12 @@ const router = createRouter({
       name: 'adm',
       component: admView
     },
+    {
+      path: '/alteracao-animal',
+      name: 'alteracao-animal',
+      component: AlteracaoAnimalView
+    },
+  
     {
       path: '/about',
       name: 'about',

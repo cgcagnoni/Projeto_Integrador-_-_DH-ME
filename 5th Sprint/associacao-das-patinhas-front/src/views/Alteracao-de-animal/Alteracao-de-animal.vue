@@ -101,35 +101,13 @@
                 </div>
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
         <div class="col-8 ">
             <div data-bs-spy="scroll" data-bs-target="#listaCadastro" data-bs-smooth-scroll="true"
                 class="scrollspy-example " tabindex="0">
                 <nav>
                     <div>
 
-
-
-                        
                     </div>
 
 
@@ -138,3 +116,5 @@
         </div>
     </div>
 </template>
+<script src="./Alteracao-de-animal.js"></script>
+        <style src="./Alteracao-de-animal.css"></style>
