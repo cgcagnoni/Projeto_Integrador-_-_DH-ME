@@ -5,55 +5,70 @@
                 <div class="col">
                     <div class="adm-anim">
                         <h1>Animais</h1>
-                        <button> <a href="/alteracao-animal">
-                         Alteração de cadastro       
-                            </a></button>
-                        <button>
-                            <a href="/busca">
+                         <RouterLink to="/alteracao-animal">
+                            <button>
+                                Alteração de cadastro
+                            </button>
+                        </RouterLink>
+                        <RouterLink to="/busca">
+                            <button>
                                 Buscar um animal
-                            </a></button>
-                        <button type="button" v-on:click="criarListaAnimais">
-                            <a href="#">
+                            </button>
+                        </RouterLink>
+                        <RouterLink to="#">
+                            <button type="button" v-on:click="criarListaAnimais">
+
                                 Lista de animais
-                            </a></button>
-                        <button>
-                            <a href="#">
+                            </button>
+                        </RouterLink>
+                        <RouterLink to="#">
+                            <button>
+
                                 Deletar um animal
-                            </a></button>
+                            </button>
+                        </RouterLink>
                     </div>
                 </div>
                 <div class="col">
                     <div class="adm-user">
                         <h1>Usuários</h1>
-                        <button>
-                            <a href="alteracao-cadastro">
+                        <RouterLink to="/alteracao-cadastro">
+                            <button v-on:click="listarTodosUsuarios()">
+
                                 Alteração de cadastro
-                            </a></button>
-                        <button v-on:click="listarTodosUsuarios()">
+                            </button>
+                        </RouterLink>
+                        <RouterLink to="#">
+                            <button v-on:click="listarTodosUsuarios()">
+
                                 Lista de usuários
-                        </button>
-                        <button>
-                            <a href="#">
+                            </button>
+                        </RouterLink>
+                        <RouterLink to="#">
+                            <button>
+
                                 Deletar um usuário
-                            </a>
-                        </button>
+                            </button>
+                        </RouterLink>
                     </div>
                 </div>
                 <div class="col">
                     <div class="adm-ong">
                         <h1>Administração</h1>
+                        <RouterLink to="#">
                         <button>
-                            <a RouterLink="/4th Sprint/alteracao-de-cadastro.html">
+
                                 Doações
-                            </a></button>
+                            </button>
+                            </RouterLink>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div id="listas">
+     <div id="listas">
         <ul id="list-user">
-            
+
             <li class="list-group" v-for="usuario in listaUsuarios">
             <h1 id="listaDeUsers">Usuário {{ usuario.id }}</h1><br/>
                 Username: {{ usuario.username }} <br/>
