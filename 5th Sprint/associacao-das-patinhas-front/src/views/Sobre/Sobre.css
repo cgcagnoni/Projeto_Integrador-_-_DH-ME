@@ -1,8 +1,6 @@
 /* Sobre nós */
-
 #sobre-nos {
     display: flex;
-    flex-direction: row;
     background-color: #01dddd;
     font-weight: bold;
 }
@@ -23,7 +21,6 @@
     margin-left: auto;
     margin-right: auto;
     color: #fff;
-
 }
 
 #sobre-txt .titulo {
