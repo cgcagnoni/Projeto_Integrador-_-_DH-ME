@@ -1,9 +1,9 @@
 <template>
   <div class="row homepage-princ" id="homepage">
-    <div class="col homepage-img">
+    <div id="imagemlogo" class="col homepage-img">
       <img src="@/assets/images/Home/animal-2.jpg" alt="" />
     </div>
-    <div class="col homepage-txt">
+    <div id="banner" class="col homepage-txt">
       <span>
         <h1 class="homepage-txt-slog">Adotar é um ato de amor</h1>
         <h2 class="homepage-txt-nome">Associação das patinhas</h2>

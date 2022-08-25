@@ -13,6 +13,14 @@
                         <RouterLink to="/busca">
                             <button>
                                 Buscar um animal
+<<<<<<< HEAD
+                            </a></button>
+                        <button type="button" v-on:click="listarTodosAnimais">
+                                Lista de animais
+                        </button>
+                        <button>
+                            <a href="#">
+=======
                             </button>
                         </RouterLink>
                         <RouterLink to="#">
@@ -24,6 +32,7 @@
                         <RouterLink to="#">
                             <button>
 
+>>>>>>> bdae4f085d2dbef49e77dc4d68c8a6b8ee0f8da1
                                 Deletar um animal
                             </button>
                         </RouterLink>
@@ -66,9 +75,14 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
+    <div id="listas">
+        <ul id="list-user">         
+=======
      <div id="listas">
         <ul id="list-user">
 
+>>>>>>> bdae4f085d2dbef49e77dc4d68c8a6b8ee0f8da1
             <li class="list-group" v-for="usuario in listaUsuarios">
             <h1 id="listaDeUsers">Usuário {{ usuario.id }}</h1><br/>
                 Username: {{ usuario.username }} <br/>
@@ -79,6 +93,15 @@
                 Telefone: {{ usuario.telefone }}<hr>
             </li>
         </ul>
+        <!-- <ul id="list-animais">         
+            <li class="list-group" v-for="animais in listaAnimais">
+            <h1 id="lista-de-animais">Animal {{ animal.id }}</h1><br/>
+                Nome: {{ animal.nome }} <br/>
+                Espécie: {{ animal.especie }}<br/>
+                Localização: {{ animal.localizacao }}<br/>
+                Usuário: {{ animal.usuario }}<br/>
+            </li>
+        </ul> -->
     </div>
 </template>
 

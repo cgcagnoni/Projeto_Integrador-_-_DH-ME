@@ -2,28 +2,18 @@ export default {
     el: "#list-user",
 
     data() {
+        
         return {
-            id: 0,
-            username: null,
-            role: 0,
-            password: null,
-            nome: null,
-            sobrenome: null,
-            localizacao: null,
-            email: null,
-            telefone: null,
-            autorizacaoNotificacao: 0,
-            listaUsuarios: [
+            usuarios: [],
 
-            ]
-        };
-
+            animais: []
+        }
     },
 
     methods: {
 
         listarTodosUsuarios() {
-            
+
             const headers = new Headers();
             const token = localStorage.getItem("token")
 
@@ -31,26 +21,50 @@ export default {
                 headers.append("Authorization", `Bearer ${token}`)
             }
 
-            let app = { method: 'GET',
-               headers };
+            let app = {
+                method: 'GET',
+                headers
+            }
 
             fetch(`https://localhost:7288/api/Usuario`, app).then(resp => {
                 resp.json().then(usuarios => {
-                    this.listaUsuarios=usuarios;
+                    this.listaUsuarios = usuarios.nome;
                 });
-             })
+            })
         },
 
-        beforeMount() {   
-            
+        listarTodosAnimais() {
+
+            const headers = new Headers();
             const token = localStorage.getItem("token")
 
-            if (token) {            
+            if (token) {
+                headers.append("Authorization", `Bearer ${token}`)
+            }
+
+            let app = {
+                method: 'GET',
+                headers
+            };
+
+            fetch(`https://localhost:7288/api/Animal`, app).then(resp => {
+                resp.json().then(animais => {
+                    this.listaAnimais = animais.nome;
+                });
+            })
+        },
+
+
+        beforeMount() {
+
+            const token = localStorage.getItem("token")
+
+            if (token) {
                 this.listarTodosUsuarios();
-            }             
-       }   
-       
+                this.listarTodosAnimais();
+            }
+        }
+
 
     }
-    
 }
