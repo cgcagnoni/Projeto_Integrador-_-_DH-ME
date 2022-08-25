@@ -35,7 +35,7 @@ namespace ONGWebAPI.Controllers
         /// <response code="400">Erro desconhecido ocorrido ao tentar obter a lista</response>
         [HttpGet]
         [Authorize(Roles = "Administrador")]
-        public ActionResult<List<Animal>> ListarTodos() 
+        public ActionResult<List<Animal>> ListarTodos()
         {
             return animalRepository.ListarTodos();
         }
@@ -77,6 +77,11 @@ namespace ONGWebAPI.Controllers
             return animalRepository.SolicitarPeloSexo(sexo);
         }
 
+        [HttpGet("Idade")]
+        public ActionResult<List<Animal>> SolicitarPelaIdade([FromQuery] Idade idade)
+        {
+            return animalRepository.SolicitarPelaIdade(idade);
+        }
 
 
         /// <summary>

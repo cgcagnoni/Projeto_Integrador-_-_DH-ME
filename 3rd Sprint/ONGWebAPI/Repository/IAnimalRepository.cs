@@ -10,6 +10,7 @@ namespace ONGWebAPI.Repository
         List<Animal> SolicitarPelaLocalizacao(Localizacao localizacao);
         List<Animal> SolicitarPeloPorte(Porte porte);
         List<Animal> SolicitarPeloSexo(Sexo sexo);
+        List<Animal> SolicitarPelaIdade(Idade idade);
         Animal ExibirPelaID(int Id);
         void AdicionaNovoAnimal(Animal Animal);
         void ApagarAnimalPelaId(int Id);

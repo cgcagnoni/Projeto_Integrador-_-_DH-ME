@@ -100,7 +100,18 @@ namespace ONGWebAPI.Repository.EntityRepository
             }
         }
 
-        public bool VerificarAnimal(int Id)
+        public List<Animal> SolicitarPelaIdade(Idade idade)
+        {
+            using (var DbONG = DbONGFactory.create())
+            {
+                var animal = DbONG.Animais?.Where(t => t.Idade == idade);
+
+                return animal.ToList();
+            }
+        }
+
+
+         public bool VerificarAnimal(int Id)
         {
             using (var DbONG = DbONGFactory.create()) return DbONG.Animais.Any(Coluna => Coluna.Id == Id);
         }

@@ -3,7 +3,7 @@
     public enum Idade
     {
         Filhote, 
-        Médio, 
-        Grande
+        Adulto, 
+        Idoso
     }
 }
