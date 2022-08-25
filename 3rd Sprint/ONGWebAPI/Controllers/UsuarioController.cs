@@ -157,10 +157,8 @@ namespace ONGWebAPI.Controllers
         [Authorize]
         public ActionResult AtualizarInformacoesPelaId(int Id, Usuario Usuario)
         {
-            if (!User.IsInRole(Roles.Administrador.ToString()))
-            {
-                Id = int.Parse(User.FindFirst(ClaimTypes.Sid).Value);
-            }
+            Id = int.Parse(User.FindFirst(ClaimTypes.Sid).Value);
+            
             if (_usuarioRepository.VerificarUsuario(Id))
             {
                 _usuarioRepository.AtualizarInformacoesPelaId(Id, Usuario);
