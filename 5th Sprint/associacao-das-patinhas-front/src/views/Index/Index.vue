@@ -24,9 +24,16 @@
     <!-- Catálogo da Home Page -->
     <div id="homepage-catalog">
       <div class="col homepage-catalog-carousel">
-        <a href="/4th Sprint/busca.html">
+        <RouterLink to="/busca">
           <h3>Animais disponíveis para adoção</h3>
-        </a>
+        </RouterLink> 
+      <div>        
+        <p v-for="animal in animaisDisponiveis">
+          {{ animal.nome }}</p>
+          <br />
+          <hr class="solid" />
+    </div>         
+        
         <div class="carousel carousel-dark slide" data-bs-ride="carousel">
           <div class="carousel-indicators">
             <button

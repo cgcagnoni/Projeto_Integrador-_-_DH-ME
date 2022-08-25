@@ -42,7 +42,7 @@
           </div>
           <div>
             <h4 id="list-item-3">Meus animais colocados para adoção</h4>            
-            <p  v-for="animal in animaisDisponiveis">
+            <p  v-for="animal in animaisDisponiveisUsuario">
             {{ animal.nome }}</p>
             <br />
             <hr class="solid" />

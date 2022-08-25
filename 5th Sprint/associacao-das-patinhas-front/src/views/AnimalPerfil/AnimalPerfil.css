@@ -118,3 +118,39 @@
     margin: 10px;
     border: #e0e300 solid 2px;
 }
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.1rem;
+}
+.input-box-interesse input {
+    margin: 0.6rem 0;
+    padding: 0.9rem 11.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px black;
+    font-size: 0.8rem;
+}
+
+.input-box-interesse input:hover {
+    background-color: #ff598f;
+}
+
+.input-box-interesse input:focus-visible {
+    outline: 1px solid #00bfaf;
+}
+.adocao-btn-enviar {
+    background-color: #ff598f;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    border: #e0e300 solid 2px;
+    padding: 15px;
+    border-radius: 25px;    
+}
+
+.adocao-btn-item:enviar {
+    background-color: #fff;
+    color: #e0e300;
+}

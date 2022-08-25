@@ -8,7 +8,7 @@ export default {
             email: null,
             telefone: null,
             localizacao: null,
-            animaisDisponiveis: [],
+            animaisDisponiveisUsuario: [],
             animaisAdotados:[]
         };
     },
@@ -36,10 +36,10 @@ export default {
             //     alert('Usuario ou senha incorretos');
             // });
         },
-        listarAnimaisDisponiveis() {
+        ListarAnimaisDisponiveisUsuario() {
             fetch(`https://localhost:7288/api/Animal/ListarAnimaisDisponiveisUsuario`, this.getOptions()).then(resp => {
-                resp.json().then(animaisDisponiveis => {
-                    this.animaisDisponiveis = animaisDisponiveis;
+                resp.json().then(animaisDisponiveisUsuario => {
+                    this.animaisDisponiveisUsuario = animaisDisponiveisUsuario;
                 })
             })
         },
@@ -58,7 +58,7 @@ export default {
 
         if (token) {            
             this.buscarUsuarioPorId();
-            this.listarAnimaisDisponiveis();
+            this.ListarAnimaisDisponiveisUsuario();
             this.listarAnimaisAdotados();
         }
         else{

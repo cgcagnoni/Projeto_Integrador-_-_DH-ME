@@ -3,10 +3,11 @@
         <div class="nav-logo col">
             <img class="navbar-logo" src="@/assets/images/Home/logo-provisoria.jpg" alt="logo-provisoria">
         </div>
-        <div class="dropdown col">
+        <div class="dropdown col">   
+            <button v-on:click="logout">Logout</button>         
             <button class="btn btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i
                     class="fa-solid fa-bars"></i> </button>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu">                
                 <li><RouterLink class="dropdown-item" to="/">Página inicial</RouterLink></li>
                 <li><RouterLink class="dropdown-item" to="/busca">Quero adotar</RouterLink></li>
                 <li><RouterLink class="dropdown-item" to="/doacao-animal">Quero divulgar um animal para adoção</RouterLink></li>
