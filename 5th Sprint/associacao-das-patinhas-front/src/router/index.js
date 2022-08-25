@@ -11,7 +11,7 @@ import PerfilView from '../views/Perfil/Perfil.vue'
 import admView from '../views/Adm/adm.vue'
 import SobreView from '../views/Sobre/Sobre.vue'
 import AlteracaoAnimalView from '../views/Alteracao-de-animal/Alteracao-de-animal.vue'
-;
+import AlteracaoCadastroView from '../views/Alteracao-de-cadastro/Alteracao-de-cadastro.vue';
 
 
 const router = createRouter({
@@ -79,6 +79,11 @@ const router = createRouter({
       path: '/alteracao-animal',
       name: 'alteracao-animal',
       component: AlteracaoAnimalView
+    },
+    {
+      path: '/alteracao-cadastro',
+      name: 'alteracao-cadastro',
+      component: AlteracaoCadastroView
     },
   
     {
