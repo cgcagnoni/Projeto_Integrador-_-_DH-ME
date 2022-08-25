@@ -50,6 +50,24 @@
     color: #ff598f;
 }
 
+.dropdown button {
+    color: #fff;
+    background-color: #ff598f;
+    height: 60px;
+    width: 90px;
+    font-size: 20px;
+    border: #e0e300 2px solid;
+    border-radius: 20px;
+    margin: 3px;
+    font-weight: bold;
+}
+
+.dropdown button:hover {
+    background-color: #fff;
+    color: #e0e300;
+}
+
+
 .dropdown-menu a:hover {
     background-color: #e0e300;
 }
