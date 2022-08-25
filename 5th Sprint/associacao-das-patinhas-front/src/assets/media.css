@@ -1,9 +1,9 @@
-@media(max-width: 750px){
-    #container{
+@media(max-width: 750px) {
+    #container {
         width: 100%;
     }
 
-    #homepage{
+    #homepage {
         display: block;
         width: 100%;
         margin: 0 auto;
@@ -13,39 +13,39 @@
         display: table-footer-group;
     }
 
-    #homepage-catalog{
+    #homepage-catalog {
         flex-wrap: wrap;
     }
 
-    .box{
+    .box {
         font-size: 20px;
         padding: 20px;
 
     }
 
-    #profilecontent{
+    #profilecontent {
         display: block;
     }
 
 
-    #listaCadastro{
+    #listaCadastro {
         width: 100%;
         margin-bottom: 20%;
     }
 
-    .alteraList{
+    .alteraList {
         margin: 20px;
     }
 
-    #busca{
+    #busca {
         display: block;
     }
 
-    .busca-icon i{
-        color:#fff;
+    .busca-icon i {
+        color: #fff;
     }
 
-    #contato{
+    #contato {
         display: flex;
         flex-direction: column;
         margin: 0 auto;
@@ -57,7 +57,7 @@
         margin: 40px;
     }
 
-    #profilecontent{
+    #profilecontent {
         margin: 0 auto;
     }
 
@@ -72,34 +72,35 @@
 
     }
 
-    .descricao-animal{
+    .descricao-animal {
         text-align: center;
     }
 
-    .outros-animais{
+    .outros-animais {
         flex-direction: column;
     }
 
-    .main-login{
+    .main-login {
         display: flex;
         flex-direction: column;
         height: 900px;
     }
-    .left-login{
+
+    .left-login {
         width: 20;
         margin: 12px;
     }
 
-    .left-login>h1{
+    .left-login>h1 {
         font-size: medium;
     }
 
-    .right-login{
+    .right-login {
         width: 100%;
         margin-bottom: 25px;
     }
 
-    #sobre-nos{
+    #sobre-nos {
         display: flex;
         flex-direction: column;
     }
@@ -111,19 +112,19 @@
     }
 
     #sobre-txt .titulo {
-        margin: 0 auto;        
+        margin: 0 auto;
     }
 
     #sobre-txt .descricao {
         margin: 0 auto;
     }
 
-    #arrecadacao{
+    #arrecadacao {
         display: flex;
         flex-direction: column;
     }
 
-    .arrecadacao-img img{
+    .arrecadacao-img img {
         width: 80%;
         height: auto;
     }
@@ -132,8 +133,23 @@
         margin: 0 auto;
     }
 
-    #arrecadacao-txt .descricao{
+    #arrecadacao-txt .descricao {
         font-size: 25px;
         margin-bottom: 15px;
+    }
+
+
+    #form_doacao {
+        display: flex;
+        background-color: #00bfaf13;
+    }
+
+
+    #img_form_doacao img {
+        display: none;
+    }
+
+    .input-select_porte {
+        font-size: small;
     }
 }

@@ -1,4 +1,29 @@
 /* doacao-animal */
+
+#form_doacao {
+    display: flex;
+}
+
+#img_form_doacao img {
+    margin: 40px;
+    width: 500px;
+}
+
+#forms_doacao {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 40px;
+}
+
+#titulo_forms_doacao {
+    color: #ff598f;
+    font-weight: bolder;
+}
+
+
+
+/* 
 #form_animal{
     margin-left: 15%;
     margin-bottom: 1%;
@@ -52,4 +77,4 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 1.1rem;
-}
+} */
