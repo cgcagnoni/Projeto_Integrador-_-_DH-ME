@@ -5,11 +5,11 @@
                 <div class="col">
                     <div class="adm-anim">
                         <h1>Animais</h1>
-                        <button> <a RouterLink="/alteracao-de-animal">
-                                Alteração de cadastro
+                        <button> <a href="/alteracao-animal">
+                         Alteração de cadastro       
                             </a></button>
                         <button>
-                            <a RouterLink="/busca.html">
+                            <a href="/busca">
                                 Buscar um animal
                             </a></button>
                         <button type="button" v-on:click="criarListaAnimais">
@@ -26,7 +26,7 @@
                     <div class="adm-user">
                         <h1>Usuários</h1>
                         <button>
-                            <a RouterLink="/4th Sprint/alteracao-de-cadastro.html">
+                            <a href="alteracao-cadastro">
                                 Alteração de cadastro
                             </a></button>
                         <button>
