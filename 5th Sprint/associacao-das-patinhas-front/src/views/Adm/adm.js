@@ -3,7 +3,7 @@ export default {
 
     data() {
         
-        return {
+        return {            
             usuarios: [],
 
             animais: []
@@ -27,8 +27,8 @@ export default {
             }
 
             fetch(`https://localhost:7288/api/Usuario`, app).then(resp => {
-                resp.json().then(usuarios => {
-                    this.listaUsuarios = usuarios.nome;
+                resp.json().then(usuario => {
+                    this.usuarios = usuario;
                 });
             })
         },
@@ -48,8 +48,8 @@ export default {
             };
 
             fetch(`https://localhost:7288/api/Animal`, app).then(resp => {
-                resp.json().then(animais => {
-                    this.listaAnimais = animais.nome;
+                resp.json().then(animal => {
+                    this.animais = animal;
                 });
             })
         },
