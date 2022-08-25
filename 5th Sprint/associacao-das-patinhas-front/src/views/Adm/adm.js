@@ -16,6 +16,37 @@ export default {
             listaUsuarios: [
 
             ]
+
+            //Dados dos animais
+            // {
+            //     id: 0,
+            //     nome: string,
+            //     especie: 0,
+            //     sexo: 0,
+            //     idade: 0,
+            //     porte: 0,
+            //     descricao: string,
+            //     vacinas: string,
+            //     foto: string,
+            //     localizacao: 0,
+            //     microchip: true,
+            //     castrado: true,
+            //     deficiencia: true,
+            //     disponibilidade: true,
+            //     dataCadastro: 2022-08-25T14:56:52.718Z,
+            //     usuario: {
+            //       id: 0,
+            //       username: string,
+            //       role: 0,
+            //       password: string,
+            //       nome: string,
+            //       sobrenome: string,
+            //       localizacao: string,
+            //       email: string,
+            //       telefone: string,
+            //       autorizacaoNotificacao: 0
+            //     }
+            //      listaAnimais: []
         };
 
     },
@@ -23,7 +54,7 @@ export default {
     methods: {
 
         listarTodosUsuarios() {
-            
+
             const headers = new Headers();
             const token = localStorage.getItem("token")
 
@@ -31,26 +62,46 @@ export default {
                 headers.append("Authorization", `Bearer ${token}`)
             }
 
-            let app = { method: 'GET',
-               headers };
+            let app = {
+                method: 'GET',
+                headers
+            };
 
             fetch(`https://localhost:7288/api/Usuario`, app).then(resp => {
                 resp.json().then(usuarios => {
-                    this.listaUsuarios=usuarios;
+                    this.listaUsuarios = usuarios;
                 });
-             })
+            })
         },
 
-        beforeMount() {   
-            
-            const token = localStorage.getItem("token")
+        // listarTodosAnimais() {
 
-            if (token) {            
-                this.listarTodosUsuarios();
-            }             
-       }   
-       
+        //     const headers = new Headers();
+        //     const token = localStorage.getItem("token")
 
+        //     if (token) {
+        //         headers.append("Authorization", `Bearer ${token}`)
+        //     }
+
+        //     let app = { method: 'GET',
+        //        headers };
+
+        //     fetch(`https://localhost:7288/api/Animal`, app).then(resp => {
+        //         resp.json().then(animais => {
+        //             this.listaAnimais=animais;
+        //         });
+        //      })
+    },
+
+    beforeMount() {
+
+        const token = localStorage.getItem("token")
+
+        if (token) {
+            this.listarTodosUsuarios();
+            // this.listarTodosAnimais();
+        }
     }
-    
+
+
 }

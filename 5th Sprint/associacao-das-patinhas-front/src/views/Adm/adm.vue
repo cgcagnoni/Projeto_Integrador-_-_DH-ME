@@ -12,10 +12,9 @@
                             <a href="/busca">
                                 Buscar um animal
                             </a></button>
-                        <button type="button" v-on:click="criarListaAnimais">
-                            <a href="#">
+                        <button type="button" v-on:click="listarTodosAnimais">
                                 Lista de animais
-                            </a></button>
+                        </button>
                         <button>
                             <a href="#">
                                 Deletar um animal
@@ -52,8 +51,7 @@
         </div>
     </div>
     <div id="listas">
-        <ul id="list-user">
-            
+        <ul id="list-user">         
             <li class="list-group" v-for="usuario in listaUsuarios">
             <h1 id="listaDeUsers">Usuário {{ usuario.id }}</h1><br/>
                 Username: {{ usuario.username }} <br/>
@@ -64,6 +62,15 @@
                 Telefone: {{ usuario.telefone }}<hr>
             </li>
         </ul>
+        <!-- <ul id="list-animais">         
+            <li class="list-group" v-for="animais in listaAnimais">
+            <h1 id="lista-de-animais">Animal {{ animal.id }}</h1><br/>
+                Nome: {{ animal.nome }} <br/>
+                Espécie: {{ animal.especie }}<br/>
+                Localização: {{ animal.localizacao }}<br/>
+                Usuário: {{ animal.usuario }}<br/>
+            </li>
+        </ul> -->
     </div>
 </template>
 
