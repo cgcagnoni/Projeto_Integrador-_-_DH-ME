@@ -2,7 +2,7 @@
 #homepage {
     display: flex;
     flex-direction: row;
-    background-color: #00bfaf;
+    background-color: #fff;
 }
 
 #homepage img {
@@ -63,12 +63,12 @@
     color: #e0e300;
 }
 
-
 /* Catálogo da Home Page */
 #homepage-catalog {
     border-top: solid #e0e300;
     border-bottom: 0;
     display: flex;
+    background-color: #00bfaf;
 }
 
 .boxes h3 {
@@ -130,7 +130,6 @@
     width: 500px;
 }
 
-
 .carousel-item img{
     margin: 0 auto;
     padding: 2%;
@@ -148,3 +147,4 @@
     font-size: 25px;
     color: #fffdd9;
 }
+
