@@ -47,7 +47,7 @@ namespace ONGWebAPI.Controllers
         [HttpPost]
         public ActionResult AdicionaNovoUsuario(Usuario usuario)
         {
-            
+
             if (usuario.Password == null || usuario.Username == null)
             {
                 return NotFound(new { message = "Usuário ou senha inválidos" });
@@ -55,9 +55,11 @@ namespace ONGWebAPI.Controllers
             usuario.Role = Entities.Roles.Usuario;
             usuario.Password = this.hashPassword(usuario.Password);
             this._usuarioRepository.AdicionaNovoUsuario(usuario);
-            return CreatedAtAction("AdicionaNovoUsuario", new {
+            return CreatedAtAction("AdicionaNovoUsuario", new
+            {
                 user = usuario.Username,
-                id = usuario.Id }, usuario);
+                id = usuario.Id
+            }, usuario);
         }
 
         [HttpGet("Login")]
@@ -86,7 +88,7 @@ namespace ONGWebAPI.Controllers
             {
                 return Convert.ToBase64String(mySHA256.ComputeHash(Encoding.UTF8.GetBytes(password)));
             }
-                
+
         }
 
 
@@ -196,10 +198,7 @@ namespace ONGWebAPI.Controllers
         [Authorize]
         public ActionResult<Usuario> ExibirPelaID(int Id)
         {
-            if (!User.IsInRole(Roles.Administrador.ToString()))
-            {
-                Id = int.Parse(User.FindFirst(ClaimTypes.Sid).Value);
-            }
+            Id = int.Parse(User.FindFirst(ClaimTypes.Sid).Value);
             var usuario = _usuarioRepository.ExibirPelaID(Id);
             if (usuario != null)
             {
