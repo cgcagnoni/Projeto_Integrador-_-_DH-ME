@@ -203,6 +203,7 @@
         Espécie: {{ animal.especie }}<br />
         Localização: {{ animal.localizacao }}<br />
         Usuário: {{ animal.usuario.id }}<br />
+        Disponibilidade: {{ animal.status}}<br />
       </li>
     </ul>
   </div>
