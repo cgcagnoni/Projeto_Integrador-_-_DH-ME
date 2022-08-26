@@ -24,7 +24,7 @@ export default {
                                     .sort();
 
                     this.listaCidades = this.listaUF
-                                                .map(x => {
+                                                .map(x => { //item para cada linha da lista UF
                                                     return {
                                                         key: x,
                                                         cidades: cidades
