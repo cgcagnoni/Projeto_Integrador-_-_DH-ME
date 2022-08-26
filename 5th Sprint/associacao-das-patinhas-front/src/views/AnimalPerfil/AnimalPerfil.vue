@@ -7,17 +7,15 @@
 
         <div class="tags-filtro">
           <!--linkar aqui com a api as tags que estao registradas no animal -->
-          #macho #dócil #filhote
+          #{{animal.sexo}} #{{animal.porte}} #{{animal.idade}}
         </div>
       </div>
 
       <div class="descricao-animal">
-        <h1 class="nome-animal">PEDRINHO</h1>
+        <h1 class="nome-animal">{{animal.nome}}</h1>
         <p class="animal-txt">
-          Pedrinho veio de uma ninhada com outros seis gatinhos, encontrados
-          abandonados em um terreno. Tem o pelo rajadinho e os olhos azuis,
-          muito dócil e carinhoso. Aparenta ter em torno de 4 a 5 meses e está
-          pronto para ter um lar!
+          Está em {{animal.localizacao}}
+          {{animal.descricao}}
         </p>
 
         <div class="container mt-5">

@@ -23,7 +23,7 @@ const router = createRouter({
       component: IndexView
     },
     {
-      path: '/animalperfil',
+      path: '/animalperfil/:id',
       name: 'animalperfil',
       component: AnimalPerfilView
     },

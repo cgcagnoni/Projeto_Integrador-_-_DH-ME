@@ -32,9 +32,7 @@ export default {
                     this.telefone = usuario.telefone;
                     this.localizacao = usuario.localizacao;
                 });
-             })//.catch(err => {
-            //     alert('Usuario ou senha incorretos');
-            // });
+             })
         },
         ListarAnimaisDisponiveisUsuario() {
             fetch(`https://localhost:7288/api/Animal/ListarAnimaisDisponiveisUsuario`, this.getOptions()).then(resp => {
