@@ -23,23 +23,10 @@
                 <label class="form-label" for="email">Email</label>
                 <input class="form-control" type="email" required placeholder="Digite seu email" />
               </div>
-              <div class="input-box">
+              <div  class="input-box">
                 <label class="form-label" for="telefone">Telefone</label>
                 <input class="form-control" type="tel" placeholder="(xx) xxxxx-xxxx" />
-                <div class="input-box">
-                  <label class="form-label" for="localizacao">Estado</label>
-                  <select id="UF" name="UF" v-model="estado">
-                    <option value="">Selecione</option>
-                    <option :value="item" v-for="item in listaUF">{{item}}</option>                    
-                  </select>
-                </div>
-                <div class="input-box">
-                  <label class="form-label" for="localizacao">Cidade</label>
-                  <select id="UF" name="UF" v-model="cidade">
-                    <option value="">Selecione</option>
-                    <option :value="item" v-for="item in listaCidades[estado]">{{item}}</option>                    
-                  </select>
-                </div>
+                    <EstadosECidades></EstadosECidades>
                 <div class="input-box">
                   <label class="form-label" for="Senha">Senha</label>
                   <input class="form-control" type="password" placeholder="Digite sua senha" />
@@ -56,6 +43,7 @@
   </div>
 </template>
 
-<script src="./Cadastro.js"></script>
+<script src="./Cadastro.js">
+</script>
 <style src="./Cadastro.css">
 </style>

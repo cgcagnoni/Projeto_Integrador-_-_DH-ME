@@ -45,21 +45,8 @@
                                 placeholder="Telefone do usuário">
                         </div>
                     </div>
-
-                    <div>
-                        <label for="estado" class="form-label">Estado</label>
-                        <select id="UF" name="UF" v-model="estado">
-                    <option value="">Selecione</option>
-                    <option :value="item" v-for="item in listaUF">{{item}}</option>                    
-                  </select>
-                </div>
-                <div class="input-box">
-                  <label class="form-label" for="localizacao">Cidade</label>
-                  <select id="UF" name="UF" v-model="cidade">
-                    <option value="">Selecione</option>
-                    <option :value="item" v-for="item in listaCidades[estado]">{{item}}</option>                    
-                  </select>
-                    </div><br>
+                    <EstadosECidades></EstadosECidades>
+                    <br>
                     <div class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
                         <label class="form-check-label" for="autorizacaoContatoEmail">Autorizo receber
@@ -85,7 +72,7 @@
                     </div>
 
                     <div class="Alterar-rodape">
-                                <button type="submit" class="Altera-button">Alterar meus dados</button>
+                        <button type="submit" class="Altera-button">Alterar meus dados</button>
                     </div>
                 </form>
 
@@ -103,7 +90,7 @@
             </div>
         </div>
     </div>
-    
+
 </template>
 
 <script src="./Alteracao-de-cadastro.js"></script>
