@@ -2,11 +2,12 @@
   <!-- Conteúdo da Página -->
   <div class="row" id="profilecontent">
     <div class="col-4">
-      <div id="list-example" class="list-group">
-        <a class="list-group-item list-group-item-action" href="#list-item-1">Meu cadastro</a>
-        <a class="list-group-item list-group-item-action" href="#list-item-2">Minhas adoções</a>
-        <a class="list-group-item list-group-item-action" href="#list-item-3">Minha doações</a>
-        <a class="list-group-item list-group-item-action" href="#list-item-4">Segurança</a>
+      <div id="listaCadastro" class="list-group">
+        <a class="list-group-item list-group-item-action" href="./perfil">Meu cadastro</a>
+        <a class="list-group-item list-group-item-action" href="./perfil">Minhas adoções</a>
+        <a class="list-group-item list-group-item-action" href="./perfil">Minha doações</a>
+        <a class="list-group-item list-group-item-action" href="./perfil">Segurança</a>
+        <a class="list-group-item list-group-item-action" href="./alteracao-cadastro">Alterar dados</a>
       </div>
     </div>
     <div class="col-8">
@@ -19,6 +20,7 @@
             <p>E-mail: &nbsp {{ email }}</p>
             <p>Telefone: &nbsp {{ telefone }}</p>
             <p>Localização: &nbsp {{ localizacao }}</p>
+            <a href="./Alteracao-cadastro">Alterar meus dados</a>
             <br />
             <hr class="solid" />
           </div>
@@ -41,16 +43,16 @@
             <hr class="solid" />
           </div>
           <div>
-            <h4 id="list-item-3">Meus animais colocados para adoção</h4>            
-            <p  v-for="animal in animaisDisponiveisUsuario">
-            {{ animal.nome }}</p>
+            <h4 id="list-item-3">Meus animais colocados para adoção</h4>
+            <p v-for="animal in animaisDisponiveisUsuario">
+              {{ animal.nome }}</p>
             <br />
             <hr class="solid" />
           </div>
           <div>
             <h4 id="list-item-4">Segurança</h4>
-            <p>Trocar e-mail</p>
-            <p>Trocar senha</p>
+            <a href="./Alteracao-cadastro">Alterar e-mail</a><br />
+            <a href="./Alteracao-cadastro">Alterar senha</a>
           </div>
         </nav>
       </div>

@@ -87,29 +87,31 @@
     outline: 1px solid #00bfaf;
 }
 
-.Cadastre-se-button {
+.Alterar-rodape{
     display: flex;
     align-items: center;
-    width: 100%;
-    
+    padding: 0.62rem;
+    width: 1000px;
+    margin: 0 auto;
 }
 
-.Cadastre-se-button button {
-    width: 100%;
-    margin-top: 2.5rem;
+.Altera-button {
+    color: #fff;
     border: none;
     background-color: #00bfaf;
-    padding: 0.62rem;
     border-radius: 5px;
+    margin-top: 2.5rem;
+    padding: 0.62rem;
     cursor: pointer;
-    
+    align-items: center;
 }
 
-.Cadastre-se-button button:hover {
+
+.Altera-button:hover {
     background-color: #ff598f;
 }
 
-.Cadastre-se-button button a {
+.Altera-button a {
     text-decoration: none;
     color: #fff;
     
