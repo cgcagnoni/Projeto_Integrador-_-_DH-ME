@@ -7,7 +7,8 @@ namespace ONGWebAPI.Repository
     {
         List<Animal> ListarTodos();
         List<Animal> SolicitarPelaEspecie(Especie especie);
-        List<Animal> SolicitarPelaLocalizacao(Localizacao localizacao);
+        List<Animal> SolicitarPelaLocalizacao(string localizacao);
+        List<Animal> SolicitarPelaCidade(string cidade);
         List<Animal> SolicitarPeloPorte(Porte porte);
         List<Animal> SolicitarPeloSexo(Sexo sexo);
         List<Animal> SolicitarPelaIdade(Idade idade);

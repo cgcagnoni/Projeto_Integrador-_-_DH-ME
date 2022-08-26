@@ -60,9 +60,14 @@ namespace ONGWebAPI.Controllers
         }
 
         [HttpGet("PorLocalizacao")]
-        public ActionResult<List<Animal>> SolicitarPelaLocalizacao([FromQuery] Localizacao localizacao)
+        public ActionResult<List<Animal>> SolicitarPelaLocalizacao(string localizacao)
         {
             return animalRepository.SolicitarPelaLocalizacao(localizacao);
+        }
+        [HttpGet("PorCidade")]
+        public ActionResult<List<Animal>> SolicitarPelaCidade(string cidade)
+        {
+            return animalRepository.SolicitarPelaLocalizacao(cidade);
         }
 
         [HttpGet("PorPorte")]

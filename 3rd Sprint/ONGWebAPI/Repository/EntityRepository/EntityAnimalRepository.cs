@@ -68,7 +68,7 @@ namespace ONGWebAPI.Repository.EntityRepository
 
 
         }
-        public List<Animal> SolicitarPelaLocalizacao(Localizacao localizacao)
+        public List<Animal> SolicitarPelaLocalizacao(string localizacao)
         {
             using (var DbONG = DbONGFactory.create())
             {
@@ -77,6 +77,17 @@ namespace ONGWebAPI.Repository.EntityRepository
                 return animal.ToList();
             }
         }
+
+        public List<Animal> SolicitarPelaCidade(string cidade)
+        {
+            using (var DbONG = DbONGFactory.create())
+            {
+                var animal = DbONG.Animais?.Where(t => t.Cidade == cidade);
+
+                return animal.ToList();
+            }
+        }
+
 
         public List<Animal> SolicitarPeloPorte(Porte porte)
         {

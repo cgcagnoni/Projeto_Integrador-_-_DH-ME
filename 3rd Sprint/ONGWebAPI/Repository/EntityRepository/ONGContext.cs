@@ -55,12 +55,7 @@ namespace ONGWebAPI.Repository.EntityRepository
                    .HasConversion(
                        p => p.ToString(),
                        p => (Porte)Enum.Parse(typeof(Porte), p)
-                   );
-                Tabela.Property(p => p.Localizacao)
-                   .HasConversion(
-                       p => p.ToString(),
-                       p => (Localizacao)Enum.Parse(typeof(Localizacao), p)
-                   );
+                   );                
                 Tabela.Property(p => p.Idade)
                    .HasConversion(
                        p => p.ToString(),

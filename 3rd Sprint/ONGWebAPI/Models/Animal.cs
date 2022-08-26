@@ -20,7 +20,8 @@ namespace ONGWebAPI.Models
         public string? Descricao { get; set; }
         public string? Vacinas { get; set; }
         public string? Foto { get; set; }
-        public Localizacao? Localizacao { get; set; }
+        public string? Localizacao { get; set; }
+        public string? Cidade { get; set;  }
         public bool? Microchip { get; set; }
         public bool? Castrado { get; set; }
         public bool? Deficiencia { get; set; }
