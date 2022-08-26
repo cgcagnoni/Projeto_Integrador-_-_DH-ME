@@ -6,14 +6,14 @@
           <div class="adm-anim">
             <h1>Animais</h1>
             <RouterLink to="/alteracao-animal">
-              <button>Alteração de cadastro</button>
+              <button class="button">Alteração de cadastro</button>
             </RouterLink>
 
-            <RouterLink to="/busca">
-              <button>Buscar um animal</button>
-            </RouterLink>
+            <a href="/busca">
+              <button class="button">Buscar um animal</button>
+            </a>
 
-            <button type="button" v-on:click="listarTodosAnimais">
+            <button class="button" type="button" v-on:click="listarTodosAnimais">
               Lista de animais
             </button>
 
@@ -22,7 +22,7 @@
               <div class="row">
                 <div class="deletar_animal-btn">
                   <button
-                    class="deletar_animal-btn-item"
+                    class="button"
                     data-bs-toggle="modal"
                     data-bs-target="#postModal"
                   >
@@ -92,10 +92,10 @@
             <h1>Usuários</h1>
 
             <RouterLink to="alteracao-cadastro">
-              <button>Alteração de cadastro</button>
+              <button class="button">Alteração de cadastro</button>
             </RouterLink>
 
-            <button v-on:click="listarTodosUsuarios()">
+            <button class="button" v-on:click="listarTodosUsuarios()">
               Lista de usuários
             </button>
 
@@ -104,7 +104,7 @@
               <div class="row">
                 <div class="deletar_usuario-btn">
                   <button
-                    class="deletar_usuario-btn-item"
+                    class="button"
                     data-bs-toggle="modal"
                     data-bs-target="#postModal"
                   >
@@ -173,9 +173,9 @@
           <div class="adm-ong">
             <h1>Administração</h1>
             <RouterLink to="/alteracao-cadastro">
-              <button>Alteração de cadastro</button>
+              <button class="button">Alteração de cadastro</button>
             </RouterLink>
-            <button>Arrecadação</button>
+            <button class="button">Arrecadação</button>
           </div>
         </div>
       </div>

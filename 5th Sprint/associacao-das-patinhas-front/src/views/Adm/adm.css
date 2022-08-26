@@ -37,16 +37,23 @@
     padding: 2%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 .adm-user 
 {
     padding: 2%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 .adm-anim 
 {
     padding: 2%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+.button {
+    width: 250px;
 }
