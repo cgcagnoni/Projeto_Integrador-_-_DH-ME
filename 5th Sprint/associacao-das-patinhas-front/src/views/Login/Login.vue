@@ -1,7 +1,9 @@
 <template>
+<div id="info">Para doar ou adotar um animalzinho, é necessário efetuar o cadastro.</div>
   <div class="main-login">
+    
     <div class="left-login">
-      <h1>Para doar ou adotar um animalzinho, é necessário efetuar o cadastro.</h1>
+      
       <img src="@/assets/images/Login/Foto-Cachorro-e-Gato-PNG.png" class="left-login-img" alt="Animacao">
     </div>
     <div class="right-login">
