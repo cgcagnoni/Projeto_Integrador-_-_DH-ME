@@ -2,21 +2,45 @@ import router from '@/router'
 
 export default {
     data() {
-        return {            
+        return {
+            id: 0,
             usuario: null,
-            senha: null
+            senha: null,
+            user: {}
         };
     },
     methods: {
         login() {
             fetch(`https://localhost:7288/api/Usuario/Login?username=${this.usuario}&senha=${this.senha}`).then(resp => {
-                resp.text().then(token => {                    
+                resp.text().then(token => {
                     localStorage.setItem("token", token)
-                    router.push('/perfil')
+                    this.role();
+                    //router.push('/perfil')
                 });
             }).catch(err => {
                 alert('Usuario ou senha incorretos');
             });
+        },
+        role() {
+            const headers = new Headers();
+            const token = localStorage.getItem("token")
+
+            if (token) {
+                headers.append("Authorization", `Bearer ${token}`)
+            }
+
+            let app = {
+                method: 'GET',
+                headers
+            };
+
+            fetch(`https://localhost:7288/api/Usuario/${this.id}`, app).then(resp => {
+                resp.json().then(usuario => {
+                    this.user = usuario;
+                    if (this.user.role == 0) router.push('/adm')
+                    if (this.user.role == 1) router.push('/perfil')
+                });
+            })
         },
     },
 }
