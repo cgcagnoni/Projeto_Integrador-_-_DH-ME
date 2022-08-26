@@ -18,12 +18,14 @@ import Footer from '@/components/Footer/Footer.vue'
 html{
     height: 100%;
     box-sizing: border-box;
+    width: 100%;
 }
 
 body {
     position: relative;
     margin: 0;
-    padding-bottom:0%
+    padding-bottom:0%;
+    width: 100%;
   }
 
 template {
