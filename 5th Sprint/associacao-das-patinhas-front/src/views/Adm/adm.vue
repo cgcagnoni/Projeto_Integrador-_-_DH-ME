@@ -14,16 +14,16 @@
 
             <!-- botao de deletar animal -->
 
-                  <button class="button" data-bs-toggle="modal" data-bs-target="#postModal">
+                  <button class="button" data-bs-toggle="modal" data-bs-target="#postModalAnimal">
                     Deletar um animal
                   </button>
                 </div>
               </div>
-              <div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="postModalLabel" aria-hidden="true">
+              <div class="modal fade" id="postModalAnimal" tabindex="-1" aria-labelledby="postModalLabelAnimal" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="postModalLabel">
+                      <h5 class="modal-title" id="postModalLabelAnimal">
                         Deletar animal do banco de dados
                       </h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -33,8 +33,8 @@
                         <div class="form-header">
                           <div class="input-group">
                             <div class="input-box-interesse">
-                              <label for="elementoNome" class="form-label">Informe o ID do animal</label>
-                              <input type="text" name="body" class="form-control" id="elementoNome"
+                              <label for="elementoIDAnimal" class="form-label">Informe o ID do animal</label>
+                              <input type="text" name="body" class="form-control" id="elementoIDAnimal"
                                 placeholder="Digite o ID" />
                             </div>
                           </div>
@@ -60,16 +60,16 @@
             <button class="button" type="button" v-on:click="listarTodosUsuarios">Lista de usuários</button>
 
             <!-- botao de deletar usuario -->
-                  <button class="button" data-bs-toggle="modal" data-bs-target="#postModal">
+                  <button class="button" data-bs-toggle="modal" data-bs-target="#postModalUser">
                     Deletar um usuário
                   </button>
                 </div>
               </div>
-              <div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="postModalLabel" aria-hidden="true">
+              <div class="modal fade" id="postModalUser" tabindex="-1" aria-labelledby="postModalLabelUser" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="postModalLabel">
+                      <h5 class="modal-title" id="postModalLabelUser">
                         Deletar usuário do banco de dados
                       </h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -79,8 +79,8 @@
                         <div class="form-header">
                           <div class="input-group">
                             <div class="input-box-interesse">
-                              <label for="elementoNome" class="form-label">Informe o ID do usuário</label>
-                              <input type="text" name="body" class="form-control" id="elementoNome"
+                              <label for="elementoIDUser" class="form-label">Informe o ID do usuário</label>
+                              <input type="text" name="body" class="form-control" id="elementoIDUser"
                                 placeholder="Digite o ID" />
                             </div>
                           </div>
