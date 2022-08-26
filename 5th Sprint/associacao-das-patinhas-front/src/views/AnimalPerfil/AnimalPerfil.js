@@ -2,8 +2,7 @@ export default {
     data() {
         return {
             animal: {},
-            interesse: {}
-
+            interesse: {},
         };
     },
     methods: {
@@ -38,6 +37,7 @@ export default {
                 body: JSON.stringify(this.interesse),
                 
             };
+            
             fetch(`https://localhost:7288/api/InteresseAdocao`, app).then(resp => {
                 resp.json().then(interesseAdocao => {
                     this.interesse = interesseAdocao;
@@ -45,10 +45,10 @@ export default {
     
                 });
             })
-        },
+        },    
     },
-    
     beforeMount() {
         this.buscarAnimalId();
+    
     }
 }

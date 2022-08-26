@@ -3,22 +3,23 @@
     <div id="animal-perfil" class="animal-perfil-princ">
       <!-- INFOS PROVISORIAS, TROCAR PELA API DEPOIS -->
       <div class="animal-perfil-img">
-        <img src="@/assets/images/PaginaAnimal/animal-5.jpg" alt="imagem-animal-pretendido" />
+        <img src="https://cataas.com/cat" alt="imagem-animal-pretendido" />
 
         <div class="tags-filtro">
           <!--linkar aqui com a api as tags que estao registradas no animal -->
-          #{{animal.sexoDesc}} #{{animal.porteDesc}} #{{animal.idadeDesc}}
+          #{{ animal.sexoDesc }} #{{ animal.porteDesc }} #{{ animal.idadeDesc }}
         </div>
       </div>
 
       <div class="descricao-animal">
-        <h1 class="nome-animal">{{animal.nome}}</h1>
+        <h1 class="nome-animal">{{ animal.nome }}</h1>
         <p class="animal-txt">
-          Está em {{animal.cidade}}, {{animal.localizacao}} <br/>
-          A história de {{animal.nome}} <br/>
-          {{animal.descricao}}<br/>
-          Mais detalhes sobre {{animal.nome}} <br/>
-          Vacinas: {{animal.vacinas}} | Microchip: {{animal.microchip}} | Cadastrado: {{animal.castrado}} | Deficiência: {{animal.deficiencia}} 
+          Está em {{ animal.cidade }}, {{ animal.localizacao }} <br />
+          A história de {{ animal.nome }} <br />
+          {{ animal.descricao }}<br />
+          Mais detalhes sobre {{ animal.nome }} <br />
+          Vacinas: {{ animal.vacinas }} | Microchip: {{ animal.microchip }} | Cadastrado: {{ animal.castrado }} | Deficiência:
+          {{ animal.deficiencia }}
           {{}}
 
         </p>
@@ -47,13 +48,13 @@
                         </div>
                         <div class="input-box-interesse">
                           <label for="elementoTelefone" class="form-label">Telefone</label>
-                          <input v-model="interesse.telefone" type="text" name="body" class="form-control" id="elementoTelefone"
-                            placeholder="Digite o seu telefone">
+                          <input v-model="interesse.telefone" type="text" name="body" class="form-control"
+                            id="elementoTelefone" placeholder="Digite o seu telefone">
                         </div>
                         <div class="input-box-interesse">
                           <label for="elementoEmail" class="form-label">E-mail</label>
-                          <input v-model="interesse.email" type="text" name="body" class="form-control" id="elementoEmail"
-                            placeholder="Digite o seu e-mail">
+                          <input v-model="interesse.email" type="text" name="body" class="form-control"
+                            id="elementoEmail" placeholder="Digite o seu e-mail">
                         </div>
 
                       </div>
