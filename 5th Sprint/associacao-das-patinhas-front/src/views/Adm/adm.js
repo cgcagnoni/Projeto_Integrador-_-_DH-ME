@@ -54,6 +54,16 @@ export default {
             })
         },
 
+        
+        deletarAnimal() {
+            
+        },
+          
+        
+        deletarUsuario(){
+
+        },
+        
 
         beforeMount() {
 
