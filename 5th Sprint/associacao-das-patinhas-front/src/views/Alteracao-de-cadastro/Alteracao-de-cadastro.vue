@@ -3,11 +3,11 @@
     <div class="row" id="profilecontent">
         <div class="col-4">
             <div id="listaCadastro" class="list-group">
-                <a class="list-group-item list-group-item-action" href="./perfil.html">Meu cadastro</a>
-                <a class="list-group-item list-group-item-action" href="./perfil.html">Minhas adoções</a>
-                <a class="list-group-item list-group-item-action" href="./perfil.html">Minha doações</a>
-                <a class="list-group-item list-group-item-action" href="./perfil.html">Segurança</a>
-                <a class="list-group-item list-group-item-action" href="./perfil.html">Alterar dados</a>
+                <a class="list-group-item list-group-item-action" href="./perfil">Meu cadastro</a>
+                <a class="list-group-item list-group-item-action" href="./perfil">Minhas adoções</a>
+                <a class="list-group-item list-group-item-action" href="./perfil">Minha doações</a>
+                <a class="list-group-item list-group-item-action" href="./perfil">Segurança</a>
+                <a class="list-group-item list-group-item-action" href="./alteracao-cadastro">Alterar dados</a>
             </div>
         </div>
         <div class="col-8">
@@ -103,13 +103,8 @@
                         </div>
                     </div>
 
-                    <div class="Cadastre-se-button">
-
-                        <div class="form-group row">
-                            <div class="col-sm-10">
-                                <button type="submit" class="btn btn-primary">Alterar dados cadastrais</button>
-                            </div>
-                        </div>
+                    <div class="Alterar-rodape">
+                                <button type="submit" class="Altera-button">Alterar meus dados</button>
                     </div>
                 </form>
 
@@ -129,3 +124,7 @@
     </div>
     
 </template>
+
+<script src="./Alteracao-de-cadastro.js"></script>
+<style src="./Alteracao-de-cadastro.css">
+</style>
