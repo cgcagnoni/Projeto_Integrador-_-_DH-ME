@@ -13,3 +13,29 @@ import Footer from '@/components/Footer/Footer.vue'
     <Footer></Footer>
   </div>
 </template>
+
+<style scoped>
+html{
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    padding-bottom:0%
+  }
+
+template {
+    position: relative;
+    margin: 0;
+    padding-bottom:0%
+  }
+
+#container{
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+}
+
+</style>

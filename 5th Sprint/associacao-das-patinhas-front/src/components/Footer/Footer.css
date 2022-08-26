@@ -1,9 +1,10 @@
 /* Footer */
 #baseboard {
     border-top: #e0e300 2px solid;
-    position: static;
-    bottom: 0;
-    margin: 0;
+    position: absolute;
+    right: 0;
+    bottom: auto;
+    left: 0;
     padding: 0;
     background-color: #ff598f;
     color: #fff;
