@@ -33,7 +33,7 @@
         <br />
         <hr class="solid" />
       </div>
-      <div class="col homepage-catalog-carousel">
+      <div class="col homepage-catalog-carousel col">
         <RouterLink to="/busca">
           <h3>Animais disponíveis para adoção</h3>
         </RouterLink> 

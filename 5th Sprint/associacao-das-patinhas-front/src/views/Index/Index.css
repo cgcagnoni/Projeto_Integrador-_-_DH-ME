@@ -98,22 +98,22 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 30px;
+    padding: 40px;
+    margin: 0 auto;
 
 }
 
 .box {
-    font-size: 50px;
+    font-size: 40px;
     color: #fff;
     border: #e0e300 solid;
     background-color: #ff598f;
     opacity: 90%;
     border-radius: 25px;
     text-align: center;
-    margin: 10px auto;
+    margin: 20px auto;
     padding: 0;
     position: relative;
-    width: 50%;
     box-sizing: border-box;
     padding: 30px;
 }
@@ -126,6 +126,7 @@
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #ff598f;
     color: #fffdd9;
+    width: auto;
 }
 
 .homepage-catalog-carousel a{
@@ -137,7 +138,7 @@
 
 .homepage-catalog-carousel {
     margin: 0 auto;
-    width: 200px;
+
 }
 
 .carousel-item img{
