@@ -16,7 +16,8 @@
           <input v-model="senha" type="password" name="senha" placeholder="Senha">
         </div>
         <button class="btn-login" v-on:click="login">Login</button>
-        <button class="btn-cadastro">Cadastre-se</button>
+        <button class="btn-cadastro">Cadastre-se</button><br/>
+        <button class="btn-cadastro">Esqueceu sua senha?</button>
       </div>
     </div>
   </div>
