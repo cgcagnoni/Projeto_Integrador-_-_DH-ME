@@ -33,7 +33,7 @@ namespace ONGWebAPI.Repository.EntityRepository
             {                
                 DbONG.Entry(interesseAdocao).State = EntityState.Added;
                 DbONG.SaveChanges();
-                //DbONG.Entry(interesseAdocao).Reference(x => x.Animal).Load();
+                DbONG.Entry(interesseAdocao).Reference(x => x.Animal).Load();
             }
         }
     }
