@@ -1,3 +1,5 @@
+import router from '@/router'
+
 export default {
     el: "#list-user",
 
@@ -63,7 +65,26 @@ export default {
         deletarUsuario(){
 
         },
-        
+
+        alterarCadastroAnimal(){
+            router.push('./Alteracao-animal')
+        },
+
+        buscarAnimal(){
+            router.push('./Busca')
+        },
+
+        alterarCadastroUsuario(){
+            router.push('./Alteracao-cadastro')
+        },
+
+        alterarCadastroAdm(){
+            router.push('./Alteracao-cadastro')
+        },
+
+        arrecadacao(){
+            router.push('./Arrecadacao')
+        },        
 
         beforeMount() {
 
