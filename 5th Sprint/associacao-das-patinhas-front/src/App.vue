@@ -36,6 +36,7 @@ template {
   margin: 0 auto;
   height: 100%;
   width: 100%;
+  align-items: center;
 }
 
 </style>
