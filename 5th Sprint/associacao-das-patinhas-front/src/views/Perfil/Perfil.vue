@@ -20,7 +20,7 @@
             <p>E-mail: &nbsp {{ email }}</p>
             <p>Telefone: &nbsp {{ telefone }}</p>
             <p>Localização: &nbsp {{ localizacao }}</p>
-            <a href="./Alteracao-cadastro">Alterar meus dados</a>
+            <a class="link" href="./Alteracao-cadastro">Alterar meus dados</a>
             <br />
             <hr class="solid" />
           </div>
@@ -51,8 +51,8 @@
           </div>
           <div>
             <h4 id="list-item-4">Segurança</h4>
-            <a href="./Alteracao-cadastro">Alterar e-mail</a><br />
-            <a href="./Alteracao-cadastro">Alterar senha</a>
+            <a class="link" href="./Alteracao-cadastro">Alterar e-mail</a><br />
+            <a class="link" href="./Alteracao-cadastro">Alterar senha</a>
           </div>
         </nav>
       </div>

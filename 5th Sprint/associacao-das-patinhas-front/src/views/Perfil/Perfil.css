@@ -76,6 +76,21 @@
     opacity: 80%;
 }
 
+.link{
+    color: #ff598f;
+    text-decoration: none;
+}
+
+.link a{
+    color: #ff598f;
+    text-decoration: none;
+}
+
+.link a:hover {
+    color: #01dddd;
+    text-decoration: none;
+}
+
 #profilecontent {
     padding: 15px;
 }
