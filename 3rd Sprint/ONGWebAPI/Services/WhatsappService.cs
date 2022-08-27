@@ -1,26 +1,52 @@
 ﻿using ONGWebAPI.Models;
+using ONGWebAPI.Models.WhatsApp;
 using RestSharp;
+using System.Text.Json;
 
 namespace ONGWebAPI.Services
 {
     public class WhatsappService : IWhatsapp
     {
+
+        private string idWhatsappAccount;
+        private string token;
+
+        public WhatsappService(string idWhatsappAccount, string token)
+        {
+            this.token = token;
+            this.idWhatsappAccount = idWhatsappAccount;
+        }
+
         public void EnviarMenssagem(InteresseAdocao interesseAdocao)
         {
-            var client = new RestClient("https://graph.facebook.com/v13.0/107709008715545");
+            var client = new RestClient($"https://graph.facebook.com/v14.0/{this.idWhatsappAccount}/");
             //client.Timeout = -1;
             var request = new RestRequest("/messages", Method.Post);
-            request.AddHeader("Authorization", "Bearer ");
+            request.AddHeader("Authorization", "Bearer " + this.token);
             request.AddHeader("Content-Type", "application/json");
-            var body = @"{" + "\n" +
-            @"    ""messaging_product"": ""whatsapp""," + "\n" +
-            @$"    ""to"": ""55{interesseAdocao.Animal.Usuario.Telefone}""," + "\n" +
-            @"    ""type"": ""text""," + "\n" +
-            @"    ""text"": {" + "\n" +
-            @$"        ""preview_url"": ""{false}""," + "\n" +
-            $@"        ""body"": ""Ola, {interesseAdocao.Animal.Usuario.Nome}, tem um interesse no(a) {interesseAdocao.Animal.Nome}! \\nSegue abaixo as informações de contato:\\nNome Completo: {interesseAdocao.Nome} \\nTelefone: {interesseAdocao.Telefone} \\nE-mail: {interesseAdocao.Email}\\n""" + "\n" +    
-            @"    }" + "\n" +
-            @"}";
+
+            MessageTemplate message = new MessageTemplate();
+            message.messaging_product = "whatsapp";
+            message.to = "55" + interesseAdocao.Animal.Usuario.Telefone;
+            message.template = new Template();
+            message.template.name = "interesse_adocao";
+            message.template.language = new Language() { code="pt_BR" };
+            message.template.components = new List<Component>();
+
+            Component component = new Component();
+            component.type = "body";
+            component.parameters = new List<Models.WhatsApp.Parameter>();
+
+            component.parameters.Add(new Models.WhatsApp.Parameter() { type = "text", text = interesseAdocao.Animal.Usuario.Nome });
+            component.parameters.Add(new Models.WhatsApp.Parameter() { type = "text", text = interesseAdocao.Animal.Nome });
+            component.parameters.Add(new Models.WhatsApp.Parameter() { type = "text", text = interesseAdocao.Nome });
+            component.parameters.Add(new Models.WhatsApp.Parameter() { type = "text", text = interesseAdocao.Telefone });
+            component.parameters.Add(new Models.WhatsApp.Parameter() { type = "text", text = interesseAdocao.Email });
+
+            message.template.components.Add(component);
+
+            
+            var body = JsonSerializer.Serialize(message);
             request.AddParameter("application/json", body, ParameterType.RequestBody);
             RestResponse response = client.Execute(request);
             Console.WriteLine(response.Content);

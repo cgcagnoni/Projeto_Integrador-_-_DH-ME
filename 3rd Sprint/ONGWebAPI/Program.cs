@@ -108,7 +108,7 @@ builder.Services.AddSingleton<ONGContext>(factory.create());
 builder.Services.AddSingleton<IUsuarioRepository, EntityUsuarioRepository>();
 builder.Services.AddSingleton<IAnimalRepository, EntityAnimalRepository>();
 builder.Services.AddSingleton<IInteresseAdocao, EntityInteresseAdocaoRepository>();
-builder.Services.AddSingleton<IWhatsapp, WhatsappService>();
+builder.Services.AddSingleton<IWhatsapp>(new WhatsappService(builder.Configuration.GetValue<string>("IdWhatsAppAccount"), builder.Configuration.GetValue<string>("TokenWhatsApp")));
 builder.Services.AddSingleton<MailService>((x) => new MailService(builder.Configuration.GetValue<string>("SenhaEmail")));
 
 var app = builder.Build();
