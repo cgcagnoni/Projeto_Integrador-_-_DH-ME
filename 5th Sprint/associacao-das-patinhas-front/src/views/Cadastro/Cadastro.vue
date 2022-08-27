@@ -36,20 +36,7 @@
                 <label class="form-label" for="telefone">Telefone</label>
                 <input class="form-control" v-model="cadastro.telefone" id="telefone" type="tel"
                   placeholder="(xx) xxxxx-xxxx" name="body" />
-                <div class="input-box">
-                  <label class="form-label" for="localizacao">Estado</label>
-                  <select id="UF" name="UF" v-model="estado">
-                    <option value="">Selecione</option>
-                    <option :value="item" v-for="item in listaUF">{{ item }}</option>
-                  </select>
-                </div>
-                <div class="input-box">
-                  <label class="form-label" for="localizacao">Cidade</label>
-                  <select id="UF" name="UF" v-model="cidade">
-                    <option value="">Selecione</option>
-                    <option :value="item" v-for="item in listaCidades[estado]">{{ item }}</option>
-                  </select>
-                </div>
+               <EstadosECidades></EstadosECidades>
                 <div class="input-box">
                   <label class="form-label" for="password">Senha</label>
                   <input class="form-control" v-model="cadastro.password" id="password" type="password"
