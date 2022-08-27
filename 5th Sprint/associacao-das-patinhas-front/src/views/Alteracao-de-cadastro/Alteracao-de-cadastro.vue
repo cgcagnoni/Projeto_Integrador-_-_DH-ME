@@ -45,40 +45,8 @@
                                 placeholder="Telefone do usuário">
                         </div>
                     </div>
-
-                    <div>
-                        <label for="estado" class="form-label">Estado</label>
-                        <select id="UF" name="UF">
-                            <option value="">Selecione</option>
-                            <option value="AC">Acre</option>
-                            <option value="AL">Alagoas</option>
-                            <option value="AP">Amapá</option>
-                            <option value="AM">Amazonas</option>
-                            <option value="BA">Bahia</option>
-                            <option value="CE">Ceará</option>
-                            <option value="DF">Distrito Federal</option>
-                            <option value="ES">Espirito Santo</option>
-                            <option value="GO">Goiás</option>
-                            <option value="MA">Maranhão</option>
-                            <option value="MS">Mato Grosso do Sul</option>
-                            <option value="MT">Mato Grosso</option>
-                            <option value="MG">Minas Gerais</option>
-                            <option value="PA">Pará</option>
-                            <option value="PB">Paraíba</option>
-                            <option value="PR">Paraná</option>
-                            <option value="PE">Pernambuco</option>
-                            <option value="PI">Piauí</option>
-                            <option value="RJ">Rio de Janeiro</option>
-                            <option value="RN">Rio Grande do Norte</option>
-                            <option value="RS">Rio Grande do Sul</option>
-                            <option value="RO">Rondônia</option>
-                            <option value="RR">Roraima</option>
-                            <option value="SC">Santa Catarina</option>
-                            <option value="SP">São Paulo</option>
-                            <option value="SE">Sergipe</option>
-                            <option value="TO">Tocantins</option>
-                        </select>
-                    </div><br>
+                    <EstadosECidades></EstadosECidades>
+                    <br>
                     <div class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
                         <label class="form-check-label" for="autorizacaoContatoEmail">Autorizo receber
@@ -104,7 +72,7 @@
                     </div>
 
                     <div class="Alterar-rodape">
-                                <button type="submit" class="Altera-button">Alterar meus dados</button>
+                        <button type="submit" class="Altera-button">Alterar meus dados</button>
                     </div>
                 </form>
 
@@ -122,7 +90,7 @@
             </div>
         </div>
     </div>
-    
+
 </template>
 
 <script src="./Alteracao-de-cadastro.js"></script>
