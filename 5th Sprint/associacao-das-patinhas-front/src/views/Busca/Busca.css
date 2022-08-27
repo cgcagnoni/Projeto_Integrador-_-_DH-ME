@@ -15,62 +15,71 @@
     background-color: #ff598f;
     color: #e0e300;
 }
+
+/* Filtros */
+
 #busca{
-    background-color: #fff; 
-    padding: 0 0 0 0;
-    margin: 0 0 0 0;
+    display: flex;
+    padding: 20px;
+    color: #ff598f;
 }
 
-.form-control{
-    text-align: center;
+.form-group{
+    border-right: solid 2px #e0e300;
+    margin: 0 auto;
+    text-align: start;
 }
 
-.container-busca{
-    padding: 0 0 0 0;
-    margin: 0 0 0 0;
+.tituloAnimal-inputs{
+    text-align: start;
 }
 
-.busca-icon{
-    color:#ff598f;
-    margin-top: 35px;
+.btn-busca button{
+    background-color: #ff598f;
+    color: #fff;
+    font-size: 20px;
+    border: #e0e300 solid 2px;
+    padding: 15px;
+    border-radius: 25px;
+    width: 150px;
 }
 
-.catalog-row{
+.btn-busca button:hover{
+    background-color: #e0e300;
+    color:#fff;
+    border: solid 2px #ff598f;
+}
+
+
+.btn-busca{
     display: flex;
     justify-content: center;
-}
-
-.catalog-row a{
-    text-decoration: none;
-}
-.catalog-row a:hover{
-    text-decoration: none;
-}
-
-.catalog-card.col h1{
-    text-align: center;
-    font-size: 25px;
-    border: 2px #e0e300 solid;
-    border-radius: 20px;
-    padding: 0 0 0 0;
-    margin: 0 0 0 0;
-    color:#ff598f;
-}
-
-.catalog-card.col h1:hover{
-    text-decoration: none;
-    background-color: #ff598f;
-    color:#e0e300;
-
-}
-
-.catalog-card img{
-    height: 200px;
-    width: auto;
     margin: 20px;
-    border-radius: 4%;
-} 
+}
 
-.catalog-card img:hover{
-    opacity: 80%;
+.title-busca{
+    margin: 5%;
+    text-align: center;
+    color: #ff598f;
+}
+/* Imagem */
+#catalog{
+    display: flex;
+    margin: 6%;
+    width: 20%;
+}
+
+#catalog h2{
+    margin: 5%;
+    text-align: center;
+    color: #ff598f;
+}
+
+#catalog a{
+    text-decoration: none;
+}
+
+#catalog a:hover{
+    text-decoration: none;
+    color:#00bfaf;
 }
