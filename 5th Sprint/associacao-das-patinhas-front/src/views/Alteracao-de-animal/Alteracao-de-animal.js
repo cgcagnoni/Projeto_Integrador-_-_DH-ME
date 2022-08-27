@@ -4,5 +4,12 @@ export default {
         };
     },
     methods: {
+
+        salvarAlteracaoAnimal() {
+
+
+            
+            alert("Cadastro atualizado!")
+        }
     },
 }

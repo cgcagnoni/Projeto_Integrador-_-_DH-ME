@@ -72,7 +72,7 @@
                     </div>
 
                     <div class="Alterar-rodape">
-                        <button type="submit" class="Altera-button">Alterar meus dados</button>
+                        <button type="submit" class="Altera-button" v-on:click="salvarAlteracaoUser">Alterar meus dados</button>
                     </div>
                 </form>
 

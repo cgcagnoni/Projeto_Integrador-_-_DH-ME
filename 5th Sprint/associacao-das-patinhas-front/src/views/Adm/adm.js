@@ -58,12 +58,16 @@ export default {
 
         
         deletarAnimal() {
-            
+
+
+            alert("Deletado com sucesso.")
         },
           
         
-        deletarUsuario(){
+        deletarUsuario() {
 
+            
+            alert("Deletado com sucesso.")
         },
 
         alterarCadastroAnimal(){
