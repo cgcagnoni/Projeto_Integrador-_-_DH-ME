@@ -4,7 +4,8 @@ export default {
             estado: "",
             cidade: "",
             listaUF: [],
-            listaCidades: {}       
+            listaCidades: {},  
+            cadastro: {}
         };
     },
     methods: {
@@ -51,7 +52,24 @@ export default {
                 //    }
                 });
             })
-        }
+        },
+        postCadastro() {
+            let app = {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                method: 'POST',
+                body: JSON.stringify(this.cadastro),
+                
+            };
+            
+            fetch(`https://localhost:7288/api/Usuario`, app).then(resp => {
+                resp.json().then(cadastrousuario => {
+                    this.cadastro = cadastrousuario;
+                });
+            })
+        },    
     },
     beforeMount(){
         this.getListaUF();

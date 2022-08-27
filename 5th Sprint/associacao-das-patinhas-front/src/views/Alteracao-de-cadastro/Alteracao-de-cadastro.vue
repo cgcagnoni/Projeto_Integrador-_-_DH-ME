@@ -13,7 +13,7 @@
         <div class="col-8">
             <div data-bs-spy="scroll" data-bs-target="#listaCadastro" data-bs-smooth-scroll="true"
                 class="scrollspy-example" tabindex="0">
-                <form>
+                <form action='https://localhost:7288/api/Usuario' method="get">
                     <div class="form-group row">
                         <h4 id="list-item-1">Alterar dados cadastrais</h4>
                         <label for="alterarNomeUsuario" class="col-sm-2 col-form-label">Nome</label>

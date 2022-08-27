@@ -3,6 +3,7 @@ export default {
         return {
             animal: {},
             interesse: {},
+            imagem: []
         };
     },
     methods: {
@@ -24,6 +25,9 @@ export default {
                     if (this.animal.idade == 0) this.animal.idadeDesc = "Filhote"
                     if (this.animal.idade == 1) this.animal.idadeDesc = "Adulto"
                     if (this.animal.idade == 2) this.animal.idadeDesc = "Idoso"
+                    if (animal.especie == 0) this.imagem = 'https://cataas.com/cat' 
+                    
+                      
                 });
             })
         },
