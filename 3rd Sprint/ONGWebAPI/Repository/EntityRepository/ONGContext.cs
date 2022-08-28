@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using ONGWebAPI.Entities;
 using ONGWebAPI.Models;
@@ -10,15 +11,17 @@ namespace ONGWebAPI.Repository.EntityRepository
     {
 
         private bool inMemory;
+        private string connectionString;
 
         public DbSet<Animal>? Animais { get; set; }
         public DbSet<Usuario>? Usuarios { get; set; }
         public DbSet<InteresseAdocao>? InteresseAdocao { get; set; }
 
 
-        public ONGContext(bool inMemory)
+        public ONGContext(string connectionString, bool inMemory)
         {
             this.inMemory = inMemory;
+            this.connectionString = connectionString;
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder Configurar)
@@ -30,10 +33,9 @@ namespace ONGWebAPI.Repository.EntityRepository
             }
             else
             {
-                string credencial = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ONG;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-                Configurar.UseSqlServer(credencial);
+                Configurar.UseSqlServer(this.connectionString);
                 Configurar.EnableSensitiveDataLogging();
-                Configurar.LogTo((log) => Debug.WriteLine(log));               
+                Configurar.LogTo((log) => Debug.WriteLine(log));
             }
         }
 

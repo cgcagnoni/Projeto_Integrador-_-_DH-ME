@@ -7,16 +7,25 @@ namespace ONGWebAPI.Services
     {
 
         private bool usarBancoEmMemoria;
+        private string connectionString;
 
-        public ONGContextFactory(bool usarBancoEmMemoria)
+        private bool executarMigrate = true;
+
+        public ONGContextFactory(string connectionString, bool usarBancoEmMemoria)
         {
             this.usarBancoEmMemoria = usarBancoEmMemoria;
+            this.connectionString = connectionString;
         }
 
         public ONGContext create()
         {
-            
-            return new ONGContext(this.usarBancoEmMemoria);
+            var db = new ONGContext(this.connectionString, this.usarBancoEmMemoria);
+            if (!usarBancoEmMemoria && executarMigrate)
+            {
+                this.executarMigrate = false;
+                db.Database.Migrate();
+            }
+            return db;
         }
 
     }

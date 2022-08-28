@@ -25,7 +25,7 @@ export default {
 
             };
 
-            fetch(`https://localhost:7288/api/Usuario`, app).then(resp => {
+            fetch(`${process.env.VITE_BASE_URL}api/Usuario`, app).then(resp => {
                 resp.json().then(cadastrousuario => {
                     this.cadastro = cadastrousuario;
                 });

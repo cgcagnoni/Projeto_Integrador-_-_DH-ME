@@ -100,8 +100,9 @@ builder.Services.AddSwaggerGen(options =>
                 });
 });
 
+
 //Configuração da injeção de dependência
-ONGContextFactory factory = new ONGContextFactory(builder.Configuration.GetValue<bool>("UsarBancoEmMemoria"));
+ONGContextFactory factory = new ONGContextFactory(builder.Configuration.GetConnectionString("BancoPatinhas"), builder.Configuration.GetValue<bool>("UsarBancoEmMemoria"));
 builder.Services.AddSingleton<ONGContextFactory>(factory);
 builder.Services.AddSingleton<ONGContext>(factory.create());
 
@@ -125,7 +126,7 @@ options.DefaultFileNames.Clear();
 options.DefaultFileNames.Add("index.html");
 app.UseDefaultFiles(options);
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseAuthentication();
@@ -134,4 +135,14 @@ app.UseAuthorization();
 app.MapControllers();
 app.UseCors();
 
-app.Run();
+app.Urls.Clear();
+
+if (Environment.GetEnvironmentVariable("PORT") == null)
+{
+    app.Run();
+}
+else
+{
+    app.Run("http://*:" + Environment.GetEnvironmentVariable("PORT"));
+}
+
