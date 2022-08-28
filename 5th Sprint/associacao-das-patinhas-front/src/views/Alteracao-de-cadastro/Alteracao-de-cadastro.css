@@ -1,18 +1,23 @@
 .fundo-form{
     background-color: #01dddd;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0 ;
 }
+
+#listaCadastro{
+    margin: 0 0 0 0;
+    padding: 5 ;
+}
+
 #form {
     background-color: white;
-    margin-top: 10px;
-    margin-left: 10%;
-    margin-right: 15px;
-    margin-bottom: 10px;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0 ;
     width: 80%;
     height: auto;
     display: flex;
-    
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, .212);
-
+    margin: 0 0 0 0;
+    padding: 0 0 0 0 ;
 }
 
 #img_form {
@@ -32,10 +37,8 @@
     width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
-    padding: 2rem;
-    
 
 }
 
@@ -61,12 +64,14 @@
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 1rem 0;
+    text-align: left
 }
 
 .input-box {
     display: flex;
     flex-direction: column;
     margin-bottom: 1.1rem;
+    text-align: left
 }
 
 .input-box input {
@@ -77,6 +82,7 @@
     border-radius: 10px;
     box-shadow: 1px 1px 6px black;
     font-size: 0.8rem;
+    text-align: left
 }
 
 .input-box input:hover {
@@ -87,31 +93,33 @@
     outline: 1px solid #00bfaf;
 }
 
-.Alterar-rodape{
+.input[type="text"] { 
+    text-align: left;
+}
+
+.Cadastre-se-button {
     display: flex;
     align-items: center;
-    padding: 0.62rem;
-    width: 1000px;
-    margin: 0 auto;
+    width: 100%;
+    
 }
 
-.Altera-button {
-    color: #fff;
+.Cadastre-se-button button {
+    width: 100%;
+    margin-top: 2.5rem;
     border: none;
     background-color: #00bfaf;
-    border-radius: 5px;
-    margin-top: 2.5rem;
     padding: 0.62rem;
+    border-radius: 5px;
     cursor: pointer;
-    align-items: center;
+    
 }
 
-
-.Altera-button:hover {
+.Cadastre-se-button button:hover {
     background-color: #ff598f;
 }
 
-.Altera-button a {
+.Cadastre-se-button button a {
     text-decoration: none;
     color: #fff;
     
@@ -136,4 +144,30 @@
     border-radius: 0;
     height: 34px;
     -webkit-appearance: none;
+}
+
+.tituloAnimal{
+    font-size: 20px;
+}
+
+.Altera-button {
+    color: #fff;
+    border: none;
+    background-color: #00bfaf;
+    border-radius: 5px;
+    margin-top: 2.5rem;
+    padding: 0.62rem;
+    cursor: pointer;
+    align-items: center;
+}
+
+
+.Altera-button:hover {
+    background-color: #ff598f;
+}
+
+.Altera-button a {
+    text-decoration: none;
+    color: #fff;
+    
 }
