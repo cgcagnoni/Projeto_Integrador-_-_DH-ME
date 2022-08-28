@@ -16,7 +16,7 @@
                 <form v-on:submit="AlteracaoCadastro">
                     <div class="form-group row">
                         <h4 id="list-item-1">Alterar dados cadastrais</h4>
-                        <label for="alterarNomeUsuario" class="col-sm-2 col-form-label">nome</label>
+                        <label for="alterarNomeUsuario" class="col-sm-2 col-form-label">Nome</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" v-model="alteracao.nome" name="body"
                                 id="alterarNomeUsuario" placeholder="Nome do usuário">
