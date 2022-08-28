@@ -30,7 +30,7 @@ namespace ONGWebAPI.Repository.EntityRepository
         {
             using (var DbONG = DbONGFactory.create())
             {
-                var animal = DbONG.Animais?.Find(Id);
+                var animal = DbONG.Animais.Find(Id);
                 DbONG.Entry(animal).State = EntityState.Deleted;
                 DbONG.SaveChanges();
             }

@@ -30,11 +30,11 @@ namespace ONGWebAPI.Controllers
         {
             return interesseRepository.ListarInteressados();
         }
-        [HttpGet("{Id}")]
+        [HttpGet("InteressadosPorUsuario")]
         [Authorize]
-        public ActionResult<List<InteresseAdocao>> ListarInteressadosPorUsuario(int Id)
+        public ActionResult<List<InteresseAdocao>> ListarInteressadosPorUsuario()
         {
-            Id = int.Parse(User.FindFirst(ClaimTypes.Sid).Value);
+            int Id = int.Parse(User.FindFirst(ClaimTypes.Sid).Value);
             return interesseRepository.ListarInteressadosPorUsuario(Id);
         }
 

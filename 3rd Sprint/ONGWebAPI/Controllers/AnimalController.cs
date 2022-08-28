@@ -185,11 +185,12 @@ namespace ONGWebAPI.Controllers
         /// <response code="400">Erro desconhecido ocorrido ao tentar deletar animal da database</response>
         [HttpDelete("{Id}")]
         [Authorize(Roles = "Administrador")]
-        public ActionResult ApagarAnimalPelaId(Animal animal, int id)
+        public ActionResult ApagarAnimalPelaId(int Id)
         {
-            if (animalRepository.VerificarAnimal(id))
+            int id = int.Parse(User.FindFirst(ClaimTypes.Sid).Value);
+            if (animalRepository.VerificarAnimal(Id))
             {
-                animalRepository.ApagarAnimalPelaId(id);
+                animalRepository.ApagarAnimalPelaId(Id);
                 return Ok();
             }
             return NotFound();
