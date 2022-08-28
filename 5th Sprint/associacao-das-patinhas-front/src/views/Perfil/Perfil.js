@@ -31,7 +31,8 @@ export default {
                     this.nome = usuario.nome;
                     this.email = usuario.email;
                     this.telefone = usuario.telefone;
-                    this.localizacao = usuario.localizacao;
+                    this.localizacao = usuario.localizacao
+                    this.id = usuario.id;
                 });
              })
         },
