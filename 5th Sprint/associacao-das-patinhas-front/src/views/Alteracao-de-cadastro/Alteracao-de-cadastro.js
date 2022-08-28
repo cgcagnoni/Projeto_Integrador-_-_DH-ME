@@ -35,7 +35,7 @@ export default {
          headers };
   },
   buscarUsuarioPorId() {
-      fetch(`https://localhost:7288/api/Usuario/${this.id}`, this.getOptions()).then(resp => {
+      fetch(`${import.meta.env.VITE_BASE_URL}api/Usuario/${this.id}`, this.getOptions()).then(resp => {
           resp.json().then(usuario => {
               this.nome = usuario.nome;
               this.email = usuario.email;
@@ -56,7 +56,7 @@ export default {
 
       };
 
-      fetch(`https://localhost:7288/api/Usuario/${this.id}`, app).then(resp => {
+      fetch(`${import.meta.env.VITE_BASE_URL}api/Usuario/${this.id}`, app).then(resp => {
           resp.json().then(alteracaousuario => {
               this.alteracao = alteracaousuario;
           });
@@ -73,5 +73,5 @@ export default {
         router.push('/login')
     }
     
-}
+  }
 }

@@ -3,11 +3,11 @@
     <div class="row" id="profilecontent">
         <div class="col-4">
             <div id="listaCadastro" class="list-group">
-                <a class="list-group-item list-group-item-action" href="./perfil">Meu cadastro</a>
-                <a class="list-group-item list-group-item-action" href="./perfil">Minhas adoções</a>
-                <a class="list-group-item list-group-item-action" href="./perfil">Minha doações</a>
-                <a class="list-group-item list-group-item-action" href="./perfil">Segurança</a>
-                <a class="list-group-item list-group-item-action" href="./alteracao-cadastro">Alterar dados</a>
+                <RouterLink class="list-group-item list-group-item-action" to="/perfil">Meu cadastro</RouterLink>
+                <RouterLink class="list-group-item list-group-item-action" to="/perfil">Minhas adoções</RouterLink>
+                <RouterLink class="list-group-item list-group-item-action" to="/perfil">Minha doações</RouterLink>
+                <RouterLink class="list-group-item list-group-item-action" to="/perfil">Segurança</RouterLink>
+                <RouterLink class="list-group-item list-group-item-action" to="/alteracao-cadastro">Alterar dados</RouterLink>
             </div>
         </div>
         <div class="col-8">

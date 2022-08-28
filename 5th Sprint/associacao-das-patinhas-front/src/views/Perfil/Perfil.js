@@ -26,7 +26,7 @@ export default {
                headers };
         },
         buscarUsuarioPorId() {
-            fetch(`https://localhost:7288/api/Usuario/${this.id}`, this.getOptions()).then(resp => {
+            fetch(`${import.meta.env.VITE_BASE_URL}api/Usuario/${this.id}`, this.getOptions()).then(resp => {
                 resp.json().then(usuario => {
                     this.nome = usuario.nome;
                     this.email = usuario.email;
@@ -37,14 +37,14 @@ export default {
              })
         },
         ListarAnimaisDisponiveisUsuario() {
-            fetch(`https://localhost:7288/api/Animal/ListarAnimaisDisponiveisUsuario`, this.getOptions()).then(resp => {
+            fetch(`${import.meta.env.VITE_BASE_URL}api/Animal/ListarAnimaisDisponiveisUsuario`, this.getOptions()).then(resp => {
                 resp.json().then(animaisDisponiveisUsuario => {
                     this.animaisDisponiveisUsuario = animaisDisponiveisUsuario;
                 })
             })
         },
         listarAnimaisAdotados() {
-            fetch(`https://localhost:7288/api/Animal/ListarAnimaisDoadosUsuario`, this.getOptions()).then(resp => {
+            fetch(`${import.meta.env.VITE_BASE_URL}api/Animal/ListarAnimaisDoadosUsuario`, this.getOptions()).then(resp => {
                 resp.json().then(animaisAdotados => {
                     this.animaisAdotados = animaisAdotados;
                 })
@@ -52,7 +52,7 @@ export default {
         },   
         listarInteressadosEmAdotar() {
 
-            fetch(`https://localhost:7288/api/InteresseAdocao/InteressadosPorUsuario`, this.getOptions()).then(resp => {
+            fetch(`${import.meta.env.VITE_BASE_URL}api/InteresseAdocao/InteressadosPorUsuario`, this.getOptions()).then(resp => {
                 resp.json().then(interesse => {
                     this.interesseAdocao = interesse;
                 })

@@ -71,13 +71,6 @@
             </div>
           </div>
         </div>
-
-
-
-        <!-- redirecionar para modal alert
-        <div class="adocao-btn">
-          <a href=""><button class="adocao-btn-item">VOU ADOTAR!</button></a>
-        </div> -->
       </div>
     </div>
   </article>
@@ -87,19 +80,19 @@
       <h2>Outros peludinhos que também precisam de um lar</h2>
 
       <div class="outros-animais">
-        <RouterLink to="/busca" target="_blank">
+        <RouterLink to="/busca">
           <img src="@/assets/images/PaginaAnimal/animal-1.jpg" alt="" />
           <p>Lulu</p>
         </RouterLink>
-        <RouterLink to="/busca" target="_blank">
+        <RouterLink to="/busca">
           <img src="@/assets/images/PaginaAnimal/animal-6.jpg" alt="" />
           <p>Rajado</p>
         </RouterLink>
-        <RouterLink to="/busca" target="_blank">
+        <RouterLink to="/busca">
           <img src="@/assets/images/PaginaAnimal/animal-7.jpg" alt="" />
           <p>Gigante</p>
         </RouterLink>
-        <RouterLink to="/busca" target="_blank">
+        <RouterLink to="/busca">
           <img src="@/assets/images/PaginaAnimal/animal-8.jpg" alt="" />
           <p>Soneca</p>
         </RouterLink>

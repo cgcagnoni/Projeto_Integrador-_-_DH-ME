@@ -31,7 +31,7 @@ export default {
                 headers
             }
 
-            fetch(`https://localhost:7288/api/Usuario`, app).then(resp => {
+            fetch(`${import.meta.env.VITE_BASE_URL}api/Usuario`, app).then(resp => {
                 resp.json().then(usuario => {
                     this.usuarios = usuario;
                 });
@@ -57,7 +57,7 @@ export default {
                 headers
             };
 
-            fetch(`https://localhost:7288/api/Animal`, app).then(resp => {
+            fetch(`${import.meta.env.VITE_BASE_URL}api/Animal`, app).then(resp => {
                 resp.json().then(animal => {
                     this.animais = animal;
                     this.parseEspecie(this.animais);
@@ -66,7 +66,7 @@ export default {
         },
         listarAnimaisDisponiveis() {
             let app = { method: 'GET' };
-            fetch(`https://localhost:7288/api/Animal/ListarAnimaisDisponiveis`, app).then(resp => {
+            fetch(`${import.meta.env.VITE_BASE_URL}api/Animal/ListarAnimaisDisponiveis`, app).then(resp => {
                 resp.json().then(animaisDisp => {
                     this.animais = animaisDisp;
                     this.parseEspecie(this.animais);
@@ -86,7 +86,7 @@ export default {
                 headers
             };
 
-            fetch(`https://localhost:7288/api/Animal/ListarAnimaisAdotados`, app).then(resp => {
+            fetch(`${import.meta.env.VITE_BASE_URL}api/Animal/ListarAnimaisAdotados`, app).then(resp => {
                 resp.json().then(animalAdot => {
                     this.animais = animalAdot;
                     this.parseEspecie(this.animais);                  
@@ -106,12 +106,12 @@ export default {
                 method: 'DELETE',
                 headers
             };
-            fetch(`https://localhost:7288/api/Animal/${this.idAnimal.id}`, app).then(resp => {
+            fetch(`${import.meta.env.VITE_BASE_URL}api/Animal/${this.idAnimal.id}`, app).then(resp => {
                 if (resp.ok) {
                     alert("Deletado com sucesso!")
                 }
                 else {
-                    alert("Animal não encontrado!")
+                    alert("Animal nao encontrado!")
                 }
             });
         },
@@ -128,12 +128,12 @@ export default {
                 method: 'DELETE',
                 headers
             };
-            fetch(`https://localhost:7288/api/Usuario/${this.idUsuario.id}`, app).then(resp => {
+            fetch(`${import.meta.env.VITE_BASE_URL}api/Usuario/${this.idUsuario.id}`, app).then(resp => {
                 if (resp.ok) {
                     alert("Deletado com sucesso!")
                 }
                 else {
-                    alert("Animal não encontrado!")
+                    alert("Animal nï¿½o encontrado!")
                 }
             });
 

@@ -34,7 +34,7 @@ export default {
                 headers
             };
 
-            fetch(`https://localhost:7288/api/Usuario/${this.id}`, app).then(resp => {
+            fetch(`${import.meta.env.VITE_BASE_URL}api/Usuario/${this.id}`, app).then(resp => {
                 resp.json().then(usuario => {
                     this.user = usuario;
                     if (this.user.role == 0) router.push('/adm')

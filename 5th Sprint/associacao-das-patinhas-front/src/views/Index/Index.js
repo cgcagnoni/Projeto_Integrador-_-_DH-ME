@@ -9,7 +9,7 @@ export default {
     methods: {
         listarAnimaisDisponiveis() {
             let app = { method: 'GET' };
-            fetch(`https://localhost:7288/api/Animal/ListarAnimaisDisponiveis`, app).then(resp => {
+            fetch(`${import.meta.env.VITE_BASE_URL}api/Animal/ListarAnimaisDisponiveis`, app).then(resp => {
                 resp.json().then(animaisDisponiveis => {
                     this.animaisDisponiveis = animaisDisponiveis;
                 });

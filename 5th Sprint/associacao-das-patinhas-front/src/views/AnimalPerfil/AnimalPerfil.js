@@ -12,7 +12,7 @@ export default {
                 method: 'GET',
 
             };
-            fetch(`https://localhost:7288/api/Animal/${this.$route.params.id}`, app).then(resp => {
+            fetch(`${import.meta.env.VITE_BASE_URL}api/Animal/${this.$route.params.id}`, app).then(resp => {
                 resp.json().then(animal => {
                     this.interesse.animal = animal;
 
@@ -42,7 +42,7 @@ export default {
                 
             };
             
-            fetch(`https://localhost:7288/api/InteresseAdocao`, app).then(resp => {
+            fetch(`${import.meta.env.VITE_BASE_URL}api/InteresseAdocao`, app).then(resp => {
                 resp.json().then(interesseAdocao => {
                     this.interesse = interesseAdocao;
                     

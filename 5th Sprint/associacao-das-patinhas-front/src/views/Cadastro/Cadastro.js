@@ -25,7 +25,7 @@ export default {
 
             };
 
-            fetch(`${process.env.VITE_BASE_URL}api/Usuario`, app).then(resp => {
+            fetch(`${import.meta.env.VITE_BASE_URL}api/Usuario`, app).then(resp => {
                 resp.json().then(cadastrousuario => {
                     this.cadastro = cadastrousuario;
                 });
