@@ -107,7 +107,7 @@
 
                             <div class="form-group row">
             
-                                    <button type="submit" class="Altera-button">Alterar dados do pet</button>
+                                    <button type="submit" class="Altera-button" v-on:click="salvarAlteracaoAnimal">Alterar dados do pet</button>
                               
                             </div>
                         </div>

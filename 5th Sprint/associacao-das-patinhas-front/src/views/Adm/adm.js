@@ -111,7 +111,7 @@ export default {
                     alert("Deletado com sucesso!")
                 }
                 else {
-                    alert("Animal n√£o encontrado!")
+                    alert("Animal n„o encontrado!")
                 }
             });
         },
@@ -133,7 +133,7 @@ export default {
                     alert("Deletado com sucesso!")
                 }
                 else {
-                    alert("Animal n√£o encontrado!")
+                    alert("Animal n„o encontrado!")
                 }
             });
 
