@@ -9,7 +9,8 @@ export default {
             telefone: null,
             localizacao: null,
             animaisDisponiveisUsuario: [],
-            animaisAdotados:[]
+            animaisAdotados:[],
+            interesseAdocao:[]
         };
     },
     methods: {
@@ -47,7 +48,15 @@ export default {
                     this.animaisAdotados = animaisAdotados;
                 })
             })
-        },        
+        },   
+        listarInteressadosEmAdotar() {
+
+            fetch(`https://localhost:7288/api/InteresseAdocao/InteressadosPorUsuario`, this.getOptions()).then(resp => {
+                resp.json().then(interesse => {
+                    this.interesseAdocao = interesse;
+                })
+            })
+        },             
 
     },
     
@@ -58,6 +67,7 @@ export default {
             this.buscarUsuarioPorId();
             this.ListarAnimaisDisponiveisUsuario();
             this.listarAnimaisAdotados();
+            this.listarInteressadosEmAdotar();
         }
         else{
             router.push('/login')

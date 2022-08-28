@@ -4,7 +4,8 @@
             <img class="navbar-logo" src="@/assets/images/Home/logo-provisoria.jpg" alt="logo-provisoria">
         </div>
         <div class="dropdown col">   
-            <button v-on:click="logout">Logout</button>         
+            <button v-if="logged" v-on:click="logout">Logout</button>  
+            <button v-else v-on:click="login">Login</button>                    
             <button class="btn btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i
                     class="fa-solid fa-bars"></i> </button>
             <ul class="dropdown-menu">                

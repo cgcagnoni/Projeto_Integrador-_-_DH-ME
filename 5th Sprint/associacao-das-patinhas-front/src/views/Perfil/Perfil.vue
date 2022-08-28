@@ -26,8 +26,17 @@
           </div>
 
           <div>
-            <h4 id="list-item-2">Minhas adoções</h4>
-            <p>{{ nome }}Você ainda não adotou nenhum animalzinho!</p>
+            <h4 id="list-item-2">Interessados em adotar</h4>
+            <div v-for="interesse in interesseAdocao">
+            <p>Nome: &nbsp {{ interesse.nome }}</p>
+            <p>E-mail: &nbsp {{ interesse.email }}</p>
+            <p>Telefone: &nbsp {{ interesse.telefone }}</p>
+            <p>Localização: &nbsp {{ interesse.localizacao }}</p>
+            <p>Cidade: &nbsp {{ interesse.cidade }}</p>
+            <hr/>
+            </div>
+            
+            
             <br />
             <hr class="solid" />
           </div>

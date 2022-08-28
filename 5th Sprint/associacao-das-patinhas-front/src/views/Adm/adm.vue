@@ -7,49 +7,51 @@
             <h1>Animais</h1>
 
             <button class="button" type="button" v-on:click="alterarCadastroAnimal">Alteração de cadastro</button>
-
             <button class="button" type="button" v-on:click="buscarAnimal">Buscar um animal</button>
+            <button class="button" type="button" v-on:click="listarTodosAnimais">Lista de animais</button>           
+            <button class="button" type="button" v-on:click="listarAnimaisDisponiveis">Lista de animais disponíveis</button>
+            <button class="button" type="button" v-on:click="listarAnimaisAdotados">Lista de animais adotados</button>
 
-            <button class="button" type="button" v-on:click="listarTodosAnimais">Lista de animais</button>
 
             <!-- botao de deletar animal -->
 
-                  <button class="button" data-bs-toggle="modal" data-bs-target="#postModalAnimal">
-                    Deletar um animal
-                  </button>
-                </div>
+            <button class="button" data-bs-toggle="modal" data-bs-target="#postModalAnimal">
+              Deletar um animal
+            </button>
+          </div>
+        </div>
+        <div class="modal fade" id="postModalAnimal" tabindex="-1" aria-labelledby="postModalLabelAnimal"
+          aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="postModalLabelAnimal">
+                  Deletar animal do banco de dados
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <div class="modal fade" id="postModalAnimal" tabindex="-1" aria-labelledby="postModalLabelAnimal" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="postModalLabelAnimal">
-                        Deletar animal do banco de dados
-                      </h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <div class="mb-2">
-                        <div class="form-header">
-                          <div class="input-group">
-                            <div class="input-box-interesse">
-                              <label for="elementoIDAnimal" class="form-label">Informe o ID do animal</label>
-                              <input type="text" name="body" class="form-control" id="elementoIDAnimal"
-                                placeholder="Digite o ID" />
-                            </div>
-                          </div>
-                        </div>
-                        <div class="modal-footer">
-                          <button class="deletar_animal-btn-enviar" type="button" data-bs-dismiss="modal"
-                            v-on:click="deletarAnimal">
-                            Deletar
-                          </button>
-                        </div>
+              <div class="modal-body">
+                <div class="mb-2">
+                  <div class="form-header">
+                    <div class="input-group">
+                      <div class="input-box-interesse">
+                        <label for="elementoIDAnimal" class="form-label">Informe o ID do animal</label>
+                        <input v-model="idAnimal.id" type="text" name="body" class="form-control" id="elementoIDAnimal"
+                          placeholder="Digite o ID" />
                       </div>
                     </div>
                   </div>
+                  <div class="modal-footer">
+                    <button class="deletar_animal-btn-enviar" type="button" data-bs-dismiss="modal"
+                      v-on:click="deletarAnimal">
+                      Deletar
+                    </button>
+                  </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
 
         <div class="col">
           <div class="adm-user">
@@ -60,42 +62,43 @@
             <button class="button" type="button" v-on:click="listarTodosUsuarios">Lista de usuários</button>
 
             <!-- botao de deletar usuario -->
-                  <button class="button" data-bs-toggle="modal" data-bs-target="#postModalUser">
-                    Deletar um usuário
-                  </button>
-                </div>
+            <button class="button" data-bs-toggle="modal" data-bs-target="#postModalUser">
+              Deletar um usuário
+            </button>
+          </div>
+        </div>
+        <div class="modal fade" id="postModalUser" tabindex="-1" aria-labelledby="postModalLabelUser"
+          aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="postModalLabelUser">
+                  Deletar usuário do banco de dados
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <div class="modal fade" id="postModalUser" tabindex="-1" aria-labelledby="postModalLabelUser" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="postModalLabelUser">
-                        Deletar usuário do banco de dados
-                      </h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <div class="mb-2">
-                        <div class="form-header">
-                          <div class="input-group">
-                            <div class="input-box-interesse">
-                              <label for="elementoIDUser" class="form-label">Informe o ID do usuário</label>
-                              <input type="text" name="body" class="form-control" id="elementoIDUser"
-                                placeholder="Digite o ID" />
-                            </div>
-                          </div>
-                        </div>
-                        <div class="modal-footer">
-                          <button class="deletar_usuario-btn-enviar" type="button" data-bs-dismiss="modal"
-                            v-on:click="deletarUsuario">
-                            Deletar
-                          </button>
-                        </div>
+              <div class="modal-body">
+                <div class="mb-2">
+                  <div class="form-header">
+                    <div class="input-group">
+                      <div class="input-box-interesse">
+                        <label for="elementoIDUser" class="form-label">Informe o ID do usuário</label>
+                        <input v-model="idUsuario.id" type="text" name="body" class="form-control" id="elementoIDUser"
+                          placeholder="Digite o ID" />
                       </div>
                     </div>
                   </div>
+                  <div class="modal-footer">
+                    <button class="deletar_usuario-btn-enviar" type="button" data-bs-dismiss="modal"
+                      v-on:click="deletarUsuario">
+                      Deletar
+                    </button>
+                  </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
 
         <div class="col">
           <div class="adm-ong">
@@ -117,21 +120,23 @@
         Username: {{ usuario.username }} <br />
         Nome: {{ usuario.nome }}<br />
         Sobrenome: {{ usuario.sobrenome }}<br />
+        Cidade: {{ usuario.cidade }}<br />
         Localizacao: {{ usuario.localizacao }}<br />
         E-mail: {{ usuario.email }}<br />
         Telefone: {{ usuario.telefone }}
         <hr />
       </li>
     </ul>
-    <ul id="list-animais">
+     <ul id="list-animais">
       <li class="list-group" v-for="animal in animais">
         <h1 id="lista-de-animais">Animal {{ animal.id }}</h1>
         <br />
         Nome: {{ animal.nome }} <br />
-        Espécie: {{ animal.especie }}<br />
+        Espécie: {{ animal.especieDesc }}<br />
+        Cidade: {{ animal.cidade }}<br />
         Localização: {{ animal.localizacao }}<br />
         Usuário: {{ animal.usuario.id }}<br />
-        Disponibilidade: {{ animal.status }}<br />
+        Disponibilidade: {{animal.disponibilidade}}
       </li>
     </ul>
   </div>
