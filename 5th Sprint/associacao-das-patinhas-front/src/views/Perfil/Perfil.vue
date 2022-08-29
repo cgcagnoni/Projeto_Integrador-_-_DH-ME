@@ -44,7 +44,9 @@
           <div>
             <h4 id="list-item-3">Minhas doações</h4>
             <p v-if="animaisAdotados" v-for="animal in animaisAdotados">
-              {{ animal.nome }}
+              <RouterLink :to="{ name: 'alteracao-animal', params: { id: animal.id } }">
+                <h6>{{animal.id}} - {{ animal.nome }}</h6>
+                  </RouterLink>              
             </p>
             <p v-else>
               Você ainda não doou nenhum animalzinho!
@@ -54,8 +56,13 @@
           </div>
           <div>
             <h4 id="list-item-4">Meus animais colocados para adoção</h4>
-            <p v-for="animal in animaisDisponiveisUsuario">
-              {{ animal.nome }}</p>
+            <h5 id="list-item-4">Para atualização de dados ou status, clique no nome do animal</h5>
+            <div v-for="animal in animaisDisponiveisUsuario">
+              <RouterLink :to="{ name: 'alteracao-animal', params: { id: animal.id } }">
+                <h6>{{animal.id}} - {{ animal.nome }}</h6>
+                  </RouterLink>
+            </div>
+                        
             <br />
             <hr class="solid" />
           </div>

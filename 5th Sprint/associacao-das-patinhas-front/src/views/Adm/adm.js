@@ -140,7 +140,10 @@ export default {
         },
 
         alterarCadastroAnimal() {
-            router.push('./Alteracao-animal')
+            const token = localStorage.getItem("token")
+            if (token){
+                router.push('alteracao-animal')
+            }
         },
 
         buscarAnimal() {
@@ -148,11 +151,15 @@ export default {
         },
 
         alterarCadastroUsuario() {
-            router.push('./Alteracao-cadastro')
+           
+            
         },
 
         alterarCadastroAdm() {
-            router.push('./Alteracao-cadastro')
+            const token = localStorage.getItem("token")
+            if (token){
+                router.push('./Alteracao-cadastro')
+            }
         },
 
         arrecadacao() {

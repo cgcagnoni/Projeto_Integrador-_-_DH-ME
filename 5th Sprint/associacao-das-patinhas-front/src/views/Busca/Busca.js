@@ -6,14 +6,15 @@ export default {
       sexo: null,
       idade: null,
       porte: null,
-      animaisFiltrados: []
+      animaisFiltrados: [],
+      Gatos: []
 
     };
   },
   methods: {
     buscarAnimais() {
       //Buscando da API
-      fetch(`${import.meta.env.VITE_BASE_URL}api/Animais/`).then(response => {
+      fetch(`${import.meta.env.VITE_BASE_URL}api/Animal/ListarAnimaisDisponiveis`).then(response => {
           response.json().then(animais => {
               this.animais = animais;
           })
@@ -45,29 +46,13 @@ export default {
 
     },
 
-    filtrarAnimais() {
-      this.animaisFiltrados = this.animais.filter(this.filtrar);
-      console.log(this.animaisFiltrados)
-    },
-
-    filtrar(animal) {
-      if (animal.especie != this.especie) {
-        return false
-      }
-      if (animal.sexo != this.sexo) {
-        return false
-      }
-      if (animal.porte != this.porte) {
-        return false
-      }
-      if (animal.idade != this.idade) {
-        return false
-      }
-
-      return true
-
-    }
-
+    ListarGatos() {
+      fetch(`https://localhost:7288/api/Animal/PorEspecie?especie=0`, this.getOptions()).then(resp => {
+          resp.json().then(Gatos => {
+              this.Gatos = Gatos;
+          })
+      })
+  },
   },
 
 

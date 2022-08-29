@@ -23,16 +23,7 @@
 
     <!-- Catálogo da Home Page -->
     <div id="homepage-catalog">
-      <!--TRECHO DE TESTE PARA ABRIR NO PERFIL DO ANIMAL - INICIA NA LINHA 27 E TERMINA NA LINHA 39-->
-      <div>
-        <p v-for="animal in animaisDisponiveis">
-          <RouterLink :to="{ name: 'animalperfil', params: { id: animal.id } }">
-            {{ animal.nome }}
-          </RouterLink>
-        </p>
-        <br />
-        <hr class="solid" />
-      </div>
+     
       <div class="col homepage-catalog-carousel col">
         <RouterLink to="/busca">
           <h3>Animais disponíveis para adoção</h3>

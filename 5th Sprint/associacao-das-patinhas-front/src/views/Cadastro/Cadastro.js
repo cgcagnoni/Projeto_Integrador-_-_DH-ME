@@ -11,7 +11,8 @@ export default {
             cidade: "",
             listaUF: [],
             listaCidades: {},
-            cadastro: {}
+            cadastro: {},
+            user: {}
         };
     },
     methods: {
@@ -34,9 +35,10 @@ export default {
                     } else {
                         alert('Erro ao tentar se cadastrar, confira seus dados');
                     }
-                    
+
                 });
             })
-        },
+        }        
     }
 }
+

@@ -57,8 +57,7 @@ export default {
                     this.interesseAdocao = interesse;
                 })
             })
-        },             
-
+        },         
     },
     
     beforeMount() {

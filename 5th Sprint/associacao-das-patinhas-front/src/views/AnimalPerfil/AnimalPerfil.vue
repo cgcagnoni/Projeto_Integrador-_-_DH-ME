@@ -18,10 +18,8 @@
           A história de {{ animal.nome }} <br />
           {{ animal.descricao }}<br />
           Mais detalhes sobre {{ animal.nome }} <br />
-          Vacinas: {{ animal.vacinas }} | Microchip: {{ animal.microchip }} | Cadastrado: {{ animal.castrado }} | Deficiência:
-          {{ animal.deficiencia }}
-          {{}}
-
+          Vacinas: {{ animal.vacinas }} | Microchip: {{ animal.microchipDesc }} | Cadastrado: {{ animal.castradoDesc }} | Deficiência:
+          {{ animal.deficienciaDesc }}       
         </p>
 
         <div class="container mt-5">

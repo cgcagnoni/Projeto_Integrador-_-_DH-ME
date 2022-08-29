@@ -24,10 +24,14 @@ export default {
                     if (this.animal.porte == 2) this.animal.porteDesc = "Grande"
                     if (this.animal.idade == 0) this.animal.idadeDesc = "Filhote"
                     if (this.animal.idade == 1) this.animal.idadeDesc = "Adulto"
-                    if (this.animal.idade == 2) this.animal.idadeDesc = "Idoso"
+                    if (this.animal.idade == 2) this.animal.idadeDesc = "Idoso"                    
+                    if(this.animal.microchip == true) this.animal.microchipDesc = "Sim"
+                    if(this.animal.microchip == false) this.animal.microchipDesc = "Não"
+                    if(this.animal.castrado == true) this.animal.castradoDesc = "Sim"
+                    if(this.animal.castrado == false) this.animal.castradoDesc = "Não"
+                    if(this.animal.deficiencia == true) this.animal.deficienciaDesc = "Sim"
+                    if(this.animal.deficiencia == false) this.animal.deficienciaDesc = "Não"
                     if (animal.especie == 0) this.imagem = 'https://cataas.com/cat' 
-                    
-                      
                 });
             })
         },

@@ -1,7 +1,7 @@
 <template>
     <div id="navbar" class="row">
         <div class="nav-logo col">
-            <img class="navbar-logo" src="@/assets/images/Home/logo-provisoria.jpg" alt="logo-provisoria">
+         <img class="navbar-logo" src="@/assets/images/Home/logo.png" alt="logo">
         </div>
         <div class="dropdown col">   
             <button v-if="logged" v-on:click="logout">Logout</button>  

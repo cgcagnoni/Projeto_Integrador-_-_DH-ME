@@ -1,14 +1,14 @@
 <template>
   <!-- Filtros -->
-  <div id="busca">
+  <!-- <div id="busca">
     <div id="Especie" class="form-group row">
       <label for="rEspecie">
         <h2 class="tituloAnimal">Espécie: </h2>
       </label>
       <div class="tituloAnimal-inputs col-sm-10">
-        <input v-model="especie" type="radio" name="especie" value="0">
+        <button v-on:click="">Gato</button>
         <label for="Gato">Gato</label><br>
-        <input v-model='especie' type="radio" name="especie" value="1">
+        <input v-model='especie' type="radio" name="especie" >
         <label for="Cachorro">Cachorro</label>
       </div>
     </div>
@@ -19,11 +19,11 @@
         <h2 class="tituloAnimal">Idade: </h2>
       </label>
       <div class="col-sm-10">
-        <input v-model="idade" type="radio" name="idade" value="0">
+        <input v-model="idade" type="radio" name="idade">
         <label for="Filhote">Filhote</label><br />
-        <input v-model="idade" type="radio" name="idade" value="1">
+        <input v-model="idade" type="radio" name="idade">
         <label for="Adulto">Adulto</label><br />
-        <input v-model="idade" type="radio" name="idade" value="2">
+        <input v-model="idade" type="radio" name="idade">
         <label for="Idoso">Idoso</label><br />
       </div>
     </div>
@@ -33,9 +33,9 @@
         <h2 class="tituloAnimal">Sexo: </h2>
       </label>
       <div class="tituloAnimal-inputs col-sm-10">
-        <input v-model="sexo" type="radio" name="sexo" value="0">
+        <input v-model="sexo" type="radio" name="sexo">
         <label for="Macho">Macho</label><br>
-        <input v-model="sexo" type="radio" name="sexo" value="1">
+        <input v-model="sexo" type="radio" name="sexo">
         <label for="Fêmea">Fêmea</label>
       </div>
     </div>
@@ -46,21 +46,21 @@
         <h2 class="tituloAnimal">Porte: </h2>
       </label>
       <div class="col-sm-10">
-        <input v-model="porte" type="radio" name="porte" value="0">
+        <input v-model="porte" type="radio" name="porte">
         <label for="Pequeno">Pequeno</label><br />
-        <input v-model="porte" type="radio" name="porte" value="1">
+        <input v-model="porte" type="radio" name="porte">
         <label for="Médio">Médio</label><br />
-        <input v-model="porte" type="radio" name="porte" value="2">
+        <input v-model="porte" type="radio" name="porte">
         <label for="Grande">Grande</label><br />
       </div>
     </div>
-    <hr>
-  <div class="btn-busca">
+    <hr> -->
+  <!-- <div class="btn-busca">
     <button v-on:click="filtrarAnimais">
       Buscar animal
     </button>
   </div>
-  </div>
+  </div> -->
 
 
 
@@ -68,7 +68,7 @@
   <div class="title-busca">
    <h1>Animais disponíveis para adoção</h1>
   </div>
-    <div id="catalog" v-for="animal in this.animaisFiltrados">
+    <div id="catalog" v-for="animal in animais">
         <div v-if="animal.especie==0" class="card">
             <img src="https://cataas.com/cat" alt="imagem-animal"/>
             <div class="cardanimal">
