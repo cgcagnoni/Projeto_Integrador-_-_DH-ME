@@ -68,7 +68,7 @@
   <div class="title-busca">
    <h1>Animais disponíveis para adoção</h1>
   </div>
-    <div id="catalog" v-for="animal in this.animaisFiltrados">
+    <div id="catalog" v-for="animal in animais">
         <div v-if="animal.especie==0" class="card">
             <img src="https://cataas.com/cat" alt="imagem-animal"/>
             <div class="cardanimal">

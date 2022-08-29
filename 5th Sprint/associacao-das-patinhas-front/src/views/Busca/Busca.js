@@ -13,7 +13,7 @@ export default {
   methods: {
     buscarAnimais() {
       //Buscando da API
-      fetch(`${import.meta.env.VITE_BASE_URL}api/Animais/`).then(response => {
+      fetch(`${import.meta.env.VITE_BASE_URL}api/Animal/ListarAnimaisDisponiveis`).then(response => {
           response.json().then(animais => {
               this.animais = animais;
           })

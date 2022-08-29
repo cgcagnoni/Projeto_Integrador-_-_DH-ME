@@ -38,6 +38,15 @@
                   placeholder="(xx) xxxxx-xxxx" name="body" />
                 <EstadosECidades v-model:estado="cadastro.localizacao" v-model:cidade="cadastro.cidade"></EstadosECidades>
                 <div class="input-box">
+                        <label class="form-label" for="localizacao">Autorizo receber contato por:</label>
+                        <select  v-model="cadastro.autorizacaoNotificacao">
+                            <option :value="0" > Email</option>
+                            <option :value="1" > WhatsApp</option>
+                            <option :value="2" > Email e WhatsApp</option>
+                            <option :value="3" > Exibir no meu perfil</option>
+                        </select>
+                    </div>          
+                <div class="input-box">
                   <label class="form-label" for="password">Senha</label>
                   <input class="form-control" v-model="cadastro.password" id="password" type="password"
                     placeholder="Digite sua senha" name="body" />

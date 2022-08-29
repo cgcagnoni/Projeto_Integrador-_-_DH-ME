@@ -55,7 +55,8 @@
           <div>
             <h4 id="list-item-4">Meus animais colocados para adoção</h4>
             <p v-for="animal in animaisDisponiveisUsuario">
-              {{ animal.nome }}</p>
+              {{animal.id}} - {{ animal.nome }}</p>
+            <button v-on:click="clickAtualizarDados">Atualizar dados</button>
             <br />
             <hr class="solid" />
           </div>
