@@ -1,4 +1,5 @@
 import EstadosECidades from '/src/components/EstadosECidades/EstadosECidades.vue'
+import router from '@/router'
 
 export default {
     components: {
@@ -27,7 +28,13 @@ export default {
 
             fetch(`${import.meta.env.VITE_BASE_URL}api/Usuario`, app).then(resp => {
                 resp.json().then(cadastrousuario => {
-                    this.cadastro = cadastrousuario;
+                    if (resp.ok) {
+                        this.cadastro = cadastrousuario;
+                        router.push('/login');
+                    } else {
+                        alert('Erro ao tentar se cadastrar, confira seus dados');
+                    }
+                    
                 });
             })
         },
