@@ -7,31 +7,42 @@
     <div id="forms_doacao">
       <div id="titulo_forms_doacao">
         <h1>Cadastre o seu animal</h1>
-          <hr class="solid" />
-        </div>
-          <form v-on:submit="postCadastroAnimal">
+        <hr class="solid" />
+      </div>
+      <form v-on:submit="postCadastroAnimal">
         <div class="form-header_doacao">
-          <div class="input-group">
+          <div class="tamanhoBox">
             <div class="input-box">
-              <label for="nome">Nome :</label>
+              <label for="nome">
+                <h1 class="tituloItem">Nome:</h1>
+              </label>
               <div>
-                <input required type="text" v-model="cadastroAnimal.nome" name="body" placeholder="Digite o nome do seu pet" />
+                <input required type="text" v-model="cadastroAnimal.nome" name="body"
+                  placeholder="Digite o nome do seu pet" />
+              </div>
+              <hr class="solid" />
+            </div>
+            <div>
+              <div class="input-select_idade">
+                <label for="idade">
+                  <h1 class="tituloItem">Idade:</h1>
+                </label>
+                <div>
+                  <select v-model="cadastroAnimal.idade" name="idade" id="idade">
+                    <option value="" block>Selecione a idade</option>
+                    <option :value="0">Filhote</option>
+                    <option :value="1">Adulto</option>
+                    <option :value="2">Idoso</option>
+                  </select>
+                </div>
+                <hr class="solid" />
               </div>
             </div>
-            <div class="input-select_idade">
-              <label for="idade">Idade :</label>
-              <div>
-                <select v-model="cadastroAnimal.idade" name="idade" id="idade">
-                  <option value="" block>Selecione a idade</option>
-                  <option :value="0">Filhote</option>
-                  <option :value="1">Adulto</option>
-                  <option :value="2">Idoso</option>
-                </select>
-              </div>
-            </div>
-          
+
             <div class="input-select_porte">
-              <label for="porte">Porte :</label>
+              <label for="porte">
+                <h1 class="tituloItem">Porte:</h1>
+              </label>
               <div>
                 <select v-model="cadastroAnimal.porte" name="porte" id="porte">
                   <option value="" block>Selecione o porte</option>
@@ -40,72 +51,92 @@
                   <option :value="2">Grande</option>
                 </select>
               </div>
+              <hr class="solid" />
             </div>
 
             <div class="input-select_especie">
-              <label for="especie">Especie :</label>
+              <label for="especie">
+                <h1 class="tituloItem">Especie:</h1>
+              </label>
               <div>
                 <select v-model="cadastroAnimal.especie" name="especie" id="especie">
-                  <option value="" block>Selecione a especie</option>
-                  <option  :value="0">Gato</option>
-                  <option :value="1">Cachorro</option>          
+                  <option value="" block>Selecione a espécie</option>
+                  <option :value="0">Gato</option>
+                  <option :value="1">Cachorro</option>
                 </select>
               </div>
+              <hr class="solid" />
             </div>
 
             <div class="input-select_sexo">
-              <label for="sexo">Sexo :</label>
+              <label for="sexo">
+                <h1 class="tituloItem">Sexo:</h1>
+              </label>
               <div>
                 <select v-model="cadastroAnimal.sexo" name="sexo" id="sexo">
                   <option value="" block>Selecione o sexo</option>
-                  <option  :value="0">Macho</option>
-                  <option :value="1">Fêmea</option>          
+                  <option :value="0">Macho</option>
+                  <option :value="1">Fêmea</option>
                 </select>
               </div>
-            </div>        
-            
+              <hr class="solid" />
+            </div>
+
             <div class="input-box">
               <label for="vacina" class="label-check">
-                Seu pet é vacinado?</label>
-              <input v-model="cadastroAnimal.vacinas" type="text" name="vacina"  />              
+                <h1 class="tituloItem">
+                  Quais vacinas seu pet possui?</h1>
+              </label>
+              <input v-model="cadastroAnimal.vacinas" type="text" name="vacina" />
+              <hr class="solid" />
             </div>
 
             <div class="input-select_microchip">
-              <label for="microchip">Seu pet possui Microchip?</label>
+              <label for="microchip">
+                <h1 class="tituloItem">Seu pet possui Microchip?</h1>
+              </label>
               <div>
                 <select v-model="cadastroAnimal.microchip" name="microchip" id="microchip">
                   <option value="" block>Selecione a opcção</option>
-                  <option  :value="true">Sim</option>
-                  <option :value="false">Não</option>          
+                  <option :value="true">Sim</option>
+                  <option :value="false">Não</option>
                 </select>
               </div>
-            </div> 
+              <hr class="solid" />
+            </div>
 
             <div class="input-select_castrado">
-              <label for="castrado">Seu pet possui Castrado?</label>
+              <label for="castrado">
+                <h1 class="tituloItem">Seu pet é castrado?</h1>
+              </label>
               <div>
                 <select v-model="cadastroAnimal.castrado" name="castrado" id="castrado">
                   <option value="" block>Selecione a opcção</option>
-                  <option  :value="true">Sim</option>
-                  <option :value="false">Não</option>          
+                  <option :value="true">Sim</option>
+                  <option :value="false">Não</option>
                 </select>
               </div>
-            </div> 
+              <hr class="solid" />
+            </div>
 
             <div class="input-select_deficiencia">
-              <label for="deficiencia">Seu pet possui alguma deficiencia?</label>
+              <label for="deficiencia">
+                <h1 class="tituloItem">Seu pet possui alguma deficiencia?</h1>
+              </label>
               <div>
                 <select v-model="cadastroAnimal.deficiencia" name="deficiencia" id="deficiencia">
                   <option value="" block>Selecione a opcção</option>
-                  <option  :value="true">Sim</option>
-                  <option :value="false">Não</option>          
+                  <option :value="true">Sim</option>
+                  <option :value="false">Não</option>
                 </select>
               </div>
-            </div>             
-              <EstadosECidades v-model:estado="cadastroAnimal.localizacao" v-model:cidade="cadastroAnimal.cidade"></EstadosECidades>
-            
+              <hr class="solid" />
+            </div>
+            <EstadosECidades v-model:estado="cadastroAnimal.localizacao" v-model:cidade="cadastroAnimal.cidade">
+            </EstadosECidades>
+
             <div class="Cadastre-se-button">
-              <button v-on:click="postDoacaoAnimal"  type="button"> Salvar</button>
+              <button v-on:click="postDoacaoAnimal" type="button"> Salvar</button>
             </div>
           </div>
         </div>
