@@ -40,6 +40,4 @@ WORKDIR /app
 COPY --from=build-back /app/out .
 COPY --from=build-front /app/dist ./wwwroot
 
-ENV UsarBancoEmMemoria=true
-
 ENTRYPOINT ["dotnet", "ONGWebAPI.dll"]
