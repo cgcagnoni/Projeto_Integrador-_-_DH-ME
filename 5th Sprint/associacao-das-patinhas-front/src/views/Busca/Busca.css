@@ -24,10 +24,28 @@
     color: #ff598f;
 }
 
-.form-group{
+#Especie{
     border-right: solid 2px #e0e300;
     margin: 0 auto;
     text-align: start;
+}
+
+#Idade{
+    border-right: solid 2px #e0e300;
+    margin: 0 auto;
+    text-align: start; 
+}
+
+#Sexo{
+    border-right: solid 2px #e0e300;
+    margin: 0 auto;
+    text-align: start; 
+}
+
+#Porte{
+    border-right: solid 2px #e0e300;
+    margin: 0 auto;
+    text-align: start; 
 }
 
 .tituloAnimal-inputs{

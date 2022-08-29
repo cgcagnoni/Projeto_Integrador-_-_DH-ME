@@ -1,8 +1,8 @@
 <template>
   <!-- Filtros -->
   <div id="busca">
-    <div class="form-group row">
-      <label for="alterarEspecie">
+    <div id="Especie" class="form-group row">
+      <label for="rEspecie">
         <h2 class="tituloAnimal">Espécie: </h2>
       </label>
       <div class="tituloAnimal-inputs col-sm-10">
@@ -14,7 +14,7 @@
     </div>
     <hr>
 
-    <div class="form-group row">
+    <div id="Idade" class="form-group row">
       <label for="alterarIdade">
         <h2 class="tituloAnimal">Idade: </h2>
       </label>
@@ -28,7 +28,7 @@
       </div>
     </div>
     <hr>
-     <div class="form-group row">
+     <div id="Sexo" class="form-group row">
       <label for="alterarEspecie">
         <h2 class="tituloAnimal">Sexo: </h2>
       </label>
@@ -41,7 +41,7 @@
     </div>
     <hr>
 
-    <div class="form-group row">
+    <div id="Porte" class="form-group row">
       <label for="alterarPorte">
         <h2 class="tituloAnimal">Porte: </h2>
       </label>
