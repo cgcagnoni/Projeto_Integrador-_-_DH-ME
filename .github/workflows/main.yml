@@ -17,8 +17,3 @@ jobs:
           heroku_email: "assocdaspatinhas@gmail.com"
           usedocker: true
           docker_heroku_process_type: web
-          docker_build_args: 
-            ConnectionStrings:BancoPatinhas
-        
-        env:
-          ConnectionStrings:BancoPatinhas: ${{secrets.CONNECTION_STRING}}

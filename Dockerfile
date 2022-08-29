@@ -30,7 +30,7 @@ RUN npm install
 COPY ${src} ./
 
 # compila a aplicação de produção com minificação
-RUN npm run build
+RUN npm run build --mode=production
 
 # Build runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS patinhas
