@@ -48,11 +48,23 @@ namespace ONGWebAPI.Controllers
             var animal = this.animalRepository.ExibirPelaID(interesseAdocao.AnimalId);
             if (animal?.Usuario?.AutorizacaoNotificacao == Entities.AutorizacaoNotificacao.WhatsApp || animal?.Usuario?.AutorizacaoNotificacao == Entities.AutorizacaoNotificacao.EmailEWhatsApp)
             {
-                whatsappService.EnviarMenssagem(interesseAdocao);
+                try
+                {
+                    whatsappService.EnviarMenssagem(interesseAdocao);
+                }
+                catch (Exception)
+                {
+                }
             }
             if (animal?.Usuario?.AutorizacaoNotificacao == Entities.AutorizacaoNotificacao.Email || animal?.Usuario?.AutorizacaoNotificacao == Entities.AutorizacaoNotificacao.EmailEWhatsApp)
             {                
-                mailService.SendEmail(interesseAdocao);
+                try
+                {
+                    mailService.SendEmail(interesseAdocao);
+                }
+                catch (Exception)
+                {
+                }
             }
             return CreatedAtAction("InteresseAdocao", new { id = interesseAdocao.Id }, interesseAdocao);
         }

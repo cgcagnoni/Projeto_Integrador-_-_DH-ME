@@ -36,14 +36,14 @@
                 <label class="form-label" for="telefone">Telefone</label>
                 <input class="form-control" v-model="cadastro.telefone" id="telefone" type="tel"
                   placeholder="(xx) xxxxx-xxxx" name="body" />
-               <EstadosECidades></EstadosECidades>
+                <EstadosECidades v-model:estado="cadastro.localizacao" v-model:cidade="cadastro.cidade"></EstadosECidades>
                 <div class="input-box">
                   <label class="form-label" for="password">Senha</label>
                   <input class="form-control" v-model="cadastro.password" id="password" type="password"
                     placeholder="Digite sua senha" name="body" />
                 </div>
                 <div class="Cadastre-se-button botao">
-                  <button type="submit"> Cadastre-se </button>
+                  <button type="button" v-on:click="postCadastro"> Cadastre-se </button>
                 </div>
               </div>
             </div>
