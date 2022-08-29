@@ -1,119 +1,138 @@
 <template>
 
-    <div id="container">
-        <!-- Conteúdo da Página -->
-        <div class="row" id="profilecontent">
-            <div class="col-4">
-                <div id="listaCadastro" class="list-group">
-                    <a class="list-group-item list-group-item-action" href="./perfil">Meu cadastro</a>
-                    <a class="list-group-item list-group-item-action" href="./perfil">Minhas adoções</a>
-                    <a class="list-group-item list-group-item-action" href="./perfil">Minha doações</a>
-                    <a class="list-group-item list-group-item-action" href="./perfil">Segurança</a>
-                    <a class="list-group-item list-group-item-action" href="./alteracao-cadastro">Alterar dados</a>
-                </div>
+    <div class="row" id="profilecontent">
+        <div class="col-4">
+            <div id="listaCadastro" class="list-group">
+                <RouterLink class="list-group-item list-group-item-action" to="/perfil">Meu cadastro</RouterLink>
+                <RouterLink class="list-group-item list-group-item-action" to="/perfil">Minhas adoções</RouterLink>
+                <RouterLink class="list-group-item list-group-item-action" to="/perfil">Minha doações</RouterLink>
+                <RouterLink class="list-group-item list-group-item-action" to="/perfil">Segurança</RouterLink>
+                <RouterLink class="list-group-item list-group-item-action" to="/alteracao-cadastro">Alterar dados
+                </RouterLink>
             </div>
+        </div>
 
-            <div class="col-8">
-                <div data-bs-spy="scroll" data-bs-target="#listaCadastro" data-bs-smooth-scroll="true"
-                    class="scrollspy-example" tabindex="0">
-                    <form>
-                        <div class="input-group row">
-                            <h1 id="list-item-1">Alterar dados do pet</h1>
-                            <label for="alterarNomeAnimal" class="col-sm-2 col-form-label">
-                                <h2 class="tituloAnimal">Nome do animal</h2>
-                            </label>
-                           <div>
-                                <input type="text" class="form-control" id="alterarNomeAnimal"
-                                    placeholder="Nome do animal" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-                            </div>
-               </div>
-
-                        <div class="form-group row">
-                            <label for="alterarEspecie">
-                                <h2 class="tituloAnimal">Espécie: </h2>
-                            </label>
-                            <div class="col-sm-10">
-                                <input type="radio" name="especie" value="Gato">
-                                <label for="Gato">Gato</label><br>
-                                <input type="radio" name="especie" value="Cachorro">
-                                <label for="Cachorro">Cachorro</label>
-                            </div>
-                        </div><hr>
-
-                        <div class="form-group row">
-                            <label for="alterarIdade">
-                                <h2 class="tituloAnimal">Idade: </h2>
-                            </label>
-                            <div class="col-sm-10">
-                                <input type="radio" name="idade" value="Filhote">
-                                <label for="Filhote">Filhote</label><br />
-                                <input type="radio" name="idade" value="Adulto">
-                                <label for="Adulto">Adulto</label><br />
-                                <input type="radio" name="idade" value="Idoso">
-                                <label for="Idoso">Idoso</label><br />
-                            </div>
-                        </div><hr>
-
-                        <div class="form-group row">
-                            <div class="col-sm-10">
-                                <label for="sexo">
-                                    <h2 class="tituloAnimal">Sexo:</h2>
-                                </label><br>
-                                <input type="radio" name="sexo" value="Macho">
-                                <label for="Macho">Macho</label><br>
-                                <input type="radio" name="sexo" value="Fêmea">
-                                <label for="Fêmea">Fêmea</label>
-                            </div>
-                        </div><hr>
-
-                        <div class="form-group row">
-                            <label for="alterarPorte">
-                                <h2 class="tituloAnimal">Porte: </h2>
-                            </label>
-                            <div class="col-sm-10">
-                                <input type="radio" name="porte" value="Pequeno">
-                                <label for="Pequeno">Pequeno</label><br />
-                                <input type="radio" name="porte" value="Médio">
-                                <label for="Médio">Médio</label><br />
-                                <input type="radio" name="porte" value="Grande">
-                                <label for="Grande">Grande</label><br />
-                            </div>
-                        </div><hr>
-
+        <div class="col-8">
+            <div data-bs-spy="scroll" data-bs-target="#listaCadastro" data-bs-smooth-scroll="true"
+                class="scrollspy-example" tabindex="0">
+                <form>
+                    <div class="input-group row">
                         <div class="input-box">
-                            <label for="Foto">
-                                <h2 class="tituloAnimal">Adicione uma foto do seu pet</h2>
-                            </label>
-                            <input for="Foto" type="file" placeholder="Adicione a Foto">
-                        </div><br>
-                        <div>
-                            <input type="checkbox" name="vacina">
-                            <label for="vacina"> Seu pet é vacinado?</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="Microchip">
-                            <label for="Microchip"> Seu pet possui Microchip?</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="Castrado">
-                            <label for="Castrado"> Seu pet é castrado?</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="deficiencia">
-                            <label for="deficiencia"> Seu pet possui alguma deficiencia?</label>
-                        </div><br>
-
-                        <div class="Cadastre-se-button">
-
-                            <div class="form-group row">
-            
-                                    <button type="submit" class="Altera-button" v-on:click="salvarAlteracaoAnimal">Alterar dados do pet</button>
-                              
+                            <label for="nome">Nome :</label>
+                            <div>
+                                <input required type="text" v-model="alteracaoAnimal.nome" name="body"
+                                    placeholder="Digite o nome do seu pet" />
                             </div>
                         </div>
-                    </form>
+                        <div class="input-select_porte">
+                            <label for="idade">Idade :</label>
+                            <div>
+                                <select v-model="alteracaoAnimal.idade" name="idade" id="idade">
+                                    <option value="" block>Selecione a idade</option>
+                                    <option :value="0">Filhote</option>
+                                    <option :value="1">Adulto</option>
+                                    <option :value="2">Idoso</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
 
-                </div>
+                    <div class="input-select_porte">
+                        <label for="porte">Porte :</label>
+                        <div>
+                            <select v-model="alteracaoAnimal.porte" name="porte" id="porte">
+                                <option value="" block>Selecione o porte</option>
+                                <option :value="0">Pequeno</option>
+                                <option :value="1">Médio</option>
+                                <option :value="2">Grande</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-select_especie">
+                        <label for="especie">Especie :</label>
+                        <div>
+                            <select v-model="alteracaoAnimal.especie" name="especie" id="especie">
+                                <option value="" block>Selecione a especie</option>
+                                <option :value="0">Gato</option>
+                                <option :value="1">Cachorro</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-select_sexo">
+                        <label for="sexo">Sexo :</label>
+                        <div>
+                            <select v-model="alteracaoAnimal.sexo" name="sexo" id="sexo">
+                                <option value="" block>Selecione o sexo</option>
+                                <option :value="0">Macho</option>
+                                <option :value="1">Fêmea</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="vacina">
+                            Seu pet é vacinado?Quais?</label>
+                        <input v-model="alteracaoAnimal.vacinas" type="text" name="vacina" />
+                    </div>
+
+                    <div class="input-select_microchip">
+                        <label for="microchip">Seu pet possui Microchip?</label>
+                        <div>
+                            <select v-model="alteracaoAnimal.microchip" name="microchip" id="microchip">
+                                <option value="" block>Selecione a opcção</option>
+                                <option :value="true">Sim</option>
+                                <option :value="false">Não</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-select_castrado">
+                        <label for="castrado">Seu pet possui Castrado?</label>
+                        <div>
+                            <select v-model="alteracaoAnimal.castrado" name="castrado" id="castrado">
+                                <option value="" block>Selecione a opcção</option>
+                                <option :value="true">Sim</option>
+                                <option :value="false">Não</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-select_deficiencia">
+                        <label for="deficiencia">Seu pet possui alguma deficiencia?</label>
+                        <div>
+                            <select v-model="alteracaoAnimal.deficiencia" name="deficiencia" id="deficiencia">
+                                <option value="" block>Selecione a opcção</option>
+                                <option :value="true">Sim</option>
+                                <option :value="false">Não</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-select_status">
+                        <label for="disponibilidade">O animal ainda está disponível para adoção?</label>
+                        <div>
+                            <select v-model="alteracaoAnimal.disponibilidade" name="disponibilidade"
+                                id="disponibilidade">
+                                <option value="" block>Selecione a opcção</option>
+                                <option :value="true">Sim</option>
+                                <option :value="false">Não</option>
+                            </select>
+                        </div>
+                    </div>
+                    <EstadosECidades v-model:estado="alteracaoAnimal.localizacao"
+                        v-model:cidade="alteracaoAnimal.cidade"></EstadosECidades>
+
+                    <div class="Cadastre-se-button">
+
+                        <div class="form-group row">
+                            <button type="button" class="Altera-button" v-on:click="salvarAlteracaoAnimal"> Alterar
+                                dados do pet </button>
+                        </div>
+                    </div>
+                </form>
+
             </div>
         </div>
 
@@ -124,12 +143,11 @@
                     <div>
 
                     </div>
-
-
                 </nav>
             </div>
         </div>
     </div>
+
 </template>
 <script src="./Alteracao-de-animal.js"></script>
         <style src="./Alteracao-de-animal.css">

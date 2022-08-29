@@ -5,11 +5,10 @@
         <div class="col">
           <div class="adm-anim">
             <h1>Animais</h1>
-
-            <button class="button" type="button" v-on:click="alterarCadastroAnimal">Alteração de cadastro</button>
             <button class="button" type="button" v-on:click="buscarAnimal">Buscar um animal</button>
-            <button class="button" type="button" v-on:click="listarTodosAnimais">Lista de animais</button>           
-            <button class="button" type="button" v-on:click="listarAnimaisDisponiveis">Lista de animais disponíveis</button>
+            <button class="button" type="button" v-on:click="listarTodosAnimais">Lista de animais</button>
+            <button class="button" type="button" v-on:click="listarAnimaisDisponiveis">Lista de animais
+              disponíveis</button>
             <button class="button" type="button" v-on:click="listarAnimaisAdotados">Lista de animais adotados</button>
 
 
@@ -56,9 +55,6 @@
         <div class="col">
           <div class="adm-user">
             <h1>Usuários</h1>
-
-            <button class="button" type="button" v-on:click="alterarCadastroUsuario">Alteração de cadastro</button>
-
             <button class="button" type="button" v-on:click="listarTodosUsuarios">Lista de usuários</button>
 
             <!-- botao de deletar usuario -->
@@ -115,28 +111,30 @@
   <div id="listas">
     <ul id="list-user">
       <li class="list-group" v-for="usuario in usuarios">
-        <h1 id="listaDeUsers">Usuário {{ usuario.id }}</h1>
+        <h1 id="listaDeUsers">Usuário {{  usuario.id  }}</h1>
         <br />
-        Username: {{ usuario.username }} <br />
-        Nome: {{ usuario.nome }}<br />
-        Sobrenome: {{ usuario.sobrenome }}<br />
-        Cidade: {{ usuario.cidade }}<br />
-        Localizacao: {{ usuario.localizacao }}<br />
-        E-mail: {{ usuario.email }}<br />
-        Telefone: {{ usuario.telefone }}
+        Username: {{  usuario.username  }} <br />
+        Nome: {{  usuario.nome  }}<br />
+        Sobrenome: {{  usuario.sobrenome  }}<br />
+        Cidade: {{  usuario.cidade  }}<br />
+        Localizacao: {{  usuario.localizacao  }}<br />
+        E-mail: {{  usuario.email  }}<br />
+        Telefone: {{  usuario.telefone  }}
         <hr />
       </li>
     </ul>
-     <ul id="list-animais">
+    <ul id="list-animais">
       <li class="list-group" v-for="animal in animais">
-        <h1 id="lista-de-animais">Animal {{ animal.id }}</h1>
+        <RouterLink :to="{ name: 'alteracao-animal', params: { id: animal.id } }">
+          <h1 id="lista-de-animais">Animal {{  animal.id  }}</h1>
+        </RouterLink>
         <br />
-        Nome: {{ animal.nome }} <br />
-        Espécie: {{ animal.especieDesc }}<br />
-        Cidade: {{ animal.cidade }}<br />
-        Localização: {{ animal.localizacao }}<br />
-        Usuário: {{ animal.usuario.id }}<br />
-        Disponibilidade: {{animal.disponibilidade}}
+        Nome: {{  animal.nome  }} <br />
+        Espécie: {{  animal.especieDesc  }}<br />
+        Cidade: {{  animal.cidade  }}<br />
+        Localização: {{  animal.localizacao  }}<br />
+        Usuário: {{  animal.usuario.id  }}<br />
+        Disponibilidade: {{ animal.disponibilidade }}
       </li>
     </ul>
   </div>

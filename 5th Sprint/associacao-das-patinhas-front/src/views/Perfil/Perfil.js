@@ -58,13 +58,6 @@ export default {
                 })
             })
         },         
-        clickAtualizarDados(){
-            const token = localStorage.getItem("token")
-            if (token){
-                router.push('alteracao-animal')
-            }
-        }    
-
     },
     
     beforeMount() {

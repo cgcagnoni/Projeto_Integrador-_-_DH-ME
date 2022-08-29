@@ -24,16 +24,6 @@ namespace ONGWebAPI.Services
             };
 
         }
-
-        //public void SendMail(string mailUserPet, string nameUserPet)
-        //{
-        //    var toAddress = new MailAddress(mailUserPet, nameUserPet);
-        //    var message = new MailMessage(fromAddress, toAddress);
-        //    message.Subject = subject;
-        //    //message.Body = body;
-        //    smtp.Send(message);
-        //}
-
         public void SendEmail(InteresseAdocao interesseAdocao)
         {
             var toAddress = new MailAddress(interesseAdocao.Animal.Usuario.Email, interesseAdocao.Animal.Usuario.Nome);
