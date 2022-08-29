@@ -7,7 +7,8 @@
                 <RouterLink class="list-group-item list-group-item-action" to="/perfil">Minhas adoções</RouterLink>
                 <RouterLink class="list-group-item list-group-item-action" to="/perfil">Minha doações</RouterLink>
                 <RouterLink class="list-group-item list-group-item-action" to="/perfil">Segurança</RouterLink>
-                <RouterLink class="list-group-item list-group-item-action" to="/alteracao-cadastro">Alterar dados</RouterLink>
+                <RouterLink class="list-group-item list-group-item-action" to="/alteracao-cadastro">Alterar dados
+                </RouterLink>
             </div>
         </div>
         <div class="col-8">
@@ -45,37 +46,20 @@
                                 id="alterarTelefonelUsuario" placeholder="Telefone do usuário">
                         </div>
                     </div>
-                    <EstadosECidades></EstadosECidades>
+                    <EstadosECidades v-model:estado="alteracao.localizacao" v-model:cidade="alteracao.cidade"></EstadosECidades>
                     <br>
-                    <div class="mb-3 form-check">
-                        <input type="checkbox" v-model="alteracao.AutorizacaoNotificacao" name="body"
-                            class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="autorizacaoContatoEmail">Autorizo receber
-                            contato através do meu e-mail</label>
-                    </div>
-                    <div class="mb-3 form-check">
-                        <input type="checkbox" name="body" v-model="alteracao.AutorizacaoNotificacao"
-                            class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" name="body" for="autorizacaoContatoEmail">Autorizo receber
-                            contato através do meu telefone</label>
-                    </div>
-                    <div class="mb-3 form-check">
-
-                        <input type="checkbox" class="form-check-input" name="body" id="exampleCheck1"
-                            v-model="alteracao.AutorizacaoNotificacao">
-                        <label class="form-check-label" for="autorizacaoContatoEmail" required>Concordo com
-                            a política de doação e adoção de animais da Associação das Patinhas</label>
-                    </div><br>
-                    <div class="form-group row">
-                        <label for="senhaUsuario" class="col-sm-2 col-form-label">Senha</label>
-                        <div class="col-sm-10">
-                            <input type="password" class="form-control"
-                                id="senhaUsuario" placeholder="Digite a sua senha">
-                        </div>
-                    </div>
-
+                    <div class="input-box">
+                        <label class="form-label" for="localizacao">Autorizo receber contato por:</label>
+                        <select  v-model="alteracao.autorizacaoNotificacao">
+                            <option :value="0" > Email</option>
+                            <option :value="1" > WhatsApp</option>
+                            <option :value="2" > Email e WhatsApp</option>
+                            <option :value="3" > Exibir no meu perfil</option>
+                        </select>
+                    </div>                  
                     <div class="Alterar-rodape">
-                        <button type="submit" class="Altera-button">Alterar meus dados</button>
+                        <button v-on:click="AlteracaoCadastro" type="button" class="Altera-button">Alterar meus
+                            dados</button>
                     </div>
                 </form>
 

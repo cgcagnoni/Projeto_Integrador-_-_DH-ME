@@ -153,11 +153,11 @@ namespace ONGWebAPI.Controllers
         /// <response code="200">Atualizações feitas na database com sucesso</response>
         /// <response code="404">Usuário não encontrado</response>
         /// <response code="400">Erro desconhecido ocorrido ao tentar atualizar a database</response>
-        [HttpPut("{Id}")]
+        [HttpPut]
         [Authorize]
-        public ActionResult AtualizarInformacoesPelaId(int Id, Usuario Usuario)
+        public ActionResult AtualizarInformacoesPelaId(Usuario Usuario)
         {
-            Id = int.Parse(User.FindFirst(ClaimTypes.Sid).Value);
+            int Id = int.Parse(User.FindFirst(ClaimTypes.Sid).Value);
             
             if (_usuarioRepository.VerificarUsuario(Id))
             {

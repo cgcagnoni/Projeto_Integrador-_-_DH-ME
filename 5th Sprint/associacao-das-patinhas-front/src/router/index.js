@@ -81,7 +81,7 @@ const router = createRouter({
       component: AlteracaoAnimalView
     },
     {
-      path: '/alteracao-cadastro',
+      path: '/alteracao-cadastro/',
       name: 'alteracao-cadastro',
       component: AlteracaoCadastroView
     },
